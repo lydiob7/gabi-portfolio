@@ -1,27 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
+import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from 'auth/store/userSlice';
 import { themeDark, themeLight, languageChanged } from 'store/uiSlice';
 
-import { Close as CloseIcon, Menu as MenuIcon } from '@material-ui/icons';
+// import { Close as CloseIcon, Menu as MenuIcon } from '@material-ui/icons';
 import {
-    Divider,
-    Drawer,
-    Hidden,
+    // Divider,
+    // Drawer,
+    // Hidden,
     Icon,
-    IconButton,
-    List,
-    ListItem,
-    ListItemText,
+    // IconButton,
+    // List,
+    // ListItem,
+    // ListItemText,
     makeStyles,
     MenuItem,
     Select
 } from '@material-ui/core';
 
-import { AuthUserCard, AuthUserSmallCard, Button, Logo, MenuButton, Switch } from 'custom-components';
+import {
+    // AuthUserCard,
+    AuthUserSmallCard,
+    Button,
+    // Logo,
+    MenuButton,
+    Switch
+} from 'custom-components';
 
-import { parsePath } from 'utils/helpers';
+// import { parsePath } from 'utils/helpers';
 import { authRoles } from 'auth';
 
 const useStyles = makeStyles((theme) => ({
@@ -110,6 +118,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         margin: '0 10px'
+    },
+    themeIcon: {
+        margin: '0 5px',
+        fontSize: '1rem'
     }
 }));
 
@@ -117,8 +129,8 @@ export default function Navbar({ menuItems = [] }) {
     const dispatch = useDispatch();
     const classes = useStyles();
 
-    const [navOpen, setNavOpen] = useState(false);
-    const appInformation = useSelector(({ ui }) => ui.appInformation);
+    // const [navOpen, setNavOpen] = useState(false);
+    // const appInformation = useSelector(({ ui }) => ui.appInformation);
     const currentLanguage = useSelector(({ ui }) => ui.appSettings.currentLanguage);
     const currentTheme = useSelector(({ ui }) => ui.appSettings.theme);
     const isLanguageToggable = useSelector(({ ui }) => ui.appSettings.isLanguageToggable);
@@ -161,10 +173,9 @@ export default function Navbar({ menuItems = [] }) {
 
                 {isThemeToggable && (
                     <div className={classes.themeButton}>
-                        <Icon size="small" className={classes.itemLogo}>
-                            {currentTheme === 'dark' ? 'flare' : 'brightness_3'}
-                        </Icon>
+                        <Icon size="small" className={clsx(classes.themeIcon, 'fa-regular fa-sun')} />
                         <Switch checked={currentTheme === 'dark'} onClick={toggleTheme} />
+                        <Icon size="small" className={clsx(classes.themeIcon, 'fa-regular fa-moon')} />
                     </div>
                 )}
                 {isLanguageToggable && (
@@ -195,132 +206,133 @@ export default function Navbar({ menuItems = [] }) {
         );
     };
 
-    const drawerList = () => (
-        <nav className={classes.drawerListWrapper}>
-            <div>
-                <Logo
-                    size="small"
-                    style={{ margin: '20px' }}
-                    title={appInformation?.appTitle}
-                    imageSrc={parsePath(appInformation?.appLogo)}
-                />
-                <Divider />
-                {userLoggedIn && (
-                    <>
-                        <AuthUserCard items={menuItems?.filter((item) => item.type === 'user-menu')} />
-                        <Divider />
-                    </>
-                )}
-                <List className={classes.drawerList}>
-                    {menuItems?.map((item, index) => {
-                        if ((item.onlyLoggedOut && userLoggedIn) || (item.onlyLoggedIn && !userLoggedIn)) return null;
-                        if (item.type === 'logout' || item.type === 'user-menu') return null;
-                        if (item.roles && !item.roles?.includes(authRoles[data?.role])) return null;
+    // const drawerList = () => (
+    //     <nav className={classes.drawerListWrapper}>
+    //         <div>
+    //             <Logo
+    //                 size="small"
+    //                 style={{ margin: '20px' }}
+    //                 title={appInformation?.appTitle}
+    //                 imageSrc={parsePath(appInformation?.appLogo)}
+    //             />
+    //             <Divider />
+    //             {userLoggedIn && (
+    //                 <>
+    //                     <AuthUserCard items={menuItems?.filter((item) => item.type === 'user-menu')} />
+    //                     <Divider />
+    //                 </>
+    //             )}
+    //             <List className={classes.drawerList}>
+    //                 {menuItems?.map((item, index) => {
+    //                     if ((item.onlyLoggedOut && userLoggedIn) || (item.onlyLoggedIn && !userLoggedIn)) return null;
+    //                     if (item.type === 'logout' || item.type === 'user-menu') return null;
+    //                     if (item.roles && !item.roles?.includes(authRoles[data?.role])) return null;
 
-                        if (item.dropdown) {
-                            return (
-                                <List button>
-                                    {item.dropdown.map((ditem, index2) => {
-                                        if (ditem.roles && !ditem.roles?.includes(authRoles[data?.role])) return null;
+    //                     if (item.dropdown) {
+    //                         return (
+    //                             <List button>
+    //                                 {item.dropdown.map((ditem, index2) => {
+    //                                     if (ditem.roles && !ditem.roles?.includes(authRoles[data?.role])) return null;
 
-                                        return (
-                                            <ListItem
-                                                className={classes.listItem}
-                                                key={ditem.title + index2}
-                                                onClick={() => setNavOpen(false)}
-                                            >
-                                                {ditem.icon && <Icon className={classes.itemLogo}>{ditem.icon}</Icon>}
-                                                <Link to={ditem.path}>{ditem.title}</Link>
-                                            </ListItem>
-                                        );
-                                    })}
-                                </List>
-                            );
-                        }
+    //                                     return (
+    //                                         <ListItem
+    //                                             className={classes.listItem}
+    //                                             key={ditem.title + index2}
+    //                                             // onClick={() => setNavOpen(false)}
+    //                                         >
+    //                                             {ditem.icon && <Icon className={classes.itemLogo}>{ditem.icon}</Icon>}
+    //                                             <Link to={ditem.path}>{ditem.title}</Link>
+    //                                         </ListItem>
+    //                                     );
+    //                                 })}
+    //                             </List>
+    //                         );
+    //                     }
 
-                        return (
-                            <ListItem
-                                className={classes.listItem}
-                                button
-                                key={item.title + index}
-                                onClick={() => setNavOpen(false)}
-                            >
-                                <Link to={item.path}>
-                                    {item.icon && <Icon className={classes.itemLogo}>{item.icon}</Icon>}
-                                    <ListItemText primary={item.title} />
-                                </Link>
-                            </ListItem>
-                        );
-                    })}
-                </List>
-            </div>
+    //                     return (
+    //                         <ListItem
+    //                             className={classes.listItem}
+    //                             button
+    //                             key={item.title + index}
+    //                             onClick={() => setNavOpen(false)}
+    //                         >
+    //                             <Link to={item.path}>
+    //                                 {item.icon && <Icon className={classes.itemLogo}>{item.icon}</Icon>}
+    //                                 <ListItemText primary={item.title} />
+    //                             </Link>
+    //                         </ListItem>
+    //                     );
+    //                 })}
+    //             </List>
+    //         </div>
 
-            <div>
-                <Divider />
+    //         <div>
+    //             <Divider />
 
-                <List className={classes.drawerList}>
-                    <ListItem
-                        className={classes.listItem}
-                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
-                        button
-                    >
-                        {isLanguageToggable && (
-                            <div className={classes.languageSelectWrapper}>
-                                <Icon size="small" className={classes.itemLogo}>
-                                    language
-                                </Icon>
-                                <Select
-                                    classes={{ root: classes.languageSelect }}
-                                    value={currentLanguage}
-                                    onChange={(ev) => handleLanguageChange(ev.target?.value)}
-                                >
-                                    {supportedLanguages?.map((language, index) => (
-                                        <MenuItem key={language + index} value={language}>
-                                            {textProvider?.supportedLanguages
-                                                ? textProvider?.supportedLanguages[language] || language
-                                                : language}
-                                        </MenuItem>
-                                    ))}
-                                </Select>
-                            </div>
-                        )}
-                        {isThemeToggable && (
-                            <div className={classes.themeButton}>
-                                <Icon size="small" className={classes.itemLogo}>
-                                    {currentTheme === 'dark' ? 'flare' : 'brightness_3'}
-                                </Icon>
-                                <Switch size="small" checked={currentTheme === 'dark'} onClick={toggleTheme} />
-                            </div>
-                        )}
-                    </ListItem>
-                    {menuItems?.map((item, index) => {
-                        if ((item.onlyLoggedOut && userLoggedIn) || (item.onlyLoggedIn && !userLoggedIn)) return null;
-                        if (item.type === 'logout') {
-                            return (
-                                <ListItem
-                                    className={classes.listItem}
-                                    button
-                                    key={item.title + index}
-                                    onClick={() => {
-                                        setNavOpen(false);
-                                        return dispatch(logoutUser());
-                                    }}
-                                >
-                                    {item.icon && <Icon className={classes.itemLogo}>{item.icon}</Icon>}
-                                    <ListItemText primary={item.title} />
-                                </ListItem>
-                            );
-                        }
-                        return null;
-                    })}
-                </List>
-            </div>
-        </nav>
-    );
+    //             <List className={classes.drawerList}>
+    //                 <ListItem
+    //                     className={classes.listItem}
+    //                     style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+    //                     button
+    //                 >
+    //                     {isLanguageToggable && (
+    //                         <div className={classes.languageSelectWrapper}>
+    //                             <Icon size="small" className={classes.itemLogo}>
+    //                                 language
+    //                             </Icon>
+    //                             <Select
+    //                                 classes={{ root: classes.languageSelect }}
+    //                                 value={currentLanguage}
+    //                                 onChange={(ev) => handleLanguageChange(ev.target?.value)}
+    //                             >
+    //                                 {supportedLanguages?.map((language, index) => (
+    //                                     <MenuItem key={language + index} value={language}>
+    //                                         {textProvider?.supportedLanguages
+    //                                             ? textProvider?.supportedLanguages[language] || language
+    //                                             : language}
+    //                                     </MenuItem>
+    //                                 ))}
+    //                             </Select>
+    //                         </div>
+    //                     )}
+    //                     {isThemeToggable && (
+    //                         <div className={classes.themeButton}>
+    //                             <Icon size="small" className={clsx(classes.themeIcon, 'fa-regular fa-sun')} />
+    //                             <Switch checked={currentTheme === 'dark'} onClick={toggleTheme} />
+    //                             <Icon size="small" className={clsx(classes.themeIcon, 'fa-regular fa-moon')} />
+    //                         </div>
+    //                     )}
+    //                 </ListItem>
+    //                 {menuItems?.map((item, index) => {
+    //                     if ((item.onlyLoggedOut && userLoggedIn) || (item.onlyLoggedIn && !userLoggedIn)) return null;
+    //                     if (item.type === 'logout') {
+    //                         return (
+    //                             <ListItem
+    //                                 className={classes.listItem}
+    //                                 button
+    //                                 key={item.title + index}
+    //                                 onClick={() => {
+    //                                     // setNavOpen(false);
+    //                                     return dispatch(logoutUser());
+    //                                 }}
+    //                             >
+    //                                 {item.icon && <Icon className={classes.itemLogo}>{item.icon}</Icon>}
+    //                                 <ListItemText primary={item.title} />
+    //                             </ListItem>
+    //                         );
+    //                     }
+    //                     return null;
+    //                 })}
+    //             </List>
+    //         </div>
+    //     </nav>
+    // );
 
     return (
         <>
-            <Hidden mdDown>{mainNavigationList()}</Hidden>
+            {mainNavigationList()}
+            {/* <Hidden mdDown>
+            </Hidden>
 
             <Drawer anchor="left" open={navOpen} onClose={() => setNavOpen(false)}>
                 <IconButton className={classes.closeMenuBtn} onClick={() => setNavOpen(false)}>
@@ -333,7 +345,7 @@ export default function Navbar({ menuItems = [] }) {
                 <IconButton className={classes.menuBtn} onClick={() => setNavOpen(!navOpen)}>
                     <MenuIcon fontSize="large" />
                 </IconButton>
-            </Hidden>
+            </Hidden> */}
         </>
     );
 }

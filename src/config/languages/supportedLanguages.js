@@ -3,7 +3,7 @@ import { englishContent, spanishContent } from 'config';
 const supportedLanguages = {
     es: spanishContent,
     en: englishContent,
-    default: spanishContent
+    default: englishContent
 };
 
 export default supportedLanguages;

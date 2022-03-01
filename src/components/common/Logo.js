@@ -2,7 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
-import { makeStyles, Typography } from '@material-ui/core';
+import {
+    makeStyles
+    // Typography
+} from '@material-ui/core';
 
 import { parsePath } from 'utils/helpers';
 
@@ -38,11 +41,11 @@ export default function Logo({ imageSrc, className, style, title }) {
     return (
         <div className={clsx(internalClasses.root, className)} style={style}>
             <Link to={parsePath()}>
-                {imageSrc && <img src={imageSrc} alt={`${title} Logo`} />}
-                &nbsp;
+                {imageSrc && <img src={imageSrc} alt={`${title} logo`} />}
+                {/* &nbsp;
                 <Typography className={clsx(internalClasses.appTitle, 'fs-500 fw-600')} variant="h1">
                     {title}
-                </Typography>
+                </Typography> */}
             </Link>
         </div>
     );

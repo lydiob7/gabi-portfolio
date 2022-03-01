@@ -9,13 +9,13 @@ import { logoutUser, setUserDataFirebase, createUserSettingsFirebase } from './s
 
 class Auth extends Component {
     state = {
-        waitAuthCheck: true
+        waitAuthCheck: false
     };
 
     componentDidMount() {
-        return Promise.all([this.firebaseCheck()]).then(() => {
-            this.setState({ waitAuthCheck: false });
-        });
+        // return Promise.all([this.firebaseCheck()]).then(() => {
+        //     this.setState({ waitAuthCheck: false });
+        // });
     }
 
     firebaseCheck = () =>

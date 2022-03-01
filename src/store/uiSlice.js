@@ -7,24 +7,24 @@ const slice = createSlice({
     initialState: {
         appInformation,
         appSettings: {
-            currentLanguage: 'es',
-            isLanguageCheckTriggered: true,
-            isPreferredThemeCheckTriggered: true,
-            isLanguageToggable: true,
+            currentLanguage: 'en',
+            isLanguageCheckTriggered: false,
+            isPreferredThemeCheckTriggered: false,
+            isLanguageToggable: false,
             isThemeToggable: true,
             mantainanceMode: false,
             supportedLanguages: Object.keys(supportedLanguages).slice(0, -1),
             theme: 'light'
         },
         footer: {
-            isMenuItemsListVisible: true,
+            isMenuItemsListVisible: false,
             isSocialLinksListVisible: true,
             isVisible: true,
             menuItems: navigationConfig(supportedLanguages['default']).footermenu,
             socialLinks
         },
         headerSettings: {
-            fixed: true
+            fixed: false
         },
         sidebar: {
             menuItems: navigationConfig(supportedLanguages['default']).headermenu

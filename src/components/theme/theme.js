@@ -5,16 +5,17 @@ export const theme = (color) =>
         palette: {
             type: color,
             primary: {
-                main: '#cd0370',
-                dark: '#934b8e',
-                contrastText: '#FFFFFF'
+                main: '#AA94FB'
             },
             secondary: {
-                main: '#00359f'
+                main: '#82816D'
+            },
+            beige: {
+                main: '#DED7C5'
             },
             background: {
-                default: color === 'light' ? '#FAFAFA' : '#202020',
-                paper: color === 'light' ? '#FFFFFF' : '#303030'
+                default: color === 'light' ? '#DED7C5' : '#202020',
+                paper: color === 'light' ? '#DED7C5' : '#303030'
             }
         },
         typography: {
@@ -85,6 +86,12 @@ export const theme = (color) =>
                     },
                     '.fs-100': {
                         fontSize: '1rem'
+                    },
+                    '.fw-900': {
+                        fontWeight: '900'
+                    },
+                    '.fw-800': {
+                        fontWeight: '800'
                     },
                     '.fw-700': {
                         fontWeight: '700'

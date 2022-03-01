@@ -11,10 +11,10 @@ const AntSwitch = withStyles((theme) => ({
     },
     switchBase: {
         padding: 2,
-        color: theme.palette.grey[500],
+        color: theme.palette.beige.main,
         '&$checked': {
             transform: 'translateX(12px)',
-            color: theme.palette.common.white,
+            color: theme.palette.background.paper,
             '& + $track': {
                 opacity: 1,
                 backgroundColor: theme.palette.primary.main,
@@ -28,10 +28,10 @@ const AntSwitch = withStyles((theme) => ({
         boxShadow: 'none'
     },
     track: {
-        border: `1px solid ${theme.palette.grey[500]}`,
+        border: `1px solid ${theme.palette.primary.main}`,
         borderRadius: 1000,
         opacity: 1,
-        backgroundColor: theme.palette.common.white
+        backgroundColor: theme.palette.primary.main
     },
     checked: {}
 }))(Switch);
