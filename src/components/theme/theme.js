@@ -27,16 +27,9 @@ export const theme = (color) =>
                     '*': {
                         boxSizing: 'border-box',
                         '&::-webkit-scrollbar': {
-                            width: '0.4em'
+                            width: '0'
                         },
-                        '&::-webkit-scrollbar-track': {
-                            boxShadow: 'inset 0 0 6px rgba(0, 0, 0, 0)'
-                        },
-                        '&::-webkit-scrollbar-thumb': {
-                            backgroundColor: 'rgba(0, 0, 0, 0.4)',
-                            outline: 'none'
-                        },
-                        scrollbarWidth: 'thin'
+                        scrollbarWidth: 'none'
                     },
                     body: {
                         fontFamily: "'Barlow', sans-serif",
@@ -58,7 +51,11 @@ export const theme = (color) =>
                     },
                     a: {
                         backgroundColor: 'transparent',
-                        textDecoration: 'none !important'
+                        textDecoration: 'none !important',
+                        color: 'inherit'
+                    },
+                    '.fs-biggest': {
+                        fontSize: '5rem'
                     },
                     '.fs-900': {
                         fontSize: '2.4rem'

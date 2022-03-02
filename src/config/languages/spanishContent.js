@@ -16,55 +16,29 @@ const spanishContent = {
         skipNavigationAnchor: 'Saltar navegación'
     },
     homePage: {
-        title: 'Título',
-        subtitle: 'Estos son todos los componentes disponibles en esta librería.',
-        documentationInfo: 'Para documentación ir a',
-        smallTitle: 'Pequeño título',
-        smallSubtitle: 'Esta es una descripción un poco más pequeña que la anterior.',
-        darkModeLabel: 'Modo nocturno',
-        mantainanceLabel:
-            'Modo mantenimiento (esto va a ser apagado luego de 5 segundos, puede ser manejado desde el backend)',
-        changingPageMessage: 'Te estás moviendo a la página',
-        cardTitle: 'Tarjeta',
-        cardCategory: 'Categoría',
-        cardAbstract:
-            'Alguna descripción de la tarjeta. Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in, elementum id enim.',
-        cardBtnText: 'Vamooo',
-        normalToastMessage: 'Mensaje normal',
-        successToastMessage: 'Mensaje exitoso',
-        infoToastMessage: 'Mensaje informativo',
-        warningToastMessage: 'Mensaje de advertencia',
-        errorToastMessage: 'Mensaje de error',
-        primaryButton: 'Botón primario',
-        secondaryButton: 'Botón secundario',
-        outlinedButton: 'Botón delineado',
-        dangerButton: 'Botón de peligro',
-        aSectionTitle: 'Un título de sección',
-        reportModalButton: 'Modal para reporte',
-        imageModalButton: 'Modal de imágenes',
-        confirmationModalButton: 'Modal de confirmación',
-        smallCardTitle: 'Tarjeta pequeña',
-        smallCardNoIconTitle: 'Tarjeta pequeña sin ícono',
-        simpleCardTitle: 'Tarjeta simple',
-        simpleCardNoButtonTitle: 'Tarjeta simple sin botón',
-        newPageTitle: 'Nueva página',
-        newPageParentPage: 'Página padre',
-        tagsWidgetTitle: 'Widget de Tags',
-        checkboxWidgetTitle: 'Widget de Checkboxes',
-        authUserProfileTitle: 'Perfil',
-        cardWithTextContentTitle: 'Tarjeta con contenido de texto',
-        formWithToggableInputsTitle: 'Formulario con campos cambiables',
-        arrayInputLabel: 'Campo de lista',
-        arrayInputPlaceholder: 'Escribí algo',
-        autocompleteLabel: 'Campo auto completable',
-        autocompletePlaceholder: 'Agrega más opciones',
-        textInputLabel: 'Campo de texto',
-        textInputPlaceholder: 'Escribí algo',
-        pickerInputLabel: 'Selector',
-        selectInputLabel: 'Menú',
-        selectOptionOneTitle: 'Primera opción',
-        selectOptionTwoTitle: 'Segunda opción',
-        selectMultipleInputLabel: 'Menú múltiple'
+        banner: {
+            title: 'Hola world, I am Gabi Polanco-Ferreyra',
+            subtitleBold: '(very empathic)',
+            subtitle: 'UX-UI designer committed to delivering conscious, sustainable, and empowering digital products.'
+        },
+        selectedWorks: {
+            title: 'Selected works',
+            firstProjectTitle: 'Rito',
+            firstProjectSubtitle: 'web/app editorial project',
+            secondProjectTitle: 'Shaka App',
+            secondProjectSubtitle: 'mobile wellness app'
+        },
+        about: {
+            title: 'about me',
+            content:
+                'Soy Gabi Polanco-Ferreyra and I come from a colorful background, graduated from Law School, did a master’s in Mediation and Conflict Resolutions, worked in government for many years before I dedicated myself to being a full-time traveler around the world for a few months. I tried a lot of other jobs before committing to my creative talents full-time.I love to travel, see the world, camp, hike mountains, and meet people (really). My dream is to sail around the world one day.',
+            contentHighlight: 'I am on my creative-human journey, and ME ENCANTA.',
+            linkedinLink: 'Linkedin',
+            mediumLink: 'Medium',
+            cvLink: 'CV',
+            behanceLink: 'Behance',
+            askForAvailability: 'ask for availability'
+        }
     },
     landingPage: {
         descriptionTitle: 'Alguna descripción pertinente para esta plataforma',

@@ -9,7 +9,8 @@ const useStyles = makeStyles((theme) => ({
         width: '90%'
     },
     root: {
-        position: 'relative'
+        position: 'relative',
+        height: '100vh'
     },
     textWrapper: {
         position: 'absolute',
@@ -28,7 +29,7 @@ const Banner = ({ classes, ...props }) => {
     const textProvider = useSelector(({ ui }) => ui.textContent?.homePage?.banner);
 
     return (
-        <Grid container className={clsx(internalClasses.root, classes?.root)} {...props}>
+        <Grid component="main" container className={clsx(internalClasses.root, classes?.root)} {...props}>
             <Grid item xs={false} md={6}></Grid>
             <div className={internalClasses.textWrapper}>
                 <Typography className={clsx(internalClasses.title, 'fs-900 fw-900')} variant="h1">

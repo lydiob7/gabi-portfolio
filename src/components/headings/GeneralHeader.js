@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { parsePath } from 'utils/helpers';
 import Grid from '@material-ui/core/Grid';
 // import Paper from '@material-ui/core/Paper';
 
@@ -12,6 +11,7 @@ import Logo from 'components/common/Logo';
 import Navbar from 'components/common/Navbar';
 
 import { authRoles } from 'auth';
+import appLogo from 'assets/images/logo.png';
 
 const useStyles = makeStyles((theme) => ({
     fixed: {
@@ -56,18 +56,13 @@ export default function GeneralHeader({ fixed }) {
 
     return (
         <Grid component="header" container className={clsx(classes.root, fixed && classes.fixed)}>
-            <Grid container className={classes.logoWrapper} item xs={12} lg={6}>
-                <Logo
-                    className={classes.logo}
-                    size="small"
-                    title={appInformation?.appTitle}
-                    imageSrc={parsePath(appInformation?.appLogo)}
-                />
+            <Grid container className={classes.logoWrapper} item xs={6}>
+                <Logo className={classes.logo} size="small" title={appInformation?.appTitle} imageSrc={appLogo} />
                 {authenticated && data?.role === authRoles.patient && (
                     <CallModule classes={{ button: classes.callButton }} />
                 )}
             </Grid>
-            <Grid className={classes.navbar} item container lg={6} alignItems="center">
+            <Grid className={classes.navbar} item container xs={6} alignItems="center">
                 <Navbar appTitle={appInformation?.appTitle} menuItems={menuItems} />
             </Grid>
         </Grid>

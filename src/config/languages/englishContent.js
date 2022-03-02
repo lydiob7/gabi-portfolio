@@ -20,6 +20,24 @@ const englishContent = {
             title: 'Hola world, I am Gabi Polanco-Ferreyra',
             subtitleBold: '(very empathic)',
             subtitle: 'UX-UI designer committed to delivering conscious, sustainable, and empowering digital products.'
+        },
+        selectedWorks: {
+            title: 'Selected works',
+            firstProjectTitle: 'Rito',
+            firstProjectSubtitle: 'web/app editorial project',
+            secondProjectTitle: 'Shaka App',
+            secondProjectSubtitle: 'mobile wellness app'
+        },
+        about: {
+            title: 'about me',
+            content:
+                'Soy Gabi Polanco-Ferreyra and I come from a colorful background, graduated from Law School, did a master’s in Mediation and Conflict Resolutions, worked in government for many years before I dedicated myself to being a full-time traveler around the world for a few months. I tried a lot of other jobs before committing to my creative talents full-time.I love to travel, see the world, camp, hike mountains, and meet people (really). My dream is to sail around the world one day.',
+            contentHighlight: 'I am on my creative-human journey, and ME ENCANTA.',
+            linkedinLink: 'Linkedin',
+            mediumLink: 'Medium',
+            cvLink: 'CV',
+            behanceLink: 'Behance',
+            askForAvailability: 'ask for availability'
         }
     },
     landingPage: {

@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
             alignItems: 'center',
             textDecoration: 'none',
             '& img': {
-                width: '30px',
+                width: 'auto',
                 height: '30px'
             }
         },

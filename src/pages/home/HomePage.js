@@ -3,11 +3,14 @@ import clsx from 'clsx';
 
 import { Container, makeStyles } from '@material-ui/core';
 
+import About from './About';
 import Banner from './Banner';
+import SelectedWorks from './SelectedWorks';
 
 const useStyles = makeStyles((theme) => ({
-    mainBanner: {
-        minHeight: '100vh'
+    oliveBackground: {
+        backgroundColor:
+            theme.palette?.type === 'light' ? theme.palette.secondary.main : theme.palette.background.default
     },
     root: {}
 }));
@@ -17,11 +20,17 @@ const HomePage = ({ classes, ...props }) => {
 
     return (
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>
-            <div className={internalClasses.mainBanner}>
-                <Container component="main" maxWidth="md">
-                    <Banner />
+            <Container maxWidth="md">
+                <Banner />
+            </Container>
+            <div className={internalClasses.oliveBackground}>
+                <Container maxWidth="md">
+                    <SelectedWorks />
                 </Container>
             </div>
+            <Container maxWidth="md">
+                <About />
+            </Container>
         </div>
     );
 };
