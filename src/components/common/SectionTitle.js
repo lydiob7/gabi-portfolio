@@ -23,7 +23,7 @@ const SectionTitle = ({ classes, title, ...props }) => {
         <Grid container alignItems="center">
             <Grid className={internalClasses.line} item xs={4}></Grid>
             <Grid item xs={4}>
-                <Typography variant="h1" className={clsx(internalClasses.title, 'fs-300')}>
+                <Typography variant="h1" className={clsx(internalClasses.title, 'fs-300 fw-500')}>
                     {title}
                 </Typography>
             </Grid>

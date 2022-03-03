@@ -4,6 +4,8 @@ import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { parsePath } from 'utils/helpers';
 
+import './index.css';
+
 import App from './App';
 
 const history = createBrowserHistory();

@@ -14,12 +14,12 @@ export const theme = (color) =>
                 main: '#DED7C5'
             },
             background: {
-                default: color === 'light' ? '#DED7C5' : '#202020',
+                default: color === 'light' ? '#DED7C5' : '#0A010B',
                 paper: color === 'light' ? '#DED7C5' : '#303030'
             }
         },
         typography: {
-            fontFamily: "'Barlow', sans-serif"
+            fontFamily: "'ClashDisplay', sans-serif"
         },
         overrides: {
             MuiCssBaseline: {
@@ -52,7 +52,11 @@ export const theme = (color) =>
                     a: {
                         backgroundColor: 'transparent',
                         textDecoration: 'none !important',
-                        color: 'inherit'
+                        color: 'inherit',
+                        transition: 'color .3s ease-in-out',
+                        '&:hover': {
+                            color: '#AA94FB'
+                        }
                     },
                     '.fs-biggest': {
                         fontSize: '5rem'

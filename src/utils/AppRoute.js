@@ -8,12 +8,12 @@ import { defaultRedirects } from 'config';
 
 const AppRoute = ({
     component: Component,
-    footer = true,
+    footer,
     layout = true,
     noLayoutFooter = false,
     noLayoutBtn = false,
     privateRoute = false,
-    scrollBtn = false,
+    scrollBtn,
     ...componentProps
 }) => {
     const authenticated = useSelector(({ auth }) => auth.user.authenticated);

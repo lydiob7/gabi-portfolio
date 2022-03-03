@@ -168,6 +168,15 @@ const englishContent = {
             }
         }
     },
+    projectPage: {
+        overviewLabel: 'Overview',
+        focusLabel: 'Focus',
+        categoriesLabel: 'Categories',
+        briefLabel: 'Brief',
+        researchLabel: 'Research',
+        visualConceptLabel: 'Visual Concept',
+        prototypeLabel: 'Prototype'
+    },
     settingsPage: {
         menu: {
             title: 'Settings',

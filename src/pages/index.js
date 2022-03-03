@@ -6,5 +6,6 @@ export { default as MailConfirmPage } from 'pages/account/MailConfirmPage';
 export { default as MantainancePage } from 'pages/others/MantainancePage';
 export { default as PrivacyPolicy } from 'pages/others/PrivacyPolicy';
 export { default as ProfilePage } from 'pages/account/ProfilePage';
+export { default as ProjectPage } from 'pages/projects/ProjectPage';
 export { default as SettingsPage } from 'pages/account/SettingsPage';
 export { default as TermsAndConditions } from 'pages/others/TermsAndConditions';

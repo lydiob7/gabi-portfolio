@@ -42,7 +42,7 @@ const SelectedWorks = ({ classes, ...props }) => {
 
             <div className={internalClasses.projectsContainer}>
                 <div>
-                    <Link to="/project">
+                    <Link to={`/project/${textProvider?.firstProjectTitle?.toLowerCase()?.split(' ').join('-')}`}>
                         <Typography variant="h2" className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}>
                             {textProvider?.firstProjectTitle}
                         </Typography>
@@ -52,7 +52,7 @@ const SelectedWorks = ({ classes, ...props }) => {
                     </Typography>
                 </div>
                 <div>
-                    <Link to="/project">
+                    <Link to={`/project/${textProvider?.secondProjectTitle?.toLowerCase()?.split(' ').join('-')}`}>
                         <Typography variant="h2" className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}>
                             {textProvider?.secondProjectTitle}
                         </Typography>

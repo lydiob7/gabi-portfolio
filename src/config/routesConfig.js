@@ -1,5 +1,5 @@
 //* Import components here 👇👇
-import { ErrorPage, HomePage, MantainancePage } from 'pages';
+import { ErrorPage, HomePage, MantainancePage, ProjectPage } from 'pages';
 
 import { mantainancePath, parsePath } from 'utils/helpers';
 import { MainRouteRedirect } from 'utils';
@@ -21,6 +21,13 @@ export const routes = [
         component: HomePage,
         exact: true,
         footer: false
+    },
+    {
+        path: parsePath('/project/:projectId'),
+        component: ProjectPage,
+        exact: true,
+        footer: false,
+        scrollBtn: false
     },
     {
         path: parsePath(mantainancePath),

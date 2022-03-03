@@ -26,7 +26,9 @@ const useStyles = makeStyles((theme) => ({
     linksWrapper: {
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
-        gridTemplateRows: '1fr 1fr'
+        gridTemplateRows: '1fr 1fr',
+        gap: '20px 50px',
+        margin: '0 0 10vh 5vw'
     },
     root: {
         padding: '10vh 0',
@@ -43,8 +45,8 @@ const About = ({ classes, ...props }) => {
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>
             <SectionTitle title={textProvider?.title} />
 
-            <Grid container className={clsx(internalClasses.contentWrapper)}>
-                <Grid item xs={8}>
+            <Grid spacing={8} container className={clsx(internalClasses.contentWrapper)}>
+                <Grid item xs={9}>
                     <Typography variant="body1" className={clsx(internalClasses.content, 'fs-400')}>
                         {textProvider?.content}
                     </Typography>
@@ -52,24 +54,24 @@ const About = ({ classes, ...props }) => {
                         {textProvider?.contentHighlight}
                     </Typography>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={3}>
                     <ul className={internalClasses.linksWrapper}>
-                        <li>
+                        <li className="fs-100 fw-800">
                             <a href="/" target="_blank" rel="noreferrer">
                                 {textProvider?.linkedinLink}
                             </a>
                         </li>
-                        <li>
-                            <a href="/" target="_blank" rel="noreferrer">
-                                {textProvider?.mediumLink}
-                            </a>
-                        </li>
-                        <li>
+                        <li className="fs-100 fw-800">
                             <a href="/" target="_blank" rel="noreferrer">
                                 {textProvider?.cvLink}
                             </a>
                         </li>
-                        <li>
+                        <li className="fs-100 fw-800">
+                            <a href="/" target="_blank" rel="noreferrer">
+                                {textProvider?.mediumLink}
+                            </a>
+                        </li>
+                        <li className="fs-100 fw-800">
                             <a href="/" target="_blank" rel="noreferrer">
                                 {textProvider?.behanceLink}
                             </a>
