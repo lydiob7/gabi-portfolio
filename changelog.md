@@ -5,3 +5,4 @@
 -   Feature: Add about and work sections.
 -   Feature: Add Project Page and projects slice.
 -   Update: Update Project page.
+-   Update: Add image placeholders on Project sections.

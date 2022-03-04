@@ -50,7 +50,7 @@ const ProjectPage = ({ classes, ...props }) => {
 
     useLayoutEffect(() => {
         dispatch(setProject(projectId));
-    }, []);
+    }, [dispatch, projectId]);
 
     return (
         <Container maxWidth="md" className={clsx(internalClasses.root, classes?.root)} {...props}>

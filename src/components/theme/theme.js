@@ -29,7 +29,8 @@ export const theme = (color) =>
                         '&::-webkit-scrollbar': {
                             width: '0'
                         },
-                        scrollbarWidth: 'none'
+                        scrollbarWidth: 'none',
+                        scrollBehavior: 'smooth'
                     },
                     body: {
                         fontFamily: "'Barlow', sans-serif",

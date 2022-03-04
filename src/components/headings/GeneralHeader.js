@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'transparent'
     },
     logo: {
+        position: 'fixed',
         margin: '20px 0',
         [theme.breakpoints.up('sm')]: {
             margin: '0'
