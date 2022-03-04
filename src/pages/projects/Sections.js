@@ -4,10 +4,36 @@ import clsx from 'clsx';
 
 import { Grid, makeStyles, Typography } from '@material-ui/core';
 
+import rito1 from 'assets/images/rito1.png';
+import rito2 from 'assets/images/rito2.png';
+import rito3 from 'assets/images/rito3.png';
+
 const useStyles = makeStyles((theme) => ({
+    firstSectionImage: {
+        height: '60vh'
+    },
+    fourthSectionImage: {
+        height: '80vh',
+        backgroundColor: '#C4C4C4'
+    },
+    image: {
+        display: 'flex',
+        justifyContent: 'center',
+        width: '100%',
+        '& img': {
+            height: '100%'
+        }
+    },
+    secondSectionImage: {
+        height: '60vh',
+        backgroundColor: '#C4C4C4'
+    },
     section: {
         position: 'relative',
         paddingTop: '80px!important'
+    },
+    sectionContent: {
+        marginBottom: '2rem'
     },
     sectionIndex: {
         [theme.breakpoints.up('lg')]: {
@@ -16,8 +42,37 @@ const useStyles = makeStyles((theme) => ({
             left: 0,
             transform: 'translateX(-100%)'
         }
+    },
+    thirdSectionImage: {
+        height: '40vh',
+        backgroundColor: '#C4C4C4'
     }
 }));
+
+const images = {
+    rito: {
+        image1: rito1,
+        image2: rito2,
+        image3: rito3,
+        image4: '',
+        image5: '',
+        image6: '',
+        image7: '',
+        image8: '',
+        image9: ''
+    },
+    'shaka-app': {
+        image1: '',
+        image2: '',
+        image3: '',
+        image4: '',
+        image5: '',
+        image6: '',
+        image7: '',
+        image8: '',
+        image9: ''
+    }
+};
 
 const Sections = ({ classes, ...props }) => {
     const internalClasses = useStyles();
@@ -38,13 +93,19 @@ const Sections = ({ classes, ...props }) => {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={4}>
-                    <div style={{ height: '60vh', width: '100%', backgroundColor: '#C4C4C4' }}></div>
+                    <div className={clsx(internalClasses.image, internalClasses.firstSectionImage)}>
+                        <img src={images[project?.id]?.image1} alt={`${project?.id}1`} />
+                    </div>
                 </Grid>
                 <Grid item xs={12} md={4}>
-                    <div style={{ height: '60vh', width: '100%', backgroundColor: '#C4C4C4' }}></div>
+                    <div className={clsx(internalClasses.image, internalClasses.firstSectionImage)}>
+                        <img src={images[project?.id]?.image2} alt={`${project?.id}2`} />
+                    </div>
                 </Grid>
                 <Grid item xs={12} md={4}>
-                    <div style={{ height: '60vh', width: '100%', backgroundColor: '#C4C4C4' }}></div>
+                    <div className={clsx(internalClasses.image, internalClasses.firstSectionImage)}>
+                        <img src={images[project?.id]?.image3} alt={`${project?.id}3`} />
+                    </div>
                 </Grid>
             </Grid>
             <Grid
@@ -62,7 +123,9 @@ const Sections = ({ classes, ...props }) => {
                     </Typography>
                 </Grid>
                 <Grid item xs={12}>
-                    <div style={{ height: '60vh', width: '100%', backgroundColor: '#C4C4C4' }}></div>
+                    <div className={clsx(internalClasses.image, internalClasses.secondSectionImage)}>
+                        <img src={images[project?.id]?.image4} alt={`${project?.id}4`} />
+                    </div>
                 </Grid>
                 <Grid item xs={12} sm={9} lg={12}>
                     <Typography variant="body1" className={clsx(internalClasses.sectionContent, 'fs-200')}>
@@ -90,16 +153,24 @@ const Sections = ({ classes, ...props }) => {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <div style={{ height: '40vh', width: '100%', backgroundColor: '#C4C4C4' }}></div>
+                    <div className={clsx(internalClasses.image, internalClasses.thirdSectionImage)}>
+                        <img src={images[project?.id]?.image5} alt={`${project?.id}5`} />
+                    </div>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <div style={{ height: '40vh', width: '100%', backgroundColor: '#C4C4C4' }}></div>
+                    <div className={clsx(internalClasses.image, internalClasses.thirdSectionImage)}>
+                        <img src={images[project?.id]?.image6} alt={`${project?.id}6`} />
+                    </div>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <div style={{ height: '40vh', width: '100%', backgroundColor: '#C4C4C4' }}></div>
+                    <div className={clsx(internalClasses.image, internalClasses.thirdSectionImage)}>
+                        <img src={images[project?.id]?.image7} alt={`${project?.id}7`} />
+                    </div>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <div style={{ height: '40vh', width: '100%', backgroundColor: '#C4C4C4' }}></div>
+                    <div className={clsx(internalClasses.image, internalClasses.thirdSectionImage)}>
+                        <img src={images[project?.id]?.image8} alt={`${project?.id}8`} />
+                    </div>
                 </Grid>
             </Grid>
             <Grid
@@ -123,7 +194,9 @@ const Sections = ({ classes, ...props }) => {
                 </Grid>
                 <Grid container item xs={12} justifyContent="center">
                     <Grid item xs={12} md={5}>
-                        <div style={{ height: '80vh', width: '100%', backgroundColor: '#C4C4C4' }}></div>
+                        <div className={clsx(internalClasses.image, internalClasses.fourthSectionImage)}>
+                            <img src={images[project?.id]?.image9} alt={`${project?.id}9`} />
+                        </div>
                     </Grid>
                 </Grid>
             </Grid>

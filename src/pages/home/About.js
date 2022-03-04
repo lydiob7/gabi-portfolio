@@ -57,34 +57,34 @@ const About = ({ classes, ...props }) => {
                 <Grid item xs={3}>
                     <ul className={internalClasses.linksWrapper}>
                         <li className="fs-100 fw-800">
-                            <a href="/" target="_blank" rel="noreferrer">
-                                {textProvider?.linkedinLink}
+                            <a href={textProvider?.linkedinLink} target="_blank" rel="noreferrer">
+                                {textProvider?.linkedinLinkText}
                             </a>
                         </li>
                         <li className="fs-100 fw-800">
-                            <a href="/" target="_blank" rel="noreferrer">
-                                {textProvider?.cvLink}
+                            <a href={textProvider?.cvLink} download>
+                                {textProvider?.cvLinkText}
                             </a>
                         </li>
                         <li className="fs-100 fw-800">
-                            <a href="/" target="_blank" rel="noreferrer">
-                                {textProvider?.mediumLink}
+                            <a href={textProvider?.mediumLink} target="_blank" rel="noreferrer">
+                                {textProvider?.mediumLinkText}
                             </a>
                         </li>
                         <li className="fs-100 fw-800">
-                            <a href="/" target="_blank" rel="noreferrer">
-                                {textProvider?.behanceLink}
+                            <a href={textProvider?.behanceLink} target="_blank" rel="noreferrer">
+                                {textProvider?.behanceLinkText}
                             </a>
                         </li>
                     </ul>
                 </Grid>
             </Grid>
 
-            <Link to="/availability" style={{ position: 'relative' }}>
+            <a href="mailto:gabrielapolancoferreyra@gmail.com" style={{ position: 'relative' }}>
                 <Typography variant="body1" className={clsx(internalClasses.availabilityLink, 'fs-biggest fw-800')}>
                     {textProvider?.askForAvailability}
                 </Typography>
-            </Link>
+            </a>
         </div>
     );
 };

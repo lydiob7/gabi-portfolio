@@ -23,7 +23,11 @@ const useStyles = makeStyles((theme) => ({
     },
     projectTitle: {
         textTransform: 'uppercase',
-        color: theme.palette?.type === 'dark' ? theme.palette.primary.main : theme.palette.text.primary
+        color: theme.palette?.type === 'dark' ? theme.palette.primary.main : theme.palette.text.primary,
+        transition: 'color .3s ease-in-out',
+        '&:hover': {
+            color: theme.palette?.type === 'dark' ? theme.palette.text.primary : theme.palette.primary.main
+        }
     },
     root: {
         padding: '10vh 0',

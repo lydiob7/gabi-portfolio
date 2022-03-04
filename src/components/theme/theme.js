@@ -19,7 +19,7 @@ export const theme = (color) =>
             }
         },
         typography: {
-            fontFamily: "'ClashDisplay', sans-serif"
+            fontFamily: "'ClashDisplay-Variable', sans-serif"
         },
         overrides: {
             MuiCssBaseline: {

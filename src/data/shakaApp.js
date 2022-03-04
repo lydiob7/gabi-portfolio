@@ -1,4 +1,5 @@
 const shakaApp = {
+    id: 'shaka-app',
     title: 'Shaka App',
     subtitle: 'mobile wellness app',
     overview:

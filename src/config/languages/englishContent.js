@@ -33,10 +33,14 @@ const englishContent = {
             content:
                 'Soy Gabi Polanco-Ferreyra and I come from a colorful background, graduated from Law School, did a master’s in Mediation and Conflict Resolutions, worked in government for many years before I dedicated myself to being a full-time traveler around the world for a few months. I tried a lot of other jobs before committing to my creative talents full-time.I love to travel, see the world, camp, hike mountains, and meet people (really). My dream is to sail around the world one day.',
             contentHighlight: 'I am on my creative-human journey, and ME ENCANTA.',
-            linkedinLink: 'Linkedin',
-            mediumLink: 'Medium',
-            cvLink: 'CV',
-            behanceLink: 'Behance',
+            linkedinLinkText: 'Linkedin',
+            linkedinLink: 'https://www.linkedin.com/in/gabriela-polanco-ferreyra-b5b25717a/',
+            mediumLinkText: 'Medium',
+            mediumLink: 'https://medium.com/@gabrielapolancoferreyra',
+            cvLinkText: 'CV',
+            cvLink: '/resume.pdf',
+            behanceLinkText: 'Behance',
+            behanceLink: 'https://www.behance.net/gabrielapolanco2',
             askForAvailability: 'ask for availability'
         }
     },

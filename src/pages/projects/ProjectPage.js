@@ -66,7 +66,7 @@ const ProjectPage = ({ classes, ...props }) => {
                     </Typography>
                 </Grid>
 
-                <Grid component="main" container spacing={1} item xs={12}>
+                <Grid component="main" container spacing={4} item xs={12}>
                     {['overview', 'focus', 'categories'].map((section) => (
                         <React.Fragment key={section}>
                             <Grid item xs={4}>

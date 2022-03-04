@@ -6,3 +6,4 @@
 -   Feature: Add Project Page and projects slice.
 -   Update: Update Project page.
 -   Update: Add image placeholders on Project sections.
+-   Update: Update rito content and fix import font.

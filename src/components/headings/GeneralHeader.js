@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
         zIndex: 2
     },
     root: {
+        position: 'relative',
         display: 'flex',
         alignItems: 'center',
         minHeight: '80px',
@@ -28,13 +29,10 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'transparent'
     },
     logo: {
-        position: 'fixed',
-        margin: '20px 0',
-        [theme.breakpoints.up('sm')]: {
-            margin: '0'
-        }
+        margin: '0'
     },
     logoWrapper: {
+        position: 'fixed',
         // justifyContent: 'center',
         // alignItems: 'center',
         // [theme.breakpoints.up('lg')]: {
@@ -55,23 +53,19 @@ export default function GeneralHeader({ fixed }) {
 
     const menuItems = useSelector(({ ui }) => ui.sidebar.menuItems);
     const appInformation = useSelector(({ ui }) => ui.appInformation);
-    const { authenticated, data } = useSelector(({ auth }) => auth.user);
     const darkTheme = useSelector(({ ui }) => ui.appSettings?.theme) === 'dark';
 
     return (
         <Grid component="header" container className={clsx(classes.root, fixed && classes.fixed)}>
-            <Grid container className={classes.logoWrapper} item xs={6}>
+            <Grid container className={classes.logoWrapper} item xs={12}>
                 <Logo
                     className={classes.logo}
                     size="small"
                     title={appInformation?.appTitle}
                     imageSrc={darkTheme ? appLogoWhite : appLogo}
                 />
-                {authenticated && data?.role === authRoles.patient && (
-                    <CallModule classes={{ button: classes.callButton }} />
-                )}
             </Grid>
-            <Grid className={classes.navbar} item container xs={6} alignItems="center">
+            <Grid className={classes.navbar} item container xs={12} alignItems="center">
                 <Navbar appTitle={appInformation?.appTitle} menuItems={menuItems} />
             </Grid>
         </Grid>
