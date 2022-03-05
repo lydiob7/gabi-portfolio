@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core';
 import { ChatOutlined as ChatOutlinedIcon } from '@material-ui/icons';
 
-import { Button, FeedbackModal } from 'custom-components';
+import { Button, FeedbackModal } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     icon: {

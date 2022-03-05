@@ -12,7 +12,7 @@ import {
     VpnKeyOutlined as VpnKeyOutlinedIcon
 } from '@material-ui/icons';
 
-import { Button } from 'custom-components';
+import { Button } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     root: {

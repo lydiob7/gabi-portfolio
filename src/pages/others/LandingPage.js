@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 import { Container, Grid, makeStyles, Typography } from '@material-ui/core';
 
-import { AuthCard } from 'custom-components';
+import { AuthCard } from '@tsui';
 import MailConfirmPage from 'pages/account/MailConfirmPage';
 
 import { defaultRedirects } from 'config/routesConfig';

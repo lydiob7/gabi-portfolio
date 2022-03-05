@@ -3,7 +3,7 @@ import React from 'react';
 import { Container, Grid, IconButton, makeStyles, Modal, Paper, Typography } from '@material-ui/core';
 import { CloseOutlined as CloseOutlinedIcon } from '@material-ui/icons';
 
-import { Button, TitleDecoration } from 'custom-components';
+import { Button, TitleDecoration } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     root: {

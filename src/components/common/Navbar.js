@@ -27,7 +27,7 @@ import {
     // Logo,
     MenuButton,
     Switch
-} from 'custom-components';
+} from '@tsui';
 
 // import { parsePath } from 'utils/helpers';
 import { authRoles } from 'auth';

@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core';
 import { Phone as PhoneIcon } from '@material-ui/icons/Phone';
 
-import { Button } from 'custom-components';
+import { Button } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     button: {

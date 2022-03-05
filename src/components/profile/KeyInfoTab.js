@@ -17,7 +17,7 @@ import {
     Typography
 } from '@material-ui/core';
 
-import { Button } from 'custom-components';
+import { Button } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     btnWrapper: {

@@ -20,7 +20,7 @@ import {
     Typography
 } from '@material-ui/core';
 
-import { ConfirmationModal, KeyInfoTab, OtherGeneralTab } from 'custom-components';
+import { ConfirmationModal, KeyInfoTab, OtherGeneralTab } from '@tsui';
 
 import defaultBgImage from 'assets/images/header-bg.png';
 import fallBackProfileImage from 'assets/images/profile.jpg';

@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core';
 
 // Layouts
-import { Footer, GeneralHeader, ScrollTopBtn, ToastMessage } from 'custom-components';
+import { Footer, GeneralHeader, ScrollTopBtn, ToastMessage } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     headerFixed: {

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { InputBase, makeStyles, Paper } from '@material-ui/core';
 import { Search as SearchIcon } from '@material-ui/icons';
 
-import { Button } from 'custom-components';
+import { Button } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     search: {

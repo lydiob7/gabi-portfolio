@@ -76,7 +76,7 @@ const ProjectPage = ({ classes, ...props }) => {
                             </Grid>
                             <Grid item xs={8}>
                                 <Typography variant="h3" className={clsx('fs-300 fw-400')}>
-                                    {project[section]}
+                                    {project && project[section]}
                                 </Typography>
                             </Grid>
                         </React.Fragment>

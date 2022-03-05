@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Checkbox, makeStyles, Typography } from '@material-ui/core';
 
-import { TitleDecoration } from 'custom-components';
+import { TitleDecoration } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     root: {

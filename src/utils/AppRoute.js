@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 
 import { LayoutDefault, NoLayout } from 'layouts';
 
@@ -9,6 +9,7 @@ import { defaultRedirects } from 'config';
 const AppRoute = ({
     component: Component,
     footer,
+    history,
     layout = true,
     noLayoutFooter = false,
     noLayoutBtn = false,
@@ -17,6 +18,15 @@ const AppRoute = ({
     ...componentProps
 }) => {
     const authenticated = useSelector(({ auth }) => auth.user.authenticated);
+
+    useEffect(() => {
+        const unlisten = history.listen(() => {
+            window.scrollTo(0, 0);
+        });
+        return () => {
+            unlisten();
+        };
+    }, [history]);
 
     if (!Component) return null;
 
@@ -41,4 +51,4 @@ const AppRoute = ({
     );
 };
 
-export default AppRoute;
+export default withRouter(AppRoute);

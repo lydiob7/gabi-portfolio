@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Grid } from '@material-ui/core';
 
-import { SimpleCard } from 'custom-components';
+import { SimpleCard } from '@tsui';
 
 function PopularCategories({ catitems }) {
     return (

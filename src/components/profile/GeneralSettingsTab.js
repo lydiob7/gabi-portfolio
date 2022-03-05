@@ -21,7 +21,7 @@ import {
     VpnKeyOutlined as VpnKeyOutlinedIcon
 } from '@material-ui/icons';
 
-import { ChangePasswordTab, DeleteAccountTab } from 'custom-components';
+import { ChangePasswordTab, DeleteAccountTab } from '@tsui';
 
 import { parsePath } from 'utils/helpers';
 

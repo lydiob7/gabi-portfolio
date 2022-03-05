@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { makeStyles } from '@material-ui/core';
 
-import { CallButton, CallDialog } from 'custom-components';
+import { CallButton, CallDialog } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     root: {}

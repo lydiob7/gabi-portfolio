@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { makeStyles, Paper, Typography } from '@material-ui/core';
 
 import ForgotPassword from 'pages/account/ForgotPassword';
-import { LoginForm, SignupForm, TitleDecoration } from 'custom-components';
+import { LoginForm, SignupForm, TitleDecoration } from '@tsui';
 
 import { parsePath } from 'utils/helpers';
 

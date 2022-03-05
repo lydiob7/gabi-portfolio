@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { makeStyles, Typography } from '@material-ui/core';
 
-import { TitleDecoration } from 'custom-components';
+import { TitleDecoration } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     root: {

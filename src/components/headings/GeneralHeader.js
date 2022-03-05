@@ -6,11 +6,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 // import Paper from '@material-ui/core/Paper';
 
-import CallModule from 'components/modules/CallModule';
 import Logo from 'components/common/Logo';
 import Navbar from 'components/common/Navbar';
 
-import { authRoles } from 'auth';
 import appLogo from 'assets/images/logo.png';
 import appLogoWhite from 'assets/images/logo-white.png';
 
@@ -33,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     },
     logoWrapper: {
         position: 'fixed',
+        zIndex: 999,
         // justifyContent: 'center',
         // alignItems: 'center',
         // [theme.breakpoints.up('lg')]: {

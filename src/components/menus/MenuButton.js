@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { Icon, makeStyles, Menu, MenuItem } from '@material-ui/core';
 
-import { Button } from 'custom-components';
+import { Button } from '@tsui';
 
 import { authRoles } from 'auth';
 

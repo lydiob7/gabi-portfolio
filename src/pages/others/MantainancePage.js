@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { Container, Grid, makeStyles, Typography } from '@material-ui/core';
 
-import { Button } from 'custom-components';
+import { Button } from '@tsui';
 
 import { parsePath } from 'utils/helpers';
 

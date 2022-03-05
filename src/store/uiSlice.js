@@ -1,6 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { setProject } from 'store/projectsSlice';
 
 import { appInformation, navigationConfig, socialLinks, supportedLanguages } from 'config';
+
+export const languageChanged = (language) => (dispatch, getState) => {
+    const currentProject = getState()?.entities?.projects?.currentProject;
+
+    dispatch(currentLanguageChanged(language));
+    dispatch(setProject(currentProject?.id));
+};
 
 const slice = createSlice({
     name: 'ui',
@@ -10,7 +18,7 @@ const slice = createSlice({
             currentLanguage: 'en',
             isLanguageCheckTriggered: false,
             isPreferredThemeCheckTriggered: false,
-            isLanguageToggable: false,
+            isLanguageToggable: true,
             isThemeToggable: true,
             mantainanceMode: false,
             supportedLanguages: Object.keys(supportedLanguages).slice(0, -1),
@@ -64,7 +72,7 @@ const slice = createSlice({
             state.appSettings.mantainanceMode = false;
         },
 
-        languageChanged: (state, action) => {
+        currentLanguageChanged: (state, action) => {
             state.appSettings.currentLanguage = action.payload;
             state.textContent = supportedLanguages[action.payload] || supportedLanguages['default'];
             state.footer.menuItems = navigationConfig(
@@ -84,7 +92,7 @@ export const {
     setThemePreferredCheckOff,
     setThemeToggableOn,
     setThemeToggableOff,
-    languageChanged,
+    currentLanguageChanged,
     mantainanceModeEnabled,
     mantainanceModeDisabled
 } = slice.actions;

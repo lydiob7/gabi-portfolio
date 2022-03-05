@@ -6,7 +6,7 @@ import * as yup from 'yup';
 
 import { makeStyles, TextField } from '@material-ui/core';
 
-import { Button } from 'custom-components';
+import { Button } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     root: {

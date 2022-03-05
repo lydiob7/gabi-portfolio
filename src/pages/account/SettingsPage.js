@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { green } from '@material-ui/core/colors';
 import { Avatar, Container, Icon, makeStyles, Typography } from '@material-ui/core';
 
-import { GeneralSettingsTab } from 'custom-components';
+import { GeneralSettingsTab } from '@tsui';
 
 import defaultBgImage from 'assets/images/header-bg.png';
 import fallBackProfileImage from 'assets/images/profile.jpg';

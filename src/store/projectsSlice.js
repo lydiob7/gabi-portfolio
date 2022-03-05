@@ -2,22 +2,32 @@ import { createSlice } from '@reduxjs/toolkit';
 import rito from 'data/rito';
 import shakaApp from 'data/shakaApp';
 
+export const setProject = (projectId) => (dispatch, getState) => {
+    const currentLanguage = getState()?.ui?.appSettings?.currentLanguage;
+    const stateList = getState()?.entities?.projects?.list;
+    let currentProject = stateList?.filter((project) => project?.id === projectId);
+    if (currentProject) {
+        currentProject = { id: currentProject[0]?.id, ...currentProject[0]?.data[currentLanguage] };
+        dispatch(setProjectText(currentProject));
+    }
+};
+
 const slice = createSlice({
     name: 'projects',
     initialState: {
         list: [
-            { id: rito.title?.toLowerCase()?.split(' ').join('-'), data: rito },
-            { id: shakaApp.title?.toLowerCase()?.split(' ').join('-'), data: shakaApp }
+            { id: rito?.id, data: rito },
+            { id: shakaApp?.id, data: shakaApp }
         ],
         currentProject: {}
     },
     reducers: {
-        setProject: (state, action) => {
-            state.currentProject = state.list?.filter((project) => project.id === action.payload)[0]?.data;
+        setProjectText: (state, action) => {
+            state.currentProject = action.payload;
         }
     }
 });
 
-export const { setProject } = slice.actions;
+export const { setProjectText } = slice.actions;
 
 export default slice.reducer;

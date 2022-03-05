@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { Container, Grid, makeStyles } from '@material-ui/core';
 
-import { Copyright, CopyrightMenu, SocialProfile } from 'custom-components';
+import { Copyright, CopyrightMenu, SocialProfile } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     root: {

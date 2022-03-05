@@ -7,7 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import { AppBar, Card, CardContent, Grid, makeStyles, Toolbar, Typography } from '@material-ui/core';
 
-import { ToggableArrayInput, ToggableInput, ToggablePicker } from 'custom-components';
+import { ToggableArrayInput, ToggableInput, ToggablePicker } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     card: {

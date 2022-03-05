@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { Card, CardContent, CardMedia, makeStyles, Typography } from '@material-ui/core';
 
-import { Button } from 'custom-components';
+import { Button } from '@tsui';
 
 import { parsePath } from 'utils/helpers';
 

@@ -1,3 +1,8 @@
+### v0.2.0
+
+-   Feature: Move all components to @tsui folder and rename imports.
+-   Update: Update projects files to cater for multilanguage.
+
 ### v0.1.0
 
 -   Feature: Start Project from TS Template Project.

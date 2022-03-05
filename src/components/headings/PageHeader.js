@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Container, Divider, Grid, makeStyles, Typography } from '@material-ui/core';
 import { OutlinedFlagRounded as OutlinedFlagRoundedIcon } from '@material-ui/icons';
 
-import { Button, ReportItemModal } from 'custom-components';
+import { Button, ReportItemModal } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     root: {

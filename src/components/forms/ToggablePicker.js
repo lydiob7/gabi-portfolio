@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Icon, IconButton, makeStyles, Typography } from '@material-ui/core';
 
-import { Button, ConfirmationModal, ImageModal } from 'custom-components';
+import { Button, ConfirmationModal, ImageModal } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     actionButtonsWrapper: {

@@ -3,7 +3,7 @@ import React from 'react';
 import { AppBar, Dialog, makeStyles, TextField, Toolbar, Typography } from '@material-ui/core';
 import { ChatOutlined as ChatOutlinedIcon } from '@material-ui/icons';
 
-import { Button } from 'custom-components';
+import { Button } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     container: {},

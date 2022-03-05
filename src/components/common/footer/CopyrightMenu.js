@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { Grid, makeStyles } from '@material-ui/core';
 
-import { Button } from 'custom-components';
+import { Button } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     root: {

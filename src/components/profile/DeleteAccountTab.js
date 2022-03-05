@@ -7,7 +7,7 @@ import clsx from 'clsx';
 import { Card, CardContent, makeStyles, TextField, Typography, withStyles } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
 
-import { Button } from 'custom-components';
+import { Button } from '@tsui';
 
 const useStyles = makeStyles((theme) => ({
     root: {
