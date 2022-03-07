@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     logoWrapper: {
         position: 'fixed',
         zIndex: 999,
+        maxWidth: '50%',
         // justifyContent: 'center',
         // alignItems: 'center',
         // [theme.breakpoints.up('lg')]: {

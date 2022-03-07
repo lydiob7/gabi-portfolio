@@ -19,7 +19,8 @@ const useStyles = makeStyles((theme) => ({
         width: '50%'
     },
     title: {
-        color: theme.palette.type === 'dark' ? theme.palette.primary.main : theme.palette.text.primary
+        color: theme.palette.type === 'dark' ? theme.palette.primary.main : theme.palette.text.primary,
+        marginBottom: '1.5rem'
     }
 }));
 

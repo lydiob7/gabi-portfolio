@@ -1,3 +1,7 @@
+### v0.2.1
+
+-   Update: Update text color on dark mode and remove fontawesome icons.
+
 ### v0.2.0
 
 -   Feature: Move all components to @tsui folder and rename imports.

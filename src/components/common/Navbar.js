@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from 'auth/store/userSlice';
@@ -10,7 +9,7 @@ import {
     // Divider,
     // Drawer,
     // Hidden,
-    Icon,
+    // Icon,
     // IconButton,
     // List,
     // ListItem,
@@ -31,6 +30,9 @@ import {
 
 // import { parsePath } from 'utils/helpers';
 import { authRoles } from 'auth';
+
+import brightness from 'assets/images/brightness.png';
+import moon from 'assets/images/moon.png';
 
 const useStyles = makeStyles((theme) => ({
     closeMenuBtn: {
@@ -121,7 +123,8 @@ const useStyles = makeStyles((theme) => ({
     },
     themeIcon: {
         margin: '0 5px',
-        fontSize: '1rem'
+        fontSize: '1rem',
+        height: '1rem'
     }
 }));
 
@@ -173,9 +176,9 @@ export default function Navbar({ menuItems = [] }) {
 
                 {isThemeToggable && (
                     <div className={classes.themeButton}>
-                        <Icon size="small" className={clsx(classes.themeIcon, 'fa-regular fa-sun')} />
+                        <img className={classes.themeIcon} src={brightness} alt="Light theme" />
                         <Switch checked={currentTheme === 'dark'} onClick={toggleTheme} />
-                        <Icon size="small" className={clsx(classes.themeIcon, 'fa-regular fa-moon')} />
+                        <img className={classes.themeIcon} src={moon} alt="Dark theme" />
                     </div>
                 )}
                 {isLanguageToggable && (
@@ -297,9 +300,9 @@ export default function Navbar({ menuItems = [] }) {
     //                     )}
     //                     {isThemeToggable && (
     //                         <div className={classes.themeButton}>
-    //                             <Icon size="small" className={clsx(classes.themeIcon, 'fa-regular fa-sun')} />
+    //                             <img className={classes.themeIcon} src={brightness} alt="Light theme" />
     //                             <Switch checked={currentTheme === 'dark'} onClick={toggleTheme} />
-    //                             <Icon size="small" className={clsx(classes.themeIcon, 'fa-regular fa-moon')} />
+    //                             <img className={classes.themeIcon} src={moon} alt="Dark theme" />
     //                         </div>
     //                     )}
     //                 </ListItem>

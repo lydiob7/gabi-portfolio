@@ -94,17 +94,17 @@ const Sections = ({ classes, ...props }) => {
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <div className={clsx(internalClasses.image, internalClasses.firstSectionImage)}>
-                        <img src={images[project?.id]?.image1} alt={`${project?.id}1`} />
+                        {images[project?.id]?.image1 && <img src={images[project.id].image1} alt={`${project?.id}1`} />}
                     </div>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <div className={clsx(internalClasses.image, internalClasses.firstSectionImage)}>
-                        <img src={images[project?.id]?.image2} alt={`${project?.id}2`} />
+                        {images[project?.id]?.image2 && <img src={images[project.id].image2} alt={`${project?.id}2`} />}
                     </div>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <div className={clsx(internalClasses.image, internalClasses.firstSectionImage)}>
-                        <img src={images[project?.id]?.image3} alt={`${project?.id}3`} />
+                        {images[project?.id]?.image3 && <img src={images[project.id].image3} alt={`${project?.id}3`} />}
                     </div>
                 </Grid>
             </Grid>
@@ -124,13 +124,18 @@ const Sections = ({ classes, ...props }) => {
                 </Grid>
                 <Grid item xs={12}>
                     <div className={clsx(internalClasses.image, internalClasses.secondSectionImage)}>
-                        <img src={images[project?.id]?.image4} alt={`${project?.id}4`} />
+                        {images[project?.id]?.image4 && <img src={images[project.id].image4} alt={`${project?.id}4`} />}
                     </div>
                 </Grid>
                 <Grid item xs={12} sm={9} lg={12}>
                     <Typography variant="body1" className={clsx(internalClasses.sectionContent, 'fs-200')}>
                         {project?.research}
                     </Typography>
+                    {project?.researchTwo && (
+                        <Typography variant="body1" className={clsx(internalClasses.sectionContent, 'fs-200')}>
+                            {project.researchTwo}
+                        </Typography>
+                    )}
                 </Grid>
             </Grid>
             <Grid
@@ -154,22 +159,22 @@ const Sections = ({ classes, ...props }) => {
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <div className={clsx(internalClasses.image, internalClasses.thirdSectionImage)}>
-                        <img src={images[project?.id]?.image5} alt={`${project?.id}5`} />
+                        {images[project?.id]?.image5 && <img src={images[project.id].image5} alt={`${project?.id}5`} />}
                     </div>
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <div className={clsx(internalClasses.image, internalClasses.thirdSectionImage)}>
-                        <img src={images[project?.id]?.image6} alt={`${project?.id}6`} />
+                        {images[project?.id]?.image6 && <img src={images[project.id].image6} alt={`${project?.id}6`} />}
                     </div>
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <div className={clsx(internalClasses.image, internalClasses.thirdSectionImage)}>
-                        <img src={images[project?.id]?.image7} alt={`${project?.id}7`} />
+                        {images[project?.id]?.image7 && <img src={images[project.id].image7} alt={`${project?.id}7`} />}
                     </div>
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <div className={clsx(internalClasses.image, internalClasses.thirdSectionImage)}>
-                        <img src={images[project?.id]?.image8} alt={`${project?.id}8`} />
+                        {images[project?.id]?.image8 && <img src={images[project.id].image8} alt={`${project?.id}8`} />}
                     </div>
                 </Grid>
             </Grid>
@@ -195,7 +200,9 @@ const Sections = ({ classes, ...props }) => {
                 <Grid container item xs={12} justifyContent="center">
                     <Grid item xs={12} md={5}>
                         <div className={clsx(internalClasses.image, internalClasses.fourthSectionImage)}>
-                            <img src={images[project?.id]?.image9} alt={`${project?.id}9`} />
+                            {images[project?.id]?.image9 && (
+                                <img src={images[project.id].image9} alt={`${project?.id}9`} />
+                            )}
                         </div>
                     </Grid>
                 </Grid>
