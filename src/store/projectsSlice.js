@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import daomos from 'data/daomos';
+import navis from 'data/navis';
 import rito from 'data/rito';
-import shakaApp from 'data/shakaApp';
+import webDesign from 'data/webDesign';
 
 export const setProject = (projectId) => (dispatch, getState) => {
     const currentLanguage = getState()?.ui?.appSettings?.currentLanguage;
@@ -10,6 +12,7 @@ export const setProject = (projectId) => (dispatch, getState) => {
         currentProject = {
             id: currentProject[0]?.id,
             behanceLink: currentProject[0]?.behanceLink,
+            title: currentProject[0]?.title,
             ...currentProject[0]?.data[currentLanguage]
         };
         dispatch(setProjectText(currentProject));
@@ -20,8 +23,16 @@ const slice = createSlice({
     name: 'projects',
     initialState: {
         list: [
-            { id: rito?.id, behanceLink: rito?.behanceLink, data: rito },
-            { id: shakaApp?.id, behanceLink: shakaApp?.behanceLink, data: shakaApp }
+            { id: rito?.id, behanceLink: rito?.behanceLink, data: rito, title: rito?.title, type: 'case-study' },
+            {
+                id: daomos?.id,
+                behanceLink: daomos?.behanceLink,
+                data: daomos,
+                title: daomos?.title,
+                type: 'case-study'
+            },
+            { id: navis?.id, behanceLink: navis?.behanceLink, data: navis, title: navis?.title, type: 'case-study' },
+            ...webDesign
         ],
         currentProject: {}
     },

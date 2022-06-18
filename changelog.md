@@ -4,6 +4,7 @@
 -   Update: Change subtitle on home page banner.
 -   Update: Use white as main background color.
 -   Update: Use purple logo by default.
+-   Feature: Add web design projects.
 
 ### v0.2.1
 

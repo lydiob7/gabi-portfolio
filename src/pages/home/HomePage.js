@@ -8,9 +8,11 @@ import Banner from './Banner';
 import SelectedWorks from './SelectedWorks';
 
 const useStyles = makeStyles((theme) => ({
-    oliveBackground: {
-        backgroundColor:
-            theme.palette?.type === 'light' ? theme.palette.secondary.main : theme.palette.background.default
+    beigeBackground: {
+        backgroundColor: theme.palette?.type === 'light' ? theme.palette.beige.main : theme.palette.background.default
+    },
+    purpleBackground: {
+        backgroundColor: theme.palette?.type === 'light' ? theme.palette.primary.main : theme.palette.background.default
     },
     root: {}
 }));
@@ -23,14 +25,16 @@ const HomePage = ({ classes, ...props }) => {
             <Container maxWidth="md">
                 <Banner />
             </Container>
-            <div className={internalClasses.oliveBackground}>
+            <div className={internalClasses.purpleBackground}>
                 <Container maxWidth="md">
                     <SelectedWorks />
                 </Container>
             </div>
-            <Container maxWidth="md">
-                <About />
-            </Container>
+            <div className={internalClasses.beigeBackground}>
+                <Container maxWidth="md">
+                    <About />
+                </Container>
+            </div>
         </div>
     );
 };

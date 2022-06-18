@@ -23,11 +23,10 @@ const useStyles = makeStyles((theme) => ({
         padding: '15vh 0'
     },
     linksWrapper: {
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gridTemplateRows: '1fr 1fr',
-        gap: '20px 50px',
-        margin: '0 0 10vh 5vw'
+        display: 'flex',
+        justifyContent: 'space-between',
+        width: '100%',
+        marginBottom: '5vh'
     },
     root: {
         padding: '10vh 0',
@@ -63,11 +62,6 @@ const About = ({ classes, ...props }) => {
                         <li className="fs-100 fw-800">
                             <a href={textProvider?.cvLink} download>
                                 {textProvider?.cvLinkText}
-                            </a>
-                        </li>
-                        <li className="fs-100 fw-800">
-                            <a href={textProvider?.mediumLink} target="_blank" rel="noreferrer">
-                                {textProvider?.mediumLinkText}
                             </a>
                         </li>
                         <li className="fs-100 fw-800">

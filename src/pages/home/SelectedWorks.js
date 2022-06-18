@@ -8,6 +8,12 @@ import { makeStyles, Typography } from '@material-ui/core';
 import SectionTitle from 'components/common/SectionTitle';
 
 const useStyles = makeStyles((theme) => ({
+    pageTitle: {
+        color: '#ffffff'
+    },
+    pageTitleLine: {
+        backgroundColor: '#ffffff'
+    },
     projectsContainer: {
         display: 'flex',
         flexDirection: 'column',
@@ -23,48 +29,74 @@ const useStyles = makeStyles((theme) => ({
     },
     projectTitle: {
         textTransform: 'uppercase',
-        color: theme.palette?.type === 'dark' ? theme.palette.primary.main : theme.palette.text.primary,
+        color: '#ffffff',
         transition: 'color .3s ease-in-out',
         '&:hover': {
-            color: theme.palette?.type === 'dark' ? theme.palette.text.primary : theme.palette.primary.main
+            color: '#000000'
         }
     },
     root: {
         padding: '10vh 0',
-        height: '100vh'
+        minHeight: '100vh'
     }
 }));
 
 const SelectedWorks = ({ classes, ...props }) => {
     const internalClasses = useStyles();
 
+    const currentLanguage = useSelector(({ ui }) => ui.appSettings?.currentLanguage);
+    const projectsList = useSelector(({ entities }) => entities?.projects?.list);
     const textProvider = useSelector(({ ui }) => ui.textContent?.homePage?.selectedWorks);
 
     return (
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>
-            <SectionTitle title={textProvider?.title} />
+            <SectionTitle
+                classes={{ title: internalClasses.pageTitle, line: internalClasses.pageTitleLine }}
+                title={textProvider?.title}
+            />
 
             <div className={internalClasses.projectsContainer}>
-                <div>
-                    <Link to={`/project/${textProvider?.firstProjectTitle?.toLowerCase()?.split(' ').join('-')}`}>
-                        <Typography variant="h2" className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}>
-                            {textProvider?.firstProjectTitle}
-                        </Typography>
-                    </Link>
-                    <Typography variant="body1" className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}>
-                        {textProvider?.firstProjectSubtitle}
-                    </Typography>
-                </div>
-                <div>
-                    <Link to={`/project/${textProvider?.secondProjectTitle?.toLowerCase()?.split(' ').join('-')}`}>
-                        <Typography variant="h2" className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}>
-                            {textProvider?.secondProjectTitle}
-                        </Typography>
-                    </Link>
-                    <Typography variant="body1" className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}>
-                        {textProvider?.secondProjectSubtitle}
-                    </Typography>
-                </div>
+                {projectsList
+                    ?.filter((project) => project?.type === 'case-study')
+                    ?.map((project) => (
+                        <div key={project.id}>
+                            <Link to={`/project/${project.id}`}>
+                                <Typography
+                                    variant="h2"
+                                    className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
+                                >
+                                    {project.title}
+                                </Typography>
+                            </Link>
+                            <Typography
+                                variant="body1"
+                                className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}
+                            >
+                                {project.data?.[currentLanguage]?.subtitle}
+                            </Typography>
+                        </div>
+                    ))}
+
+                {projectsList
+                    ?.filter((project) => project?.type === 'web-design')
+                    ?.map((project) => (
+                        <div key={project.id}>
+                            <a target="_blank" rel="noreferrer" href={project.website}>
+                                <Typography
+                                    variant="h2"
+                                    className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
+                                >
+                                    {project.title}
+                                </Typography>
+                            </a>
+                            <Typography
+                                variant="body1"
+                                className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}
+                            >
+                                {project[currentLanguage]?.subtitle}
+                            </Typography>
+                        </div>
+                    ))}
             </div>
         </div>
     );
