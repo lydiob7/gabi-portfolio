@@ -7,7 +7,11 @@ export const setProject = (projectId) => (dispatch, getState) => {
     const stateList = getState()?.entities?.projects?.list;
     let currentProject = stateList?.filter((project) => project?.id === projectId);
     if (currentProject) {
-        currentProject = { id: currentProject[0]?.id, ...currentProject[0]?.data[currentLanguage] };
+        currentProject = {
+            id: currentProject[0]?.id,
+            behanceLink: currentProject[0]?.behanceLink,
+            ...currentProject[0]?.data[currentLanguage]
+        };
         dispatch(setProjectText(currentProject));
     }
 };
@@ -16,8 +20,8 @@ const slice = createSlice({
     name: 'projects',
     initialState: {
         list: [
-            { id: rito?.id, data: rito },
-            { id: shakaApp?.id, data: shakaApp }
+            { id: rito?.id, behanceLink: rito?.behanceLink, data: rito },
+            { id: shakaApp?.id, behanceLink: shakaApp?.behanceLink, data: shakaApp }
         ],
         currentProject: {}
     },

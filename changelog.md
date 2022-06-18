@@ -1,3 +1,10 @@
+### v0.3.0
+
+-   Feature: Add white icons for theme switcher.
+-   Update: Change subtitle on home page banner.
+-   Update: Use white as main background color.
+-   Update: Use purple logo by default.
+
 ### v0.2.1
 
 -   Update: Update text color on dark mode and remove fontawesome icons.

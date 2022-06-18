@@ -28,6 +28,15 @@ const useStyles = makeStyles((theme) => ({
     arrowBackTop: {
         top: '5vh'
     },
+    behanceLink: {
+        fontSize: '2rem',
+        color: theme.palette.primary.main,
+        fontWeight: 700,
+        padding: '32px 64px',
+        [theme.breakpoints.up('md')]: {
+            fontSize: '3rem'
+        }
+    },
     label: {
         textTransform: 'lowercase'
     },
@@ -67,7 +76,7 @@ const ProjectPage = ({ classes, ...props }) => {
                 </Grid>
 
                 <Grid component="main" container spacing={4} item xs={12}>
-                    {['overview', 'focus', 'categories'].map((section) => (
+                    {['overview', 'scope', 'categories'].map((section) => (
                         <React.Fragment key={section}>
                             <Grid item xs={4}>
                                 <Typography variant="h3" className={clsx(internalClasses.label, 'fs-200 fw-700')}>
@@ -75,15 +84,27 @@ const ProjectPage = ({ classes, ...props }) => {
                                 </Typography>
                             </Grid>
                             <Grid item xs={8}>
-                                <Typography variant="h3" className={clsx('fs-300 fw-400')}>
-                                    {project && project[section]}
-                                </Typography>
+                                {project && Array.isArray(project[section]) ? (
+                                    project[section].map((subsection) => (
+                                        <Typography key={subsection} variant="h3" className={clsx('fs-300 fw-400')}>
+                                            {subsection}
+                                        </Typography>
+                                    ))
+                                ) : (
+                                    <Typography variant="h3" className={clsx('fs-300 fw-400')}>
+                                        {project[section]}
+                                    </Typography>
+                                )}
                             </Grid>
                         </React.Fragment>
                     ))}
                 </Grid>
 
                 <SectionsNavigation />
+
+                <a rel="noreferrer" target="_blank" className={internalClasses.behanceLink} href={project?.behanceLink}>
+                    {textProvider?.checkOnBehanceLink}
+                </a>
 
                 <Sections />
             </Grid>

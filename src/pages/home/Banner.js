@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         height: '100vh'
     },
+    subtitle: {
+        margin: '.5rem 0'
+    },
     textWrapper: {
         position: 'absolute',
         left: 0,
@@ -19,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         width: '50%'
     },
     title: {
-        color: theme.palette.type === 'dark' ? theme.palette.primary.main : theme.palette.text.primary,
+        color: theme.palette.primary.main,
         marginBottom: '1.5rem'
     }
 }));
@@ -37,8 +40,14 @@ const Banner = ({ classes, ...props }) => {
                     {textProvider?.title}
                 </Typography>
                 <Typography className={clsx(internalClasses.subtitle, 'fs-200 fw-400')} variant="h1">
-                    <span className="fw-700">{textProvider?.subtitleBold} </span>
                     {textProvider?.subtitle}
+                </Typography>
+                <Typography className={clsx(internalClasses.subtitle, 'fs-200 fw-400')} variant="h1">
+                    {textProvider?.subtitle2} <span className="fw-600">{textProvider?.subtitleBold1}</span>{' '}
+                    {textProvider?.subtitle3} <span className="fw-600">{textProvider?.subtitleBold2}</span>
+                </Typography>
+                <Typography className={clsx(internalClasses.subtitle, 'fs-200 fw-400')} variant="h1">
+                    {textProvider?.subtitle4}
                 </Typography>
             </div>
             <Grid item xs={12} md={6}>

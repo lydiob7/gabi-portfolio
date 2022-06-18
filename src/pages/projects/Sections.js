@@ -4,9 +4,12 @@ import clsx from 'clsx';
 
 import { Grid, makeStyles, Typography } from '@material-ui/core';
 
-import rito1 from 'assets/images/rito1.png';
-import rito2 from 'assets/images/rito2.png';
-import rito3 from 'assets/images/rito3.png';
+import rito1 from 'assets/images/rito1.jpg';
+import rito2 from 'assets/images/rito1.jpg';
+import rito3 from 'assets/images/rito1.jpg';
+import rito4 from 'assets/images/rito1.jpg';
+import rito5 from 'assets/images/rito1.jpg';
+import rito6 from 'assets/images/rito1.jpg';
 
 const useStyles = makeStyles((theme) => ({
     firstSectionImage: {
@@ -54,12 +57,9 @@ const images = {
         image1: rito1,
         image2: rito2,
         image3: rito3,
-        image4: '',
-        image5: '',
-        image6: '',
-        image7: '',
-        image8: '',
-        image9: ''
+        image4: rito4,
+        image5: rito5,
+        video1: rito6
     },
     'shaka-app': {
         image1: '',
@@ -87,25 +87,34 @@ const Sections = ({ classes, ...props }) => {
                         01.
                     </Typography>
                 </Grid>
-                <Grid item xs={12} sm={9} lg={12}>
-                    <Typography variant="body1" className={clsx(internalClasses.sectionContent, 'fs-200')}>
-                        {project?.brief}
-                    </Typography>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <div className={clsx(internalClasses.image, internalClasses.firstSectionImage)}>
-                        {images[project?.id]?.image1 && <img src={images[project.id].image1} alt={`${project?.id}1`} />}
-                    </div>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <div className={clsx(internalClasses.image, internalClasses.firstSectionImage)}>
-                        {images[project?.id]?.image2 && <img src={images[project.id].image2} alt={`${project?.id}2`} />}
-                    </div>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <div className={clsx(internalClasses.image, internalClasses.firstSectionImage)}>
-                        {images[project?.id]?.image3 && <img src={images[project.id].image3} alt={`${project?.id}3`} />}
-                    </div>
+                <Grid item container xs={12} sm={9} lg={12}>
+                    <Grid item xs={12}>
+                        {Array.isArray(project?.brief) ? (
+                            project.brief.map((paragraph) => (
+                                <Typography
+                                    key={paragraph}
+                                    variant="body1"
+                                    className={clsx(internalClasses.sectionContent, 'fs-200 fw-500')}
+                                >
+                                    {paragraph}
+                                </Typography>
+                            ))
+                        ) : (
+                            <Typography
+                                variant="body1"
+                                className={clsx(internalClasses.sectionContent, 'fs-200 fw-500')}
+                            >
+                                {project?.brief}
+                            </Typography>
+                        )}
+                    </Grid>
+                    <Grid item xs={12}>
+                        <div className={clsx(internalClasses.image, internalClasses.firstSectionImage)}>
+                            {images[project?.id]?.image1 && (
+                                <img src={images[project.id].image1} alt={`${project?.id}1`} />
+                            )}
+                        </div>
+                    </Grid>
                 </Grid>
             </Grid>
             <Grid
@@ -122,20 +131,35 @@ const Sections = ({ classes, ...props }) => {
                         02.
                     </Typography>
                 </Grid>
-                <Grid item xs={12}>
-                    <div className={clsx(internalClasses.image, internalClasses.secondSectionImage)}>
-                        {images[project?.id]?.image4 && <img src={images[project.id].image4} alt={`${project?.id}4`} />}
-                    </div>
-                </Grid>
-                <Grid item xs={12} sm={9} lg={12}>
-                    <Typography variant="body1" className={clsx(internalClasses.sectionContent, 'fs-200')}>
-                        {project?.research}
-                    </Typography>
-                    {project?.researchTwo && (
-                        <Typography variant="body1" className={clsx(internalClasses.sectionContent, 'fs-200')}>
-                            {project.researchTwo}
-                        </Typography>
-                    )}
+                <Grid container item xs={12} sm={9} lg={12}>
+                    <Grid item xs={12}>
+                        {Array.isArray(project?.research) ? (
+                            project.research.map((paragraph) => (
+                                <Typography
+                                    key={paragraph}
+                                    variant="body1"
+                                    className={clsx(internalClasses.sectionContent, 'fs-200 fw-500')}
+                                >
+                                    {paragraph}
+                                </Typography>
+                            ))
+                        ) : (
+                            <Typography
+                                variant="body1"
+                                className={clsx(internalClasses.sectionContent, 'fs-200 fw-500')}
+                            >
+                                {project?.research}
+                            </Typography>
+                        )}
+                    </Grid>
+
+                    <Grid item xs={12}>
+                        <div className={clsx(internalClasses.image, internalClasses.secondSectionImage)}>
+                            {images[project?.id]?.image2 && (
+                                <img src={images[project.id].image2} alt={`${project?.id}2`} />
+                            )}
+                        </div>
+                    </Grid>
                 </Grid>
             </Grid>
             <Grid
@@ -153,9 +177,21 @@ const Sections = ({ classes, ...props }) => {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={9} lg={12}>
-                    <Typography variant="body1" className={clsx(internalClasses.sectionContent, 'fs-200')}>
-                        {project?.visualConcept}
-                    </Typography>
+                    {Array.isArray(project?.visualConcept) ? (
+                        project.visualConcept.map((paragraph) => (
+                            <Typography
+                                key={paragraph}
+                                variant="body1"
+                                className={clsx(internalClasses.sectionContent, 'fs-200 fw-500')}
+                            >
+                                {paragraph}
+                            </Typography>
+                        ))
+                    ) : (
+                        <Typography variant="body1" className={clsx(internalClasses.sectionContent, 'fs-200 fw-500')}>
+                            {project?.visualConcept}
+                        </Typography>
+                    )}
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <div className={clsx(internalClasses.image, internalClasses.thirdSectionImage)}>
@@ -193,9 +229,21 @@ const Sections = ({ classes, ...props }) => {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={9} lg={12}>
-                    <Typography variant="body1" className={clsx(internalClasses.sectionContent, 'fs-200')}>
-                        {project?.prototype}
-                    </Typography>
+                    {Array.isArray(project?.prototype) ? (
+                        project.prototype.map((paragraph) => (
+                            <Typography
+                                key={paragraph}
+                                variant="body1"
+                                className={clsx(internalClasses.sectionContent, 'fs-200 fw-500')}
+                            >
+                                {paragraph}
+                            </Typography>
+                        ))
+                    ) : (
+                        <Typography variant="body1" className={clsx(internalClasses.sectionContent, 'fs-200 fw-500')}>
+                            {project?.prototype}
+                        </Typography>
+                    )}
                 </Grid>
                 <Grid container item xs={12} justifyContent="center">
                     <Grid item xs={12} md={5}>

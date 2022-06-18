@@ -18,8 +18,13 @@ const spanishContent = {
     homePage: {
         banner: {
             title: 'Hola world, I am Gabi Polanco-Ferreyra',
-            subtitleBold: '(very empathic)',
-            subtitle: 'UX-UI designer committed to delivering conscious, sustainable, and empowering digital products.'
+            subtitle:
+                'My background in law allowed me to develop my empathic view of the world, and my limitless curiosity led me to study different design programs in a self-taught and formal way.',
+            subtitle2: 'The result: Gabi,  ',
+            subtitle3: 'new UX/UI designer who wants to be part of the ',
+            subtitle4: "I'm driven by the desire to make this world more accessible, fair, and democratic.",
+            subtitleBold1: '(very empathic)',
+            subtitleBold2: 'digital revolution'
         },
         selectedWorks: {
             title: 'Selected works',
@@ -175,12 +180,13 @@ const spanishContent = {
     },
     projectPage: {
         overviewLabel: 'Overview',
-        focusLabel: 'Focus',
+        scopeLabel: 'Scope',
         categoriesLabel: 'Categories',
         briefLabel: 'Brief',
         researchLabel: 'Research',
         visualConceptLabel: 'Visual Concept',
-        prototypeLabel: 'Prototype'
+        prototypeLabel: 'Prototype',
+        checkOnBehanceLink: 'CHECK OUT THE FULL CASE STUDY IN BEHANCE.'
     },
     settingsPage: {
         menu: {

@@ -1,5 +1,6 @@
 const shakaApp = {
     id: 'shaka-app',
+    behanceLink: 'https://behance.net',
     en: {
         title: 'Shaka App',
         subtitle: 'mobile wellness app',

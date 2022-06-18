@@ -14,8 +14,8 @@ export const theme = (color) =>
                 main: '#DED7C5'
             },
             background: {
-                default: color === 'light' ? '#DED7C5' : '#0A010B',
-                paper: color === 'light' ? '#DED7C5' : '#303030'
+                default: color === 'light' ? '#FFFFFF' : '#0A010B',
+                paper: color === 'light' ? '#FFFFFF' : '#303030'
             },
             text: {
                 primary: color === 'light' ? 'rgba(0, 0, 0, 0.87)' : '#DED7C5'

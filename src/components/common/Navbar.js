@@ -33,6 +33,8 @@ import { authRoles } from 'auth';
 
 import brightness from 'assets/images/brightness.png';
 import moon from 'assets/images/moon.png';
+import brightnessWhite from 'assets/images/brightness-white.png';
+import moonWhite from 'assets/images/moon-white.png';
 
 const useStyles = makeStyles((theme) => ({
     closeMenuBtn: {
@@ -176,9 +178,17 @@ export default function Navbar({ menuItems = [] }) {
 
                 {isThemeToggable && (
                     <div className={classes.themeButton}>
-                        <img className={classes.themeIcon} src={brightness} alt="Light theme" />
+                        <img
+                            className={classes.themeIcon}
+                            src={currentTheme === 'dark' ? brightnessWhite : brightness}
+                            alt="Light theme"
+                        />
                         <Switch checked={currentTheme === 'dark'} onClick={toggleTheme} />
-                        <img className={classes.themeIcon} src={moon} alt="Dark theme" />
+                        <img
+                            className={classes.themeIcon}
+                            src={currentTheme === 'dark' ? moonWhite : moon}
+                            alt="Dark theme"
+                        />
                     </div>
                 )}
                 {isLanguageToggable && (

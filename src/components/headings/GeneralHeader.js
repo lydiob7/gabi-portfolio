@@ -53,17 +53,11 @@ export default function GeneralHeader({ fixed }) {
 
     const menuItems = useSelector(({ ui }) => ui.sidebar.menuItems);
     const appInformation = useSelector(({ ui }) => ui.appInformation);
-    const darkTheme = useSelector(({ ui }) => ui.appSettings?.theme) === 'dark';
 
     return (
         <Grid component="header" container className={clsx(classes.root, fixed && classes.fixed)}>
             <Grid container className={classes.logoWrapper} item xs={12}>
-                <Logo
-                    className={classes.logo}
-                    size="small"
-                    title={appInformation?.appTitle}
-                    imageSrc={darkTheme ? appLogoWhite : appLogo}
-                />
+                <Logo className={classes.logo} size="small" title={appInformation?.appTitle} imageSrc={appLogo} />
             </Grid>
             <Grid className={classes.navbar} item container xs={12} alignItems="center">
                 <Navbar appTitle={appInformation?.appTitle} menuItems={menuItems} />
