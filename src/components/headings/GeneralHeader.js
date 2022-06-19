@@ -10,7 +10,7 @@ import Logo from 'components/common/Logo';
 import Navbar from 'components/common/Navbar';
 
 import appLogo from 'assets/images/logo.png';
-import appLogoWhite from 'assets/images/logo-white.png';
+// import appLogoWhite from 'assets/images/logo-white.png';
 
 const useStyles = makeStyles((theme) => ({
     fixed: {

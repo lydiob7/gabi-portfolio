@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     arrowBackTop: {
         top: '5vh'
     },
-    behanceLink: {
+    checkOutLink: {
         fontSize: '2rem',
         color: theme.palette.primary.main,
         fontWeight: 700,
@@ -36,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('md')]: {
             fontSize: '3rem'
         }
+    },
+    hereLink: {
+        textDecoration: 'underline!important'
     },
     label: {
         textTransform: 'lowercase'
@@ -102,9 +105,17 @@ const ProjectPage = ({ classes, ...props }) => {
 
                 <SectionsNavigation />
 
-                <a rel="noreferrer" target="_blank" className={internalClasses.behanceLink} href={project?.behanceLink}>
-                    {textProvider?.checkOnBehanceLink}
-                </a>
+                <Typography variant="body1" className={clsx(internalClasses.checkOutLink, 'fs-biggest fw-600')}>
+                    {textProvider?.checkHereLink}{' '}
+                    <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href={project?.behanceLink}
+                        className={internalClasses?.hereLink}
+                    >
+                        {textProvider?.hereTitle}
+                    </a>
+                </Typography>
 
                 <Sections />
             </Grid>

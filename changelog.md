@@ -5,6 +5,8 @@
 -   Update: Use white as main background color.
 -   Update: Use purple logo by default.
 -   Feature: Add web design projects.
+-   Feature: Accept an array of objects as post on project details.
+-   Feature: Add tailwind.
 
 ### v0.2.1
 

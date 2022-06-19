@@ -28,10 +28,8 @@ const englishContent = {
         },
         selectedWorks: {
             title: 'Selected works',
-            firstProjectTitle: 'Rito',
-            firstProjectSubtitle: 'web/app editorial project',
-            secondProjectTitle: 'Shaka App',
-            secondProjectSubtitle: 'mobile wellness app'
+            caseStudiesTitle: 'Case Studies',
+            webDesignTitle: 'Web design'
         },
         about: {
             title: 'about me',
@@ -46,7 +44,7 @@ const englishContent = {
             cvLink: '/resume.pdf',
             behanceLinkText: 'Behance',
             behanceLink: 'https://www.behance.net/gabrielapolanco2',
-            askForAvailability: 'ask for availability'
+            askForAvailability: "let's talk"
         }
     },
     landingPage: {
@@ -185,7 +183,8 @@ const englishContent = {
         researchLabel: 'Research',
         visualConceptLabel: 'Visual Concept',
         prototypeLabel: 'Prototype',
-        checkOnBehanceLink: 'CHECK OUT THE FULL CASE STUDY IN BEHANCE.'
+        checkHereLink: 'CHECK OUT THE FULL CASE STUDY',
+        hereTitle: 'HERE'
     },
     settingsPage: {
         menu: {

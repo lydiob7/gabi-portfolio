@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'uppercase',
         color: '#ffffff',
         transition: 'color .3s ease-in-out',
+        marginTop: '1rem',
         '&:hover': {
             color: '#000000'
         }
@@ -38,6 +39,12 @@ const useStyles = makeStyles((theme) => ({
     root: {
         padding: '10vh 0',
         minHeight: '100vh'
+    },
+    sectionTitle: {
+        marginTop: '3rem'
+    },
+    titleWrapper: {
+        paddingLeft: '3vw'
     }
 }));
 
@@ -56,47 +63,59 @@ const SelectedWorks = ({ classes, ...props }) => {
             />
 
             <div className={internalClasses.projectsContainer}>
-                {projectsList
-                    ?.filter((project) => project?.type === 'case-study')
-                    ?.map((project) => (
-                        <div key={project.id}>
-                            <Link to={`/project/${project.id}`}>
-                                <Typography
-                                    variant="h2"
-                                    className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
-                                >
-                                    {project.title}
-                                </Typography>
-                            </Link>
-                            <Typography
-                                variant="body1"
-                                className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}
-                            >
-                                {project.data?.[currentLanguage]?.subtitle}
-                            </Typography>
-                        </div>
-                    ))}
+                <Typography variant="h2" className={clsx(internalClasses.sectionTitle, 'fs-300 fw-600')}>
+                    {textProvider?.caseStudiesTitle}
+                </Typography>
 
-                {projectsList
-                    ?.filter((project) => project?.type === 'web-design')
-                    ?.map((project) => (
-                        <div key={project.id}>
-                            <a target="_blank" rel="noreferrer" href={project.website}>
+                <div className={internalClasses?.titleWrapper}>
+                    {projectsList
+                        ?.filter((project) => project?.type === 'case-study')
+                        ?.map((project) => (
+                            <div key={project.id}>
+                                <Link to={`/project/${project.id}`}>
+                                    <Typography
+                                        variant="h3"
+                                        className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
+                                    >
+                                        {project.title}
+                                    </Typography>
+                                </Link>
                                 <Typography
-                                    variant="h2"
-                                    className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
+                                    variant="body1"
+                                    className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}
                                 >
-                                    {project.title}
+                                    {project.data?.[currentLanguage]?.subtitle}
                                 </Typography>
-                            </a>
-                            <Typography
-                                variant="body1"
-                                className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}
-                            >
-                                {project[currentLanguage]?.subtitle}
-                            </Typography>
-                        </div>
-                    ))}
+                            </div>
+                        ))}
+                </div>
+
+                <Typography variant="h2" className={clsx(internalClasses.sectionTitle, 'fs-300 fw-600')}>
+                    {textProvider?.webDesignTitle}
+                </Typography>
+
+                <div className={internalClasses?.titleWrapper}>
+                    {projectsList
+                        ?.filter((project) => project?.type === 'web-design')
+                        ?.map((project) => (
+                            <div key={project.id}>
+                                <a target="_blank" rel="noreferrer" href={project.website}>
+                                    <Typography
+                                        variant="h3"
+                                        className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
+                                    >
+                                        {project.title}
+                                    </Typography>
+                                </a>
+                                <Typography
+                                    variant="body1"
+                                    className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}
+                                >
+                                    {project[currentLanguage]?.subtitle}
+                                </Typography>
+                            </div>
+                        ))}
+                </div>
             </div>
         </div>
     );
