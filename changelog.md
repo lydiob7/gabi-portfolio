@@ -7,6 +7,7 @@
 -   Feature: Add web design projects.
 -   Feature: Accept an array of objects as post on project details.
 -   Feature: Add tailwind.
+-   Feature: Change logo and arrow color on home page scroll.
 
 ### v0.2.1
 
