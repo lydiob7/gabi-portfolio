@@ -3,7 +3,6 @@ import rito2 from 'assets/images/projects/rito/rito2.jpg';
 import rito3 from 'assets/images/projects/rito/rito3.jpg';
 import rito4 from 'assets/images/projects/rito/rito4.jpg';
 import rito5 from 'assets/images/projects/rito/rito5.jpg';
-import rito6 from 'assets/images/projects/rito/rito1.jpg';
 
 const rito = {
     id: 'rito',

@@ -1,11 +1,8 @@
 import daomos1 from 'assets/images/projects/daomos/daomos1.png';
-import daomos2 from 'assets/images/projects/daomos/daomos1.png';
-import daomos3 from 'assets/images/projects/daomos/daomos1.png';
 import daomos4 from 'assets/images/projects/daomos/daomos4.png';
 import daomos5 from 'assets/images/projects/daomos/daomos5.png';
 import daomos6 from 'assets/images/projects/daomos/daomos6.png';
 import daomos7 from 'assets/images/projects/daomos/daomos7.png';
-import daomos8 from 'assets/images/projects/daomos/daomos1.png';
 
 const daomos = {
     id: 'daomos',
@@ -163,7 +160,7 @@ const daomos = {
                 content: [
                     {
                         type: 'video',
-                        content: { src: daomos8, alt: 'Daomos 8' }
+                        content: { src: 'https://www.youtube.com/embed/AKBmmVCL87U', alt: 'Daomos 8' }
                     }
                 ]
             }
@@ -321,7 +318,7 @@ const daomos = {
                 content: [
                     {
                         type: 'video',
-                        content: { src: daomos8, alt: 'Daomos 8' }
+                        content: { src: 'https://www.youtube.com/embed/AKBmmVCL87U', alt: 'Daomos 8' }
                     }
                 ]
             }
