@@ -10,6 +10,8 @@
 -   Feature: Change logo and arrow color on home page scroll.
 -   Feature: Cross out project titles on hover.
 -   Update: Remove link on project title if status is not ready.
+-   Feature: Add iframe to cater for videos.
+-   Update: Add all projects information both in english and spanish.
 
 ### v0.2.1
 

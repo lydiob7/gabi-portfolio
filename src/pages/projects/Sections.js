@@ -39,12 +39,15 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         gap: '2rem'
     },
+    paragraph: {
+        marginBottom: '.4rem'
+    },
     section: {
         position: 'relative',
         paddingTop: '80px!important'
     },
     sectionContent: {
-        margin: '1rem 0'
+        margin: '2rem 0'
     },
     sectionIndex: {
         [theme.breakpoints.up('lg')]: {
@@ -55,6 +58,9 @@ const useStyles = makeStyles((theme) => ({
         }
     }
 }));
+
+const containerWidth = Math.floor(window.innerWidth * 0.571);
+const iframeHeight = Math.floor(containerWidth * 0.6);
 
 const Sections = ({ classes, ...props }) => {
     const internalClasses = useStyles();
@@ -67,8 +73,8 @@ const Sections = ({ classes, ...props }) => {
         const weightClass = `fw-${params?.weight}`;
 
         return (
-            <Grid item xs={12} className={internalClasses.sectionContent}>
-                <Typography variant="body1" className={clsx(sizeClass, weightClass)}>
+            <Grid item xs={12}>
+                <Typography variant="body1" className={clsx(sizeClass, weightClass, internalClasses.paragraph)}>
                     {params?.content}
                 </Typography>
             </Grid>
@@ -87,13 +93,14 @@ const Sections = ({ classes, ...props }) => {
         );
     };
 
-    const ImagesSlide = ({ content }) => {
+    const ImagesSlide = ({ content, size }) => {
+        const sizeClass = size === 'auto' ? internalClasses.imageSizeAuto : internalClasses.imageSizeNormal;
         return (
             <Grid item xs={12} className={internalClasses.sectionContent}>
                 <div className={internalClasses.imagesSlideWrapper}>
                     {Array.isArray(content) &&
                         content.map((item) => (
-                            <div className={clsx(internalClasses.image, internalClasses.imageSizeNormal)}>
+                            <div className={clsx(internalClasses.image, sizeClass)}>
                                 {item?.src && <img src={item?.src} alt={item?.alt} />}
                             </div>
                         ))}
@@ -105,7 +112,19 @@ const Sections = ({ classes, ...props }) => {
     const Video = ({ content }) => {
         return (
             <Grid item xs={12} md={5} className={internalClasses.sectionContent}>
-                <div className={clsx(internalClasses.video)}>{content?.src && <video src={content.src} />}</div>
+                <div className={clsx(internalClasses.video)}>
+                    {content?.src && (
+                        <iframe
+                            width={containerWidth}
+                            height={iframeHeight}
+                            src={content.src}
+                            title={content.alt}
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    )}
+                </div>
             </Grid>
         );
     };

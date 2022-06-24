@@ -184,8 +184,8 @@ const spanishContent = {
         researchLabel: 'Research',
         visualConceptLabel: 'Visual Concept',
         prototypeLabel: 'Prototype',
-        checkHereLink: 'CHECK OUT THE FULL CASE STUDY',
-        hereTitle: 'HERE'
+        checkHereLink: 'CONSULTE EL CASE STUDY COMPLETO',
+        hereTitle: 'AQUI'
     },
     settingsPage: {
         menu: {
