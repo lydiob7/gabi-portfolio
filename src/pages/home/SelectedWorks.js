@@ -28,12 +28,25 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '70px'
     },
     projectTitle: {
+        display: 'inline-block',
+        position: 'relative',
         textTransform: 'uppercase',
         color: '#ffffff',
         transition: 'color .3s ease-in-out',
         marginTop: '1rem',
-        '&:hover': {
-            color: '#000000'
+        '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: '-10%',
+            width: 0,
+            height: '50%',
+            borderBottom: '3px solid #ffffff',
+            transformOrigin: 'left center',
+            transition: 'all .4s ease'
+        },
+        '&:hover::after': {
+            width: '120%'
         }
     },
     root: {

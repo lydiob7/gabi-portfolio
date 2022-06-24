@@ -8,6 +8,7 @@
 -   Feature: Accept an array of objects as post on project details.
 -   Feature: Add tailwind.
 -   Feature: Change logo and arrow color on home page scroll.
+-   Feature: Cross out project titles on hover.
 
 ### v0.2.1
 
