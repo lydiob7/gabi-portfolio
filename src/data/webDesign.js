@@ -9,7 +9,8 @@ const array = [
         es: {
             subtitle: 'Web app for clay artists in Misiones.'
         },
-        type: 'web-design'
+        type: 'web-design',
+        status: 'ready'
     },
     {
         id: 'chapati',
@@ -21,7 +22,8 @@ const array = [
         es: {
             subtitle: "Conscious website promoting the Chapati' project"
         },
-        type: 'web-design'
+        type: 'web-design',
+        status: 'ready'
     },
     {
         id: 'tomi-scattini',
@@ -33,19 +35,21 @@ const array = [
         es: {
             subtitle: 'Full stack web developer Portfolio'
         },
-        type: 'web-design'
+        type: 'web-design',
+        status: 'ready'
     },
     {
         id: 'vaikuntha',
         website: 'https://vaikuntha.com.ar/',
         title: 'Vaikuntha',
         en: {
-            subtitle: 'Coming soon!'
+            subtitle: 'Ceramist Portfolio (coming soon)'
         },
         es: {
-            subtitle: 'Coming soon!'
+            subtitle: 'Portfolio de Ceramista (próximanente)'
         },
-        type: 'web-design'
+        type: 'web-design',
+        status: 'in-progress'
     }
 ];
 

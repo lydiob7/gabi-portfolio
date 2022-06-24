@@ -23,15 +23,30 @@ const slice = createSlice({
     name: 'projects',
     initialState: {
         list: [
-            { id: rito?.id, behanceLink: rito?.behanceLink, data: rito, title: rito?.title, type: 'case-study' },
+            {
+                id: rito?.id,
+                behanceLink: rito?.behanceLink,
+                data: rito,
+                title: rito?.title,
+                type: 'case-study',
+                status: 'ready'
+            },
             {
                 id: daomos?.id,
                 behanceLink: daomos?.behanceLink,
                 data: daomos,
                 title: daomos?.title,
-                type: 'case-study'
+                type: 'case-study',
+                status: 'ready'
             },
-            { id: navis?.id, behanceLink: navis?.behanceLink, data: navis, title: navis?.title, type: 'case-study' },
+            {
+                id: navis?.id,
+                behanceLink: navis?.behanceLink,
+                data: navis,
+                title: navis?.title,
+                type: 'case-study',
+                status: 'in-progress'
+            },
             ...webDesign
         ],
         currentProject: {}

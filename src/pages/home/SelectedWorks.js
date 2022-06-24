@@ -85,14 +85,23 @@ const SelectedWorks = ({ classes, ...props }) => {
                         ?.filter((project) => project?.type === 'case-study')
                         ?.map((project) => (
                             <div key={project.id}>
-                                <Link to={`/project/${project.id}`}>
+                                {project?.status === 'ready' ? (
+                                    <Link to={`/project/${project.id}`}>
+                                        <Typography
+                                            variant="h3"
+                                            className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
+                                        >
+                                            {project.title}
+                                        </Typography>
+                                    </Link>
+                                ) : (
                                     <Typography
                                         variant="h3"
                                         className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
                                     >
                                         {project.title}
                                     </Typography>
-                                </Link>
+                                )}
                                 <Typography
                                     variant="body1"
                                     className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}
@@ -112,14 +121,23 @@ const SelectedWorks = ({ classes, ...props }) => {
                         ?.filter((project) => project?.type === 'web-design')
                         ?.map((project) => (
                             <div key={project.id}>
-                                <a target="_blank" rel="noreferrer" href={project.website}>
+                                {project?.status === 'ready' ? (
+                                    <a target="_blank" rel="noreferrer" href={project.website}>
+                                        <Typography
+                                            variant="h3"
+                                            className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
+                                        >
+                                            {project.title}
+                                        </Typography>
+                                    </a>
+                                ) : (
                                     <Typography
                                         variant="h3"
                                         className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
                                     >
                                         {project.title}
                                     </Typography>
-                                </a>
+                                )}
                                 <Typography
                                     variant="body1"
                                     className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}

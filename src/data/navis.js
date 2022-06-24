@@ -3,7 +3,7 @@ const navis = {
     behanceLink: 'https://behance.net',
     title: 'Navis',
     en: {
-        subtitle: 'Coming soon!',
+        subtitle: 'An app for sailing women (coming soon)',
         overview: [
             'Project created from scratch, in 4 days, in collaboration with Tadeau Carabias.',
             'The challenge was to create a responsive online platform for a magazine to meet the needs and goals of users. The goal was to deliver a consistent, branded, and engaging experience and our main focus were on UI Design.'
@@ -22,7 +22,7 @@ const navis = {
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id praesentium atque ipsam debitis dolorem ullam maxime tenetur esse consectetur perspiciatis amet, nam aspernatur quis adipisci culpa modi laborum incidunt fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Id praesentium atque ipsam debitis dolorem ullam maxime tenetur esse consectetur perspiciatis amet, nam aspernatur quis adipisci culpa modi laborum incidunt fuga.Lorem ipsum dolor sit amet consectetur adipisicing elit. Id praesentium atque ipsam debitis dolorem ullam maxime tenetur esse consectetur perspiciatis amet, nam aspernatur quis adipisci culpa modi laborum incidunt fuga.'
     },
     es: {
-        subtitle: 'Coming soon!',
+        subtitle: 'Una app para mujeres navegantes (próximanente)',
         overview:
             'Navis is an emergent art magazine to promote new and upcoming artists and review the work of established ones, with the intent to democratize art and enable easier access for everyone both artist and viewers.',
         focus: 'Experience and Interface Design',

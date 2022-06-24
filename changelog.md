@@ -9,6 +9,7 @@
 -   Feature: Add tailwind.
 -   Feature: Change logo and arrow color on home page scroll.
 -   Feature: Cross out project titles on hover.
+-   Update: Remove link on project title if status is not ready.
 
 ### v0.2.1
 
