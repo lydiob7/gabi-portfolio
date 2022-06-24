@@ -71,7 +71,7 @@ export default function GeneralHeader({ fixed }) {
         });
 
         return () => window.removeEventListener('scroll', () => {});
-    }, [themeColor]);
+    }, [location.pathname, themeColor]);
 
     return (
         <Grid component="header" container className={clsx(classes.root, fixed && classes.fixed)}>

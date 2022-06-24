@@ -81,7 +81,7 @@ function ScrollTopBtn() {
         });
 
         return () => window.removeEventListener('scroll', () => {});
-    }, []);
+    }, [location.pathname, themeColor]);
 
     function scroll() {
         const sectionOptions = {
