@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Icon, makeStyles, Modal } from '@material-ui/core';
+import { IconButton, makeStyles, Modal } from '@material-ui/core';
+import { Close as CloseIcon, ZoomIn as ZoomInIcon, ZoomOut as ZoomOutIcon } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -8,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         justifyContent: ' center !important',
         alignItems: ' center !important',
-        backgroundColor: 'rgba(0, 0, 0, 0.8)'
+        backgroundColor: 'rgba(0, 0, 0, 0.5)'
     },
     closeFile: {
         color: '#FFFFFF',
@@ -21,17 +22,27 @@ const useStyles = makeStyles((theme) => ({
         cursor: 'pointer'
     },
     imageWrapper: {
-        display: 'flex',
-        justifyContent: 'center',
-        width: '780px',
-        minHeight: '50vh',
-        maxHeight: '80vh',
-        overflow: 'hidden',
+        position: 'relative',
+        width: '70vw',
+        height: '85vh',
+        overflowX: 'scroll',
+        overflowY: 'scroll',
         background: '#eeeeee',
         '& img': {
-            objectFit: 'scale-down',
-            maxWidth: '100%'
+            objectFit: 'cover',
+            width: '100%',
+            height: 'auto',
+            transformOrigin: 'top left',
+            '&.zoom': {
+                transform: 'scale(1.5)'
+            }
         }
+    },
+    zoomIcon: {
+        position: 'fixed',
+        zIndex: 9999,
+        top: '12vh',
+        right: '16vw'
     }
 }));
 
@@ -39,17 +50,29 @@ const ImageModal = ({ imageUrl, onClose, open }) => {
     const classes = useStyles();
     const size = { width: window.innerWidth * 0.8, height: window.innerHeight * 0.8 };
 
+    const [isZommedIn, setIsZoomedIn] = useState(false);
+
     return (
-        <Modal className={classes.container} open={open} onClose={onClose}>
+        <Modal
+            className={classes.container}
+            open={open}
+            onClose={() => {
+                setIsZoomedIn(false);
+                onClose();
+            }}
+        >
             <>
-                <Icon onClick={onClose} className={classes.closeFile}>
-                    close
-                </Icon>
+                <IconButton onClick={onClose} className={classes.closeFile}>
+                    <CloseIcon />
+                </IconButton>
                 {typeof imageUrl === 'string' && imageUrl?.includes('pdf') ? (
                     <embed src={imageUrl} width={size.width} height={size.height} type="application/pdf" />
                 ) : (
                     <div className={classes.imageWrapper}>
-                        <img src={imageUrl} alt="file" />
+                        <IconButton className={classes.zoomIcon} onClick={() => setIsZoomedIn(!isZommedIn)}>
+                            {isZommedIn ? <ZoomOutIcon fontSize="large" /> : <ZoomInIcon fontSize="large" />}
+                        </IconButton>
+                        <img className={isZommedIn && 'zoom'} src={imageUrl} alt="file" />
                     </div>
                 )}
             </>

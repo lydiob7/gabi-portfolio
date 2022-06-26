@@ -6,16 +6,18 @@ import rito5 from 'assets/images/projects/rito/rito5.jpg';
 
 const rito = {
     id: 'rito',
-    behanceLink: 'https://behance.net',
+    behanceLink: 'https://www.behance.net/gallery/141042255/Rito-Emergent-art-magazine%28-UX-UI-Case-Study-Ironhack%29',
     title: 'Rito',
     en: {
-        subtitle: 'web/app editorial project',
+        subtitle: 'Web/app editorial project',
         overview: [
             'Project created from scratch, in 4 days, in collaboration with Tadeau Carabias.',
-            'The challenge was to create a responsive online platform for a magazine to meet the needs and goals of users. The goal was to deliver a consistent, branded, and engaging experience and our main focus were on UI Design.'
+            'The challenge was to create a responsive online platform for a magazine to meet the needs and goals of users. The goal was to deliver a consistent, branded, and engaging experience and our main focus was on UI Design.'
         ],
-        scope: 'User Research, analyzing, user flow, information architecture, wireframing, mock-up, design system, prototyping, and usability testing.',
+        scope: 'Desktop research, user flow, information architecture, wireframing, mock-up, design system, prototyping, and usability testing.',
         categories: 'Website/Mobile',
+        comment:
+            "I highly recommend checking out the full case study here, but if you don't have time today, below is a summary.",
         post: [
             {
                 sectionNumber: '01',
@@ -24,7 +26,7 @@ const rito = {
                     {
                         type: 'paragraph',
                         content:
-                            'Rito is an emergent art magazine to promote new and upcoming artists and review the work of established ones, with the intent to democratize art and enable easier access for everyone both artist and viewers',
+                            'Rito is an emergent art magazine to promote new and upcoming artists and review the work of established ones, with the intent to democratize art and enable easier access for everyone both artist and viewers.',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -42,7 +44,7 @@ const rito = {
                     {
                         type: 'paragraph',
                         content:
-                            'At first, we searched the web for different digital and physical magazines to understand how this type of market works and what people want to consume when they decide to read an art magazine.',
+                            'At first, we searched the web for different digital and physical magazines to understand how this type of market works and what people want to consume when they read an art magazine.',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -50,7 +52,7 @@ const rito = {
                     {
                         type: 'paragraph',
                         content:
-                            'After visiting and comparing different sites, the information they offer, how content is organized, their aesthetics, their accessibility, and even the frequency of content, we started thinking of questions for the interviews that would allow us to achieve our goal.',
+                            'After visiting and comparing different sites, the information they offer, how they organize content, their aesthetics, their accessibility, and even the frequency of content, we started thinking of questions for the interviews that would allow us to achieve our goal.',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -76,7 +78,7 @@ const rito = {
                     {
                         type: 'paragraph',
                         content:
-                            'On the other hand, the surveys allow us to learn that magazines are a product that is not consumed daily, but more sporadically during the week. Also, 100% of the time, they are accessed by recommendation on social networks. Finally, people consume them because they look for inspiration and recommendations.',
+                            'On the other hand, the surveys allow us to learn that magazines are a product that is not consumed daily but more sporadically during the week. Also, 100% of the time, they are accessed by recommendation on social networks. Finally, people consume them because they look for inspiration and recommendations.',
                         size: '200',
                         weight: '500',
                         style: 'normal'

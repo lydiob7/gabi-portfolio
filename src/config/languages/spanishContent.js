@@ -41,7 +41,7 @@ const spanishContent = {
             mediumLinkText: 'Medium',
             mediumLink: 'https://medium.com/@gabrielapolancoferreyra',
             cvLinkText: 'CV',
-            cvLink: '/resume.pdf',
+            cvLink: '/Gabriela Polanco-Ferreyra Resume.pdf',
             behanceLinkText: 'Behance',
             behanceLink: 'https://www.behance.net/gabrielapolanco2',
             askForAvailability: 'Hablemos'

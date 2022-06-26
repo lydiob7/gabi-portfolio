@@ -1,3 +1,8 @@
+### v0.4.0
+
+-   Update: Change some english strings.
+-   Feature: Add image modal on projects and zoom.
+
 ### v0.3.0
 
 -   Feature: Add white icons for theme switcher.

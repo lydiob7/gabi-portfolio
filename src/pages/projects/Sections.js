@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 
 import { Grid, makeStyles, Typography } from '@material-ui/core';
+import ImageModal from '../../components/modals/ImageModal';
 
 const useStyles = makeStyles((theme) => ({
     checkOutLink: {
@@ -21,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         width: '100%',
+        cursor: 'pointer',
         '& img': {
             height: '100%'
         }
@@ -65,6 +67,9 @@ const iframeHeight = Math.floor(containerWidth * 0.6);
 const Sections = ({ classes, ...props }) => {
     const internalClasses = useStyles();
 
+    const [imageToOpen, setImageToOpen] = useState(null);
+
+    const behanceLink = useSelector(({ entities }) => entities.projects.currentProject?.behanceLink);
     const project = useSelector(({ entities }) => entities.projects.currentProject?.post);
     const textProvider = useSelector(({ ui }) => ui.textContent.projectPage);
 
@@ -86,7 +91,7 @@ const Sections = ({ classes, ...props }) => {
 
         return (
             <Grid item xs={12} className={internalClasses.sectionContent}>
-                <div className={clsx(internalClasses.image, sizeClass)}>
+                <div onClick={() => setImageToOpen(content?.src)} className={clsx(internalClasses.image, sizeClass)}>
                     {content?.src && <img src={content.src} alt={content?.alt} />}
                 </div>
             </Grid>
@@ -100,7 +105,10 @@ const Sections = ({ classes, ...props }) => {
                 <div className={internalClasses.imagesSlideWrapper}>
                     {Array.isArray(content) &&
                         content.map((item) => (
-                            <div className={clsx(internalClasses.image, sizeClass)}>
+                            <div
+                                onClick={() => setImageToOpen(item?.src)}
+                                className={clsx(internalClasses.image, sizeClass)}
+                            >
                                 {item?.src && <img src={item?.src} alt={item?.alt} />}
                             </div>
                         ))}
@@ -170,10 +178,12 @@ const Sections = ({ classes, ...props }) => {
 
             <Typography variant="body1" className={clsx(internalClasses.checkOutLink, 'fs-biggest fw-600')}>
                 {textProvider?.checkHereLink}{' '}
-                <a rel="noreferrer" target="_blank" href={project?.behanceLink} className={internalClasses?.hereLink}>
+                <a rel="noreferrer" target="_blank" href={behanceLink} className={internalClasses?.hereLink}>
                     {textProvider?.hereTitle}
                 </a>
             </Typography>
+
+            <ImageModal open={!!imageToOpen} onClose={() => setImageToOpen(null)} imageUrl={imageToOpen} />
         </>
     );
 };

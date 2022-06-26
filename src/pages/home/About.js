@@ -25,12 +25,13 @@ const useStyles = makeStyles((theme) => ({
     linksWrapper: {
         display: 'flex',
         justifyContent: 'space-between',
+        gap: '1rem',
         width: '100%',
         marginBottom: '5vh'
     },
     root: {
         padding: '10vh 0',
-        height: '100vh'
+        minHeight: '100vh'
     }
 }));
 
@@ -73,7 +74,12 @@ const About = ({ classes, ...props }) => {
                 </Grid>
             </Grid>
 
-            <a href="mailto:gabrielapolancoferreyra@gmail.com" style={{ position: 'relative' }}>
+            <a
+                target="_blank"
+                rel="noreferrer"
+                href="mailto:gabrielapolancoferreyra@gmail.com"
+                style={{ position: 'relative' }}
+            >
                 <Typography variant="body1" className={clsx(internalClasses.availabilityLink, 'fs-biggest fw-800')}>
                     {textProvider?.askForAvailability}
                 </Typography>

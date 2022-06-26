@@ -37,11 +37,12 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '3rem'
         }
     },
+    comment: {
+        marginTop: '3rem',
+        padding: '0 1rem'
+    },
     hereLink: {
         textDecoration: 'underline!important'
-    },
-    label: {
-        textTransform: 'lowercase'
     },
     projectTitle: {
         textTransform: 'uppercase'
@@ -82,7 +83,7 @@ const ProjectPage = ({ classes, ...props }) => {
                     {['overview', 'scope', 'categories'].map((section) => (
                         <React.Fragment key={section}>
                             <Grid item xs={4}>
-                                <Typography variant="h3" className={clsx(internalClasses.label, 'fs-200 fw-700')}>
+                                <Typography variant="h3" className={clsx('fs-200 fw-700 capitalize')}>
                                     {textProvider[`${section}Label`]}:
                                 </Typography>
                             </Grid>
@@ -101,6 +102,14 @@ const ProjectPage = ({ classes, ...props }) => {
                             </Grid>
                         </React.Fragment>
                     ))}
+
+                    {project?.comment && (
+                        <div className={internalClasses.comment}>
+                            <Typography variant="body1" className="fs-100">
+                                {project.comment}
+                            </Typography>
+                        </div>
+                    )}
                 </Grid>
 
                 <SectionsNavigation />
