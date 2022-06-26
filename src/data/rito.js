@@ -16,8 +16,6 @@ const rito = {
         ],
         scope: 'Desktop research, user flow, information architecture, wireframing, mock-up, design system, prototyping, and usability testing.',
         categories: 'Website/Mobile',
-        comment:
-            "I highly recommend checking out the full case study here, but if you don't have time today, below is a summary.",
         post: [
             {
                 sectionNumber: '01',
@@ -124,7 +122,7 @@ const rito = {
         ]
     },
     es: {
-        subtitle: 'web/app editorial project',
+        subtitle: 'Proyecto editorial (web/app)',
         overview: [
             'Proyecto creado desde cero, en 4 días, en colaboración con Tadeau Carabias.',
             'El reto consistía en crear una plataforma online responsiva para una revista con el fin de satisfacer las necesidades y objetivos de los usuarios. El objetivo era ofrecer una experiencia consistente, de marca y atractiva y nuestro enfoque principal fue el diseño de la interfaz de usuario.'
@@ -139,7 +137,7 @@ const rito = {
                     {
                         type: 'paragraph',
                         content:
-                            'Rito es una revista de arte emergente para promocionar a los nuevos artistas y revisar el trabajo de los establecidos, con la intención de democratizar el arte y permitir un acceso más fácil para todos, tanto para los artistas como para los espectadores.',
+                            'Rito es una revista de arte emergente para promocionar a los nuevos artistas y seguir el trabajo de los artists ya establecidos. Esta revista tiene la intención de democratizar el arte y brindar un acceso más fácil para todos, tanto para artistas como para espectadores.',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -157,7 +155,7 @@ const rito = {
                     {
                         type: 'paragraph',
                         content:
-                            'Al principio, buscamos en la web diferentes revistas digitales y físicas para entender cómo funciona este tipo de mercado y qué es lo que la gente quiere consumir cuando decide leer una revista de arte.',
+                            'Al principio buscamos diferentes revistas digitales y físicas para entender cómo funciona este tipo de mercado y qué es lo que la gente quiere consumir cuando decide leer una revista de arte.',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -165,7 +163,7 @@ const rito = {
                     {
                         type: 'paragraph',
                         content:
-                            'Después de visitar y comparar diferentes sitios, la información que ofrecen, cómo se organizan los contenidos, su estética, su accesibilidad e incluso la frecuencia de los contenidos, empezamos a pensar en preguntas para las entrevistas que nos permitieran alcanzar nuestro objetivo.',
+                            'Después de visitar y comparar diferentes sitios, la información que ofrecen, cómo se organizan los contenidos, su estética, su accesibilidad e incluso la frecuencia de los contenidos, empezamos a pensar las preguntas para las entrevistas, las que nos permitirían entender más a nuestra audiencia.',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -179,7 +177,7 @@ const rito = {
                     },
                     {
                         type: 'paragraph',
-                        content: 'Hemos entrevistado a cinco personas y esto es lo que hemos aprendido de ellas.',
+                        content: 'Entrevistamos a cinco personas; y estas son algunas de las reflexiones.',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -199,7 +197,7 @@ const rito = {
                     {
                         type: 'paragraph',
                         content:
-                            'En esta etapa de búsqueda de empatía con nuestros usuarios, abrimos la puerta al arte latinoamericano. Decidimos crear RITO para contribuir a la visibilidad y democratización de los artistas emergentes de Argentina y Brasil, países que comparten fronteras territoriales, proximidad y una larga historia de cooperación a pesar de no compartir el mismo idioma.',
+                            'En esta etapa donde buscamos empatizar con nuestros usuarios, es que decidimos abrir la puerta al arte latinoamericano. Decidimos crear RITO para contribuir a la visibilidad y democratización de los artistas emergentes de Argentina y Brasil, países que comparten fronteras territoriales, proximidad y una larga historia de cooperación a pesar de no compartir el mismo idioma.',
                         size: '400',
                         weight: '600',
                         style: 'normal'
@@ -213,7 +211,7 @@ const rito = {
                     {
                         type: 'paragraph',
                         content:
-                            'Elegimos una paleta colorida ya que los colores son representativos de América Latina.Nuestro nombre nació después de una lluvia de ideas. Pensamos en nuestras entrevistas, en lo que oímos sobre ellas y reflexionamos sobre lo que entendíamos por arte.',
+                            'Elegimos una paleta colorida que represents Latinoamerica. Nuestro nombre surgió después de una lluvia de idea, donde hicimos una puesta en común de todo lo aprendido y escuchado durante la etapa de investigación.',
                         size: '200',
                         weight: '500',
                         style: 'normal'

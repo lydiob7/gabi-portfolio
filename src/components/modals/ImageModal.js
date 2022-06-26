@@ -42,7 +42,11 @@ const useStyles = makeStyles((theme) => ({
         position: 'fixed',
         zIndex: 9999,
         top: '12vh',
-        right: '16vw'
+        right: '16vw',
+        backgroundColor: 'rgba(255, 255, 255, .4)',
+        '&:hover': {
+            backgroundColor: 'rgba(255, 255, 255, .7)'
+        }
     }
 }));
 

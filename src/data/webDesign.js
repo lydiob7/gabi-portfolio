@@ -7,7 +7,7 @@ const array = [
             subtitle: 'Web app for clay artists in Misiones'
         },
         es: {
-            subtitle: 'Web app for clay artists in Misiones'
+            subtitle: 'Web app para ceramistas en Misiones'
         },
         type: 'web-design',
         status: 'ready'
@@ -20,7 +20,7 @@ const array = [
             subtitle: "Conscious website promoting the Chapati's project"
         },
         es: {
-            subtitle: "Conscious website promoting the Chapati's project"
+            subtitle: 'Página web consciente que promueve el proyecto "Chapati"'
         },
         type: 'web-design',
         status: 'ready'
@@ -33,7 +33,7 @@ const array = [
             subtitle: 'Full stack developer portfolio'
         },
         es: {
-            subtitle: 'Full stack developer portfolio'
+            subtitle: 'Portfolio de Desarrollador full-stack'
         },
         type: 'web-design',
         status: 'ready'

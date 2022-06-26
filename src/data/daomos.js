@@ -1,18 +1,20 @@
 import daomos1 from 'assets/images/projects/daomos/daomos1.png';
-import daomos4 from 'assets/images/projects/daomos/daomos4.png';
-import daomos5 from 'assets/images/projects/daomos/daomos5.png';
+import daomos4 from 'assets/images/projects/daomos/daomos4.jpg';
+import daomos5 from 'assets/images/projects/daomos/daomos5.jpg';
 import daomos6 from 'assets/images/projects/daomos/daomos6.png';
 import daomos7 from 'assets/images/projects/daomos/daomos7.png';
 
 const daomos = {
     id: 'daomos',
-    behanceLink: 'https://behance.net',
+    behanceLink: 'https://www.behance.net/gallery/145510979/DAOMOS',
     title: 'Daomos',
     en: {
         subtitle: 'Dapp for DAOs',
-        overview:
-            'For this project, I worked with Jaoa Pereira (Build up Labs), as the stakeholder and the research for this project was teamwork with Catarina Silva. The main challenge was to create a tool to enhance DAOs and keep contributing to the automatization and decentralization of the web3 ecosystem.',
-        scope: 'User Research, analyzing, user flow, information architecture, wireframing, mock-up, design system, prototyping, and usability testing.',
+        overview: [
+            'For this project, I worked with Jaoa Pereira (Build up Labs) as the stakeholder, and the research for this project was teamwork with Catarina Silva.',
+            'The challenge was to create a tool to enhance DAOs and keep contributing to the decentralization of the web3 ecosystem.'
+        ],
+        scope: 'User research, analyzing, user flow, information architecture, wireframing, mock-up, design system, prototyping, and usability testing.',
         categories: 'Mobile',
         post: [
             {
@@ -22,7 +24,7 @@ const daomos = {
                     {
                         type: 'paragraph',
                         content:
-                            'Daomos is a  decentralized platform to help day-to-day DAOs.It facilitates organization and communication between participants who want to contribute to a decentralized world and revolutionize the future of work. An app that generates spaces where people build communities gets to know people who share the same interests and values and connects people with cool and meaningful web3-based projects around the world.',
+                            'Daomos is a  decentralized platform to help day-to-day DAOs.It facilitates organization and communication between participants who want to contribute to a decentralized world and revolutionize the future of work. An app that generates spaces where people build communities gets to know people who share the same interests and values and connects people with cool and meaningful web3-based projects worldwide.',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -75,7 +77,8 @@ const daomos = {
                     },
                     {
                         type: 'paragraph',
-                        content: 'We also analyzed our web3 competitors.',
+                        content:
+                            'We also analyzed our web2 and web3 competitors regarding scheduling tools out in the market',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -110,7 +113,7 @@ const daomos = {
                     {
                         type: 'paragraph',
                         content:
-                            'We have learned that in products like this it is crucial to make the greatest effort to develop a great user experience and thus be able to invite more people to join something still unknown and often overwhelming.',
+                            'We conclude that in new and revolutionary products such as those that live on the blockchain, it is crucial to make a great effort to develop a friendly and guided user experience. In this way, we could invite a more significant number of people to join something still unknown and often overwhelming like web 3 and, thus, avoid a complexity that excludes those non-expert users.',
                         size: '200',
                         weight: '600',
                         style: 'normal'
@@ -118,7 +121,7 @@ const daomos = {
                     {
                         type: 'paragraph',
                         content:
-                            'We need a DAPP where users own and control their own data and interact directly with one another, free from surveillance or censorship, while still having access to the same breadth and quality of services.',
+                            'Therefore, we needed to develop a DAPP where users own and control their own data, where they can interact directly with each other, free from surveillance or censorship. But all this while still having access to the same breadth and quality of services. ',
                         size: '200',
                         weight: '600',
                         style: 'normal'
@@ -126,7 +129,7 @@ const daomos = {
                     {
                         type: 'paragraph',
                         content:
-                            'How might we create a scheduling tool abstracted away as much technical excess possible and be much more user-friendly?',
+                            'So how could we create a scheduling tool that restricts technical excesses as much as possible and is much easier to use?',
                         size: '200',
                         weight: '600',
                         style: 'normal'
@@ -139,7 +142,36 @@ const daomos = {
                 content: [
                     {
                         type: 'paragraph',
-                        content: 'The UI',
+                        content: 'For the UI, I decided to create user interfaces that were:',
+                        size: '200',
+                        weight: '600',
+                        style: 'normal'
+                    },
+                    {
+                        type: 'paragraph',
+                        content: '1-Intuitive so it can be operated even by laypersons or untrained users.',
+                        size: '200',
+                        weight: '600',
+                        style: 'normal'
+                    },
+                    {
+                        type: 'paragraph',
+                        content: '2-Enjoyable and fun  (because it is always essential!)',
+                        size: '200',
+                        weight: '600',
+                        style: 'normal'
+                    },
+                    {
+                        type: 'paragraph',
+                        content:
+                            '3-Efficient and not much different from what users are used to dealing with or interacting with.',
+                        size: '200',
+                        weight: '600',
+                        style: 'normal'
+                    },
+                    {
+                        type: 'paragraph',
+                        content: 'The result is:',
                         size: '200',
                         weight: '600',
                         style: 'normal'
@@ -159,8 +191,19 @@ const daomos = {
                 id: 'prototype',
                 content: [
                     {
+                        type: 'paragraph',
+                        content: 'Take a look at the prototype.',
+                        size: '200',
+                        weight: '600',
+                        style: 'normal'
+                    },
+                    {
                         type: 'video',
-                        content: { src: 'https://www.youtube.com/embed/AKBmmVCL87U', alt: 'Daomos 8' }
+                        content: { src: 'https://www.youtube.com/embed/SNI71C0_nUc', alt: 'Daomos 8' }
+                    },
+                    {
+                        type: 'video',
+                        content: { src: '', alt: 'Daomos 9' }
                     }
                 ]
             }
@@ -168,8 +211,10 @@ const daomos = {
     },
     es: {
         subtitle: 'Una Dapp para DAOs',
-        overview:
-            'Para este proyecto, trabajé con Jaoa Pereira (Build up Labs), como parte interesada. La investigación para este proyecto fue un trabajo en equipo con Catarina Silva. El principal desafío fue crear una herramienta para mejorar los DAOs y seguir contribuyendo a la automatización y descentralización del ecosistema web3.',
+        overview: [
+            'Para este proyecto, trabajé con Jaoa Pereira (Build up Labs), como parte interesada. La investigación para este proyecto fue un trabajo en equipo con Catarina Silva.',
+            'El principal desafío fue crear una herramienta para mejorar los DAOs y seguir contribuyendo a la automatización y descentralización del ecosistema web3. '
+        ],
         scope: 'Investigación de usuarios, análisis, flujo de usuarios, arquitectura de la información, wireframing, mock-up, sistema de diseño, prototipado y pruebas de usabilidad.',
         categories: 'Movil',
         post: [
@@ -180,7 +225,15 @@ const daomos = {
                     {
                         type: 'paragraph',
                         content:
-                            'Daomos es una plataforma descentralizada para ayudar el el día a día de los DAOs. Facilita la organización y la comunicación entre los participantes que quieren contribuir a un mundo descentralizado y revolucionar el futuro del trabajo. Una aplicación que genera espacios donde la gente construye comunidades, conoce a personas que comparten los mismos intereses y valores y conecta a la gente de todo el mundo con proyectos geniales y significativos basados en la web3.',
+                            'Daomos es una plataforma descentralizada que busca ayudar a mejorar el el día a día de los DAOs. Esta Dapp, facilita la organización y la comunicación entre personas que quieren contribuir a un mundo descentralizado y revolucionar el futuro del trabajo.',
+                        size: '200',
+                        weight: '500',
+                        style: 'normal'
+                    },
+                    {
+                        type: 'paragraph',
+                        content:
+                            'Una aplicación que genera espacios donde la gente construye comunidad, conoce a personas que comparten los mismos intereses y valores y tambien, pueden conectar con gente de todo el mundo con proyectos geniales y significativos basados en la web3.',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -198,7 +251,7 @@ const daomos = {
                     {
                         type: 'paragraph',
                         content:
-                            'Para crear un producto digital que viva en la web3, primero tuvimos que realizar una amplia investigación de escritorio sobre este nuevo mundo nacido en 2018.',
+                            'Para crear un producto digital que viva en la web3, primero tuvimos que realizar una amplia investigación  sobre este nuevo mundo nacido en 2018.',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -206,7 +259,7 @@ const daomos = {
                     {
                         type: 'paragraph',
                         content:
-                            'Necesitamos entender lo que significa que un producto viva en el blockchain y las implicaciones y beneficios de hacerlo en este ecosistema y no en el actual ( web2).',
+                            'Necesitamos entender lo que significa que un producto viva en el blockchain y las implicancias y beneficios de hacerlo en este ecosistema y no en el actual ( web2).',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -214,7 +267,7 @@ const daomos = {
                     {
                         type: 'paragraph',
                         content:
-                            'Además de buscar artículos, participamos en diferentes charlas online sobre el tema, nos acercamos a grupos presenciales de web3 en Lisboa, y entrevistamos a un experto en diseño de web3 para empezar a entender a los usuarios de web3.',
+                            'Además de buscar artículos e investigaciones, participamos en diferentes charlas online sobre el tema, nos acercamos a grupos presenciales de web3 en Lisboa, y entrevistamos a un experto en diseño ux ui,  en web3 , para empezar a entender a los usuarios  que interactuan en la blockchain.',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -222,7 +275,7 @@ const daomos = {
                     {
                         type: 'paragraph',
                         content:
-                            'También profundizamos en el concepto de Organización Autónoma Descentralizada para entender qué son, cómo funcionan, cómo es el panorama actual de las herramientas DAO, y cómo podemos potenciarlo con un producto único.',
+                            'También profundizamos en el concepto de Organización Autónoma Descentralizada para entender qué son, cómo funcionan, cómo es el panorama actual de las herramientas DAO, y asi entender, cómo podemos potenciarlo con un producto único.',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -233,7 +286,8 @@ const daomos = {
                     },
                     {
                         type: 'paragraph',
-                        content: 'También analizamos a nuestros competidores de la web3.',
+                        content:
+                            'También  analizamos  a nuestros competidores de web2 y web3 en lo que respecta a las herramientas de panificación, que ya existen en el mercado.',
                         size: '200',
                         weight: '500',
                         style: 'normal'
@@ -268,7 +322,7 @@ const daomos = {
                     {
                         type: 'paragraph',
                         content:
-                            'Hemos aprendido que en productos como éste es crucial hacer el mayor esfuerzo para desarrollar una gran experiencia de usuario y así poder invitar a más personas a unirse a algo todavía desconocido y a menudo abrumador.',
+                            'Concluimos que en productos nuevos y revolucionarios como los que viven en la blockchain, es crucial hacer un gran esfuerzo para desarrollar una experiencia de usuario amigable y guiada. De esta forma, podríamos invitar a un mayor número de personas a unirse a algo todavía desconocido y a menudo abrumador como la web 3, y, así,  evitar una complejidad que resulte en la exclusión de aquellos usuarios no expertos.',
                         size: '200',
                         weight: '600',
                         style: 'normal'
@@ -276,7 +330,7 @@ const daomos = {
                     {
                         type: 'paragraph',
                         content:
-                            'Necesitamos una DAPP en la que los usuarios sean dueños y controlen sus propios datos e interactúen directamente entre ellos, sin vigilancia ni censura, pero con la misma amplitud y calidad de servicios.',
+                            'Por lo tanto, necesitábamos desarrollar una DAPP en la que los usuarios fueran dueños y controlaran sus propios datos, en la que pudiesen interactuar directamente unos con otros, libres de vigilancia o censura. Pero todo esto, sin dejar de tener acceso a la misma amplitud y calidad de servicios.',
                         size: '200',
                         weight: '600',
                         style: 'normal'
@@ -284,7 +338,7 @@ const daomos = {
                     {
                         type: 'paragraph',
                         content:
-                            '¿Cómo podríamos crear una herramienta de programación que se abstraiga de todo el exceso técnico posible y sea mucho más fácil de usar?',
+                            'Entonces, ¿cómo podríamos crear una herramienta de programación que restrinja al máximo los excesos técnicos y sea mucho más fácil de usar?',
                         size: '200',
                         weight: '600',
                         style: 'normal'
@@ -297,7 +351,36 @@ const daomos = {
                 content: [
                     {
                         type: 'paragraph',
-                        content: 'The UI',
+                        content: 'Para la interfaz de usuario, decidí crear interfaces que fueran:',
+                        size: '200',
+                        weight: '600',
+                        style: 'normal'
+                    },
+                    {
+                        type: 'paragraph',
+                        content: '1-Intuitivas para que puedan ser manejadas incluso por usuarios no expertas.',
+                        size: '200',
+                        weight: '600',
+                        style: 'normal'
+                    },
+                    {
+                        type: 'paragraph',
+                        content: '2- Agradables y divertidas (porque siempre es esencial).',
+                        size: '200',
+                        weight: '600',
+                        style: 'normal'
+                    },
+                    {
+                        type: 'paragraph',
+                        content:
+                            '3-Eficaces y no muy diferentes de lo que los usuarios están acostumbrados a tratar o interactuar.',
+                        size: '200',
+                        weight: '600',
+                        style: 'normal'
+                    },
+                    {
+                        type: 'paragraph',
+                        content: 'El resultado es:',
                         size: '200',
                         weight: '600',
                         style: 'normal'
@@ -317,8 +400,19 @@ const daomos = {
                 id: 'prototype',
                 content: [
                     {
+                        type: 'paragraph',
+                        content: 'Mira el prototipo final',
+                        size: '200',
+                        weight: '600',
+                        style: 'normal'
+                    },
+                    {
                         type: 'video',
-                        content: { src: 'https://www.youtube.com/embed/AKBmmVCL87U', alt: 'Daomos 8' }
+                        content: { src: 'https://www.youtube.com/embed/SNI71C0_nUc', alt: 'Daomos 8' }
+                    },
+                    {
+                        type: 'video',
+                        content: { src: '', alt: 'Daomos 9' }
                     }
                 ]
             }

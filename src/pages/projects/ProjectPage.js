@@ -29,20 +29,17 @@ const useStyles = makeStyles((theme) => ({
         top: '5vh'
     },
     checkOutLink: {
-        fontSize: '2rem',
+        fontSize: '1.5rem',
         color: theme.palette.primary.main,
-        fontWeight: 700,
+        fontWeight: 500,
         padding: '32px 64px',
         [theme.breakpoints.up('md')]: {
-            fontSize: '3rem'
+            fontSize: '2rem'
         }
     },
-    comment: {
-        marginTop: '3rem',
-        padding: '0 1rem'
-    },
     hereLink: {
-        textDecoration: 'underline!important'
+        textTransform: 'lowercase',
+        fontWeight: 700
     },
     projectTitle: {
         textTransform: 'uppercase'
@@ -102,20 +99,12 @@ const ProjectPage = ({ classes, ...props }) => {
                             </Grid>
                         </React.Fragment>
                     ))}
-
-                    {project?.comment && (
-                        <div className={internalClasses.comment}>
-                            <Typography variant="body1" className="fs-100">
-                                {project.comment}
-                            </Typography>
-                        </div>
-                    )}
                 </Grid>
 
                 <SectionsNavigation />
 
-                <Typography variant="body1" className={clsx(internalClasses.checkOutLink, 'fs-biggest fw-600')}>
-                    {textProvider?.checkHereLink}{' '}
+                <Typography variant="body1" className={clsx(internalClasses.checkOutLink)}>
+                    {textProvider?.recommendation}{' '}
                     <a
                         rel="noreferrer"
                         target="_blank"
@@ -124,6 +113,7 @@ const ProjectPage = ({ classes, ...props }) => {
                     >
                         {textProvider?.hereTitle}
                     </a>
+                    {textProvider?.recommendation2}
                 </Typography>
 
                 <Sections />

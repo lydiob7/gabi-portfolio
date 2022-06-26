@@ -17,11 +17,11 @@ const spanishContent = {
     },
     homePage: {
         banner: {
-            title: 'Hola world, Soy Gabi Polanco-Ferreyra',
+            title: 'Hola mundo, Soy Gabi Polanco-Ferreyra',
             subtitle:
-                'Mi background en Derecho me permitió desarrollar mi visión empática del mundo, y mi curiosidad sin límites, me llevo a estudiar diferentes programas de diseño de forma autodidacta y formalmente.',
-            subtitle2: 'El resultado: Gabi',
-            subtitle3: 'una nueva diseñadora UX/UI que quiere ser parte',
+                'Mi background profesional en Derecho me permitió desarrollar y ejercitar visión empática del mundo,mi curiosidad sin límites y mis ganas de crear, me llevó a estudiar diseño de forma autodidacta y formalmente.',
+            subtitle2: 'El resultado es: Gabi, una nueva diseñadora UX/UI ',
+            subtitle3: 'que quiere ser parte ',
             subtitle4: 'Me mueve el deseo de hacer este mundo uno más accesible, justo y democrático.',
             subtitleBold1: '(muy empática)',
             subtitleBold2: 'de la revolución digital'
@@ -34,7 +34,7 @@ const spanishContent = {
         about: {
             title: 'about me',
             content:
-                'Soy Gabi Polanco-Ferreyra y vengo de un pasado profesional variado, me gradué en la Escuela de Derecho, hice un máster en Mediación y Resolución de Conflictos, trabajé en el gobierno durante muchos años antes de dedicarme a ser una viajera a tiempo completo alrededor del mundo durante unos meses. Tuve muchos otros trabajos antes de decidir dedicarme a mis talentos creativos como profesión. Me encanta viajar, ver el mundo, acampar, escalar montañas y conocer gente (de verdad). Mi sueño es dar la vuelta, en velero, al mundo algún día.',
+                'Soy Gabi Polanco-Ferreyra y vengo de un pasado profesional variado, soy abogada e hice un máster en Mediación y Resolución de Conflictos, trabajé en el Poder Judicial Federal durante muchos años antes de dedicarme a ser una viajera a tiempo completo alrededor del mundo. Tuve muchos otros trabajos antes de decidir dedicarme a mis talentos creativos como profesión. Me encanta viajar, ver el mundo, acampar, escalar montañas y conocer gente (de verdad). Mi sueño es dar la vuelta, en velero, al mundo algún día.',
             contentHighlight: 'Estoy transitando mi viaje creativo and ME ENCANTA.',
             linkedinLinkText: 'Linkedin',
             linkedinLink: 'https://www.linkedin.com/in/gabriela-polanco-ferreyra-b5b25717a/',
@@ -184,8 +184,10 @@ const spanishContent = {
         researchLabel: 'Research',
         visualConceptLabel: 'Visual Concept',
         prototypeLabel: 'Prototype',
-        checkHereLink: 'CONSULTE EL CASE STUDY COMPLETO',
-        hereTitle: 'AQUI'
+        recommendation: 'Recomiendo ver el case study completo ',
+        recommendation2: ', pero si no tenes tiempo hoy, a continuación podes ver el resumen.',
+        checkHereLink: 'VER EL CASE STUDY COMPLETO',
+        hereTitle: 'AQUÍ'
     },
     settingsPage: {
         menu: {

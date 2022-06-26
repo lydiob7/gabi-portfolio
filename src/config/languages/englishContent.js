@@ -183,6 +183,8 @@ const englishContent = {
         researchLabel: 'Research',
         visualConceptLabel: 'Visual Concept',
         prototypeLabel: 'Prototype',
+        recommendation: 'I highly recommend checking out the full case study ',
+        recommendation2: ", but if you don't have time today, below is a summary.",
         checkHereLink: 'CHECK OUT THE FULL CASE STUDY',
         hereTitle: 'HERE'
     },

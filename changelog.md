@@ -2,6 +2,8 @@
 
 -   Update: Change some english strings.
 -   Feature: Add image modal on projects and zoom.
+-   Update: Change some spanish strings.
+-   Update: Update daomos information.
 
 ### v0.3.0
 
