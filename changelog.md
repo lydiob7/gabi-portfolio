@@ -1,3 +1,7 @@
+### v0.4.1
+
+-   Update: Move daomos to top and hide tomi portfolio.
+
 ### v0.4.0
 
 -   Update: Change some english strings.

@@ -24,18 +24,18 @@ const slice = createSlice({
     initialState: {
         list: [
             {
-                id: rito?.id,
-                behanceLink: rito?.behanceLink,
-                data: rito,
-                title: rito?.title,
-                type: 'case-study',
-                status: 'ready'
-            },
-            {
                 id: daomos?.id,
                 behanceLink: daomos?.behanceLink,
                 data: daomos,
                 title: daomos?.title,
+                type: 'case-study',
+                status: 'ready'
+            },
+            {
+                id: rito?.id,
+                behanceLink: rito?.behanceLink,
+                data: rito,
+                title: rito?.title,
                 type: 'case-study',
                 status: 'ready'
             },

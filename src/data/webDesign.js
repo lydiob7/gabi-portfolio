@@ -25,19 +25,19 @@ const array = [
         type: 'web-design',
         status: 'ready'
     },
-    {
-        id: 'tomi-scattini',
-        title: 'Tomi Scattini',
-        website: 'https://tomiscattini.com/',
-        en: {
-            subtitle: 'Full stack developer portfolio'
-        },
-        es: {
-            subtitle: 'Portfolio de Desarrollador full-stack'
-        },
-        type: 'web-design',
-        status: 'ready'
-    },
+    // {
+    //     id: 'tomi-scattini',
+    //     title: 'Tomi Scattini',
+    //     website: 'https://tomiscattini.com/',
+    //     en: {
+    //         subtitle: 'Full stack developer portfolio'
+    //     },
+    //     es: {
+    //         subtitle: 'Portfolio de Desarrollador full-stack'
+    //     },
+    //     type: 'web-design',
+    //     status: 'ready'
+    // },
     {
         id: 'vaikuntha',
         website: 'https://vaikuntha.com.ar/',

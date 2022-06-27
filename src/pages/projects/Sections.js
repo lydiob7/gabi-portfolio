@@ -119,7 +119,7 @@ const Sections = ({ classes, ...props }) => {
 
     const Video = ({ content }) => {
         return (
-            <Grid item xs={12} md={5} className={internalClasses.sectionContent}>
+            <Grid item xs={12} className={internalClasses.sectionContent}>
                 <div className={clsx(internalClasses.video)}>
                     {content?.src && (
                         <iframe

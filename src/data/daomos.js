@@ -203,7 +203,7 @@ const daomos = {
                     },
                     {
                         type: 'video',
-                        content: { src: '', alt: 'Daomos 9' }
+                        content: { src: 'https://www.youtube.com/embed/dQkVaFVSpMs', alt: 'Daomos 9' }
                     }
                 ]
             }
@@ -412,7 +412,7 @@ const daomos = {
                     },
                     {
                         type: 'video',
-                        content: { src: '', alt: 'Daomos 9' }
+                        content: { src: 'https://www.youtube.com/embed/dQkVaFVSpMs', alt: 'Daomos 9' }
                     }
                 ]
             }
