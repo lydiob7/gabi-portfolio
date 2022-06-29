@@ -12,7 +12,11 @@ const useStyles = makeStyles((theme) => ({
     },
     root: {},
     title: {
-        textAlign: 'center'
+        textAlign: 'center',
+        fontSize: '1rem',
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1.3rem'
+        }
     }
 }));
 
@@ -21,13 +25,13 @@ const SectionTitle = ({ classes, title, ...props }) => {
 
     return (
         <Grid container alignItems="center">
-            <Grid className={clsx(internalClasses.line, classes?.line)} item xs={4}></Grid>
-            <Grid item xs={4}>
-                <Typography variant="h1" className={clsx(internalClasses.title, classes?.title, 'fs-300 fw-500')}>
+            <Grid className={clsx(internalClasses.line, classes?.line)} item xs={3} md={4}></Grid>
+            <Grid item xs={6} md={4}>
+                <Typography {...props} variant="h1" className={clsx(internalClasses.title, classes?.title, 'fw-500')}>
                     {title}
                 </Typography>
             </Grid>
-            <Grid className={clsx(internalClasses.line, classes?.line)} item xs={4}></Grid>
+            <Grid className={clsx(internalClasses.line, classes?.line)} item xs={3} md={4}></Grid>
         </Grid>
     );
 };

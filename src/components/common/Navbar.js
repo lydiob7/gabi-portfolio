@@ -70,7 +70,10 @@ const useStyles = makeStyles((theme) => ({
     },
     languageSelect: {
         fontSize: '.8rem',
-        minWidth: '100px',
+        minWidth: '40px',
+        [theme.breakpoints.up('sm')]: {
+            minWidth: '100px'
+        },
         [theme.breakpoints.up('lg')]: {
             minWidth: 'auto'
         }

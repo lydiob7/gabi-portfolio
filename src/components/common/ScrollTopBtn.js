@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { HashLink } from 'react-router-hash-link';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
@@ -67,6 +68,13 @@ function ScrollTopBtn() {
 
     const themeColor = useSelector(({ ui }) => ui.appSettings?.theme);
 
+    const hashLinkOptions = {
+        1: '#case-studies',
+        2: '#web-design',
+        3: '#about',
+        4: '#top'
+    };
+
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (rootElement.scrollTop > 1900) setSection(4);
@@ -83,23 +91,23 @@ function ScrollTopBtn() {
         return () => window.removeEventListener('scroll', () => {});
     }, [location.pathname, themeColor]);
 
-    function scroll() {
-        const sectionOptions = {
-            1: 791,
-            2: 1450,
-            3: 2400,
-            4: 0
-        };
-        rootElement.scrollTo({
-            top: sectionOptions[section],
-            behavior: 'smooth'
-        });
-    }
+    // function scroll() {
+    //     const sectionOptions = {
+    //         1: 791,
+    //         2: 1450,
+    //         3: 2400,
+    //         4: 0
+    //     };
+    //     rootElement.scrollTo({
+    //         top: sectionOptions[section],
+    //         behavior: 'smooth'
+    //     });
+    // }
 
     return (
         <div className={internalClasses.root}>
-            <div
-                onClick={scroll}
+            <HashLink
+                to={hashLinkOptions[section]}
                 className={clsx(
                     internalClasses.backToTop,
                     section === 4 && internalClasses.rotate,
@@ -112,7 +120,7 @@ function ScrollTopBtn() {
                         className={isArrowWhite ? internalClasses.purpleArrow : internalClasses.whiteArrow}
                     />
                 </svg>
-            </div>
+            </HashLink>
         </div>
     );
 }

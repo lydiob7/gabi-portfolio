@@ -1,3 +1,7 @@
+### v0.5.0
+
+-   Feature: Make responsive.
+
 ### v0.4.1
 
 -   Update: Move daomos to top and hide tomi portfolio.

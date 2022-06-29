@@ -10,20 +10,28 @@ const useStyles = makeStyles((theme) => ({
     },
     root: {
         position: 'relative',
-        height: '100vh'
+        minHeight: '100vh'
     },
     subtitle: {
         margin: '.5rem 0'
     },
     textWrapper: {
-        position: 'absolute',
-        left: 0,
-        top: '20vh',
-        width: '50%'
+        padding: '0 5vw',
+        [theme.breakpoints.up('md')]: {
+            position: 'absolute',
+            left: 0,
+            top: '20vh',
+            width: '50%',
+            padding: '0'
+        }
     },
     title: {
         color: theme.palette.primary.main,
-        marginBottom: '1.5rem'
+        marginBottom: '1.5rem',
+        marginTop: '2rem',
+        [theme.breakpoints.up('md')]: {
+            marginTop: '0'
+        }
     }
 }));
 
@@ -34,7 +42,7 @@ const Banner = ({ classes, ...props }) => {
 
     return (
         <Grid component="main" container className={clsx(internalClasses.root, classes?.root)} {...props}>
-            <Grid item xs={false} md={6}></Grid>
+            <Grid item xs={false} sm={3} />
             <div className={internalClasses.textWrapper}>
                 <Typography className={clsx(internalClasses.title, 'fs-900 fw-900')} variant="h1">
                     {textProvider?.title}
@@ -50,7 +58,8 @@ const Banner = ({ classes, ...props }) => {
                     {textProvider?.subtitle4}
                 </Typography>
             </div>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={false} sm={3} />
+            <Grid item xs={12} sm={6}>
                 <img className={internalClasses.image} src="images/profile-picture.jpg" alt="Gabi Polanco profile" />
             </Grid>
         </Grid>

@@ -57,6 +57,19 @@ const useStyles = makeStyles((theme) => ({
             top: '50px',
             left: 0,
             transform: 'translateX(-100%)'
+        },
+        '& > .MuiTypography-root': {
+            fontSize: '2.5rem',
+            color: theme.palette.primary.main,
+            textTransform: 'uppercase',
+            [theme.breakpoints.up('sm')]: {
+                fontSize: '5rem'
+            }
+        }
+    },
+    sectionName: {
+        [theme.breakpoints.up('sm')]: {
+            display: 'none'
         }
     }
 }));
@@ -165,8 +178,11 @@ const Sections = ({ classes, ...props }) => {
                     xs={12}
                 >
                     <Grid item xs={12} sm={3} lg={false} className={internalClasses.sectionIndex}>
-                        <Typography variant="body1" className="fs-biggest fw-800">
-                            {section?.sectionNumber}.
+                        <Typography variant="body1" className="fw-800">
+                            {section?.sectionNumber}.{' '}
+                            <span className={internalClasses.sectionName}>
+                                {section?.id === 'visualConcept' ? 'visual concept' : section?.id}
+                            </span>
                         </Typography>
                     </Grid>
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 
-import { makeStyles, Typography } from '@material-ui/core';
+import { Hidden, makeStyles, Typography } from '@material-ui/core';
 
 import SectionTitle from 'components/common/SectionTitle';
 
@@ -24,6 +24,12 @@ const useStyles = makeStyles((theme) => ({
             margin: '5vh 0'
         }
     },
+    projectNumber: {
+        fontSize: '2rem',
+        [theme.breakpoints.up('md')]: {
+            fontSize: '4rem'
+        }
+    },
     projectSubtitle: {
         marginLeft: '70px'
     },
@@ -34,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#ffffff',
         transition: 'color .3s ease-in-out',
         marginTop: '1rem',
+        fontSize: '2.5rem',
         '&::after': {
             content: '""',
             position: 'absolute',
@@ -47,6 +54,9 @@ const useStyles = makeStyles((theme) => ({
         },
         '&:hover::after': {
             width: '120%'
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: '5rem'
         }
     },
     root: {
@@ -75,7 +85,7 @@ const SelectedWorks = ({ classes, ...props }) => {
                 title={textProvider?.title}
             />
 
-            <div className={internalClasses.projectsContainer}>
+            <div id="case-studies" className={internalClasses.projectsContainer}>
                 <Typography variant="h2" className={clsx(internalClasses.sectionTitle, 'fs-300 fw-600')}>
                     {textProvider?.caseStudiesTitle}
                 </Typography>
@@ -83,14 +93,17 @@ const SelectedWorks = ({ classes, ...props }) => {
                 <div className={internalClasses?.titleWrapper}>
                     {projectsList
                         ?.filter((project) => project?.type === 'case-study')
-                        ?.map((project) => (
+                        ?.map((project, index) => (
                             <div key={project.id}>
                                 {project?.status === 'ready' ? (
                                     <Link to={`/project/${project.id}`}>
                                         <Typography
                                             variant="h3"
-                                            className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
+                                            className={clsx(internalClasses.projectTitle, 'fw-600')}
                                         >
+                                            <span className={clsx(internalClasses.projectNumber, 'fw-500')}>
+                                                0{index + 1}/
+                                            </span>{' '}
                                             {project.title}
                                         </Typography>
                                     </Link>
@@ -99,15 +112,21 @@ const SelectedWorks = ({ classes, ...props }) => {
                                         variant="h3"
                                         className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
                                     >
+                                        {' '}
+                                        <span className={clsx(internalClasses.projectNumber, 'fw-500')}>
+                                            0{index + 1}/
+                                        </span>{' '}
                                         {project.title}
                                     </Typography>
                                 )}
-                                <Typography
-                                    variant="body1"
-                                    className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}
-                                >
-                                    {project.data?.[currentLanguage]?.subtitle}
-                                </Typography>
+                                <Hidden xsDown>
+                                    <Typography
+                                        variant="body1"
+                                        className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}
+                                    >
+                                        {project.data?.[currentLanguage]?.subtitle}
+                                    </Typography>
+                                </Hidden>
                             </div>
                         ))}
                 </div>
@@ -116,10 +135,10 @@ const SelectedWorks = ({ classes, ...props }) => {
                     {textProvider?.webDesignTitle}
                 </Typography>
 
-                <div className={internalClasses?.titleWrapper}>
+                <div id="web-design" className={internalClasses?.titleWrapper}>
                     {projectsList
                         ?.filter((project) => project?.type === 'web-design')
-                        ?.map((project) => (
+                        ?.map((project, index) => (
                             <div key={project.id}>
                                 {project?.status === 'ready' ? (
                                     <a target="_blank" rel="noreferrer" href={project.website}>
@@ -127,6 +146,9 @@ const SelectedWorks = ({ classes, ...props }) => {
                                             variant="h3"
                                             className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
                                         >
+                                            <span className={clsx(internalClasses.projectNumber, 'fw-500')}>
+                                                0{index + 1}/
+                                            </span>{' '}
                                             {project.title}
                                         </Typography>
                                     </a>
@@ -135,15 +157,20 @@ const SelectedWorks = ({ classes, ...props }) => {
                                         variant="h3"
                                         className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
                                     >
+                                        <span className={clsx(internalClasses.projectNumber, 'fw-500')}>
+                                            0{index + 1}/
+                                        </span>{' '}
                                         {project.title}
                                     </Typography>
                                 )}
-                                <Typography
-                                    variant="body1"
-                                    className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}
-                                >
-                                    {project[currentLanguage]?.subtitle}
-                                </Typography>
+                                <Hidden xsDown>
+                                    <Typography
+                                        variant="body1"
+                                        className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}
+                                    >
+                                        {project[currentLanguage]?.subtitle}
+                                    </Typography>
+                                </Hidden>
                             </div>
                         ))}
                 </div>

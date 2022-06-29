@@ -2,32 +2,59 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 
-import { Grid, makeStyles, Typography } from '@material-ui/core';
+import { Grid, Hidden, makeStyles, Typography } from '@material-ui/core';
 
 import SectionTitle from 'components/common/SectionTitle';
 
 const useStyles = makeStyles((theme) => ({
     availabilityLink: {
-        position: 'absolute',
-        bottom: '-30px',
-        width: '100vw',
-        color: theme.palette.type === 'light' ? theme.palette.text.primary : theme.palette.primary.main
+        fontSize: '2rem',
+        color: theme.palette.primary.main,
+        [theme.breakpoints.up('md')]: {
+            position: 'absolute',
+            bottom: '-30px',
+            width: '100vw',
+            color: theme.palette.type === 'light' ? theme.palette.text.primary : theme.palette.primary.main,
+            fontSize: '5rem'
+        }
     },
-    content: {},
+    content: {
+        fontSize: '1.1rem',
+        fontWeight: '600',
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1.4rem'
+        }
+    },
     contentHighlight: {
         color: theme.palette.primary.main,
-        marginTop: '1rem'
+        marginTop: '1rem',
+        fontSize: '1.3rem',
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1.5rem'
+        }
     },
     contentWrapper: {
         alignItems: 'flex-end',
         padding: '15vh 0'
     },
+    link: {
+        fontSize: '1.2rem',
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1rem'
+        }
+    },
     linksWrapper: {
         display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
         justifyContent: 'space-between',
         gap: '1rem',
         width: '100%',
-        marginBottom: '5vh'
+        marginBottom: '5vh',
+        [theme.breakpoints.up('md')]: {
+            flexDirection: 'row',
+            alignItems: 'center'
+        }
     },
     root: {
         padding: '10vh 0',
@@ -42,30 +69,46 @@ const About = ({ classes, ...props }) => {
 
     return (
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>
-            <SectionTitle title={textProvider?.title} />
+            <SectionTitle id="about" title={textProvider?.title} />
 
             <Grid spacing={8} container className={clsx(internalClasses.contentWrapper)}>
-                <Grid item xs={9}>
-                    <Typography variant="body1" className={clsx(internalClasses.content, 'fs-400')}>
+                <Grid item xs={12} md={9}>
+                    <Typography variant="body1" className={clsx(internalClasses.content)}>
                         {textProvider?.content}
                     </Typography>
-                    <Typography variant="body1" className={clsx(internalClasses.contentHighlight, 'fs-400 fw-600')}>
+                    <Typography variant="body1" className={clsx(internalClasses.contentHighlight, 'fw-600')}>
                         {textProvider?.contentHighlight}
                     </Typography>
                 </Grid>
-                <Grid item xs={3}>
+
+                <Hidden mdUp>
+                    <Grid item xs={6}>
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="mailto:gabrielapolancoferreyra@gmail.com"
+                            style={{ position: 'relative' }}
+                        >
+                            <Typography variant="body1" className={clsx(internalClasses.availabilityLink, 'fw-800')}>
+                                {textProvider?.askForAvailability}
+                            </Typography>
+                        </a>
+                    </Grid>
+                </Hidden>
+
+                <Grid item xs={6} md={3}>
                     <ul className={internalClasses.linksWrapper}>
-                        <li className="fs-100 fw-800">
+                        <li className={clsx(internalClasses.link, 'fw-800')}>
                             <a href={textProvider?.linkedinLink} target="_blank" rel="noreferrer">
                                 {textProvider?.linkedinLinkText}
                             </a>
                         </li>
-                        <li className="fs-100 fw-800">
+                        <li className={clsx(internalClasses.link, 'fw-800')}>
                             <a href={textProvider?.cvLink} download>
                                 {textProvider?.cvLinkText}
                             </a>
                         </li>
-                        <li className="fs-100 fw-800">
+                        <li className={clsx(internalClasses.link, 'fw-800')}>
                             <a href={textProvider?.behanceLink} target="_blank" rel="noreferrer">
                                 {textProvider?.behanceLinkText}
                             </a>
@@ -74,16 +117,18 @@ const About = ({ classes, ...props }) => {
                 </Grid>
             </Grid>
 
-            <a
-                target="_blank"
-                rel="noreferrer"
-                href="mailto:gabrielapolancoferreyra@gmail.com"
-                style={{ position: 'relative' }}
-            >
-                <Typography variant="body1" className={clsx(internalClasses.availabilityLink, 'fs-biggest fw-800')}>
-                    {textProvider?.askForAvailability}
-                </Typography>
-            </a>
+            <Hidden smDown>
+                <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="mailto:gabrielapolancoferreyra@gmail.com"
+                    style={{ position: 'relative' }}
+                >
+                    <Typography variant="body1" className={clsx(internalClasses.availabilityLink, 'fs-biggest fw-800')}>
+                        {textProvider?.askForAvailability}
+                    </Typography>
+                </a>
+            </Hidden>
         </div>
     );
 };
