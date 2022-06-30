@@ -124,7 +124,7 @@ const About = ({ classes, ...props }) => {
                     href="mailto:gabrielapolancoferreyra@gmail.com"
                     style={{ position: 'relative' }}
                 >
-                    <Typography variant="body1" className={clsx(internalClasses.availabilityLink, 'fs-biggest fw-800')}>
+                    <Typography variant="body1" className={clsx(internalClasses.availabilityLink, 'fw-800')}>
                         {textProvider?.askForAvailability}
                     </Typography>
                 </a>

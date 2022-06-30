@@ -1,3 +1,7 @@
+### v0.5.1
+
+-   Update: Fix some responsive errors.
+
 ### v0.5.0
 
 -   Feature: Make responsive.

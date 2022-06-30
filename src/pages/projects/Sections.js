@@ -35,11 +35,20 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     imageSizeNormal: {
-        height: '60vh'
+        height: '40vh',
+        [theme.breakpoints.up('md')]: {
+            height: '60vh'
+        }
     },
     imagesSlideWrapper: {
         display: 'flex',
-        gap: '2rem'
+        gap: '2rem',
+        flexWrap: 'wrap',
+        overflow: 'hidden',
+        [theme.breakpoints.up('md')]: {
+            flexWrap: 'nowrap',
+            overflow: 'visible'
+        }
     },
     paragraph: {
         marginBottom: '.4rem'
@@ -192,7 +201,7 @@ const Sections = ({ classes, ...props }) => {
                 </Grid>
             ))}
 
-            <Typography variant="body1" className={clsx(internalClasses.checkOutLink, 'fs-biggest fw-600')}>
+            <Typography variant="body1" className={clsx(internalClasses.checkOutLink, 'fw-600')}>
                 {textProvider?.checkHereLink}{' '}
                 <a rel="noreferrer" target="_blank" href={behanceLink} className={internalClasses?.hereLink}>
                     {textProvider?.hereTitle}

@@ -60,7 +60,8 @@ const rito = {
                         content: [
                             { src: rito2, alt: 'Rito 2' },
                             { src: rito3, alt: 'Rito 3' }
-                        ]
+                        ],
+                        size: 'auto'
                     },
                     {
                         type: 'paragraph',
@@ -173,7 +174,8 @@ const rito = {
                         content: [
                             { src: rito2, alt: 'Rito 2' },
                             { src: rito3, alt: 'Rito 3' }
-                        ]
+                        ],
+                        size: 'auto'
                     },
                     {
                         type: 'paragraph',

@@ -29,7 +29,8 @@ const spanishContent = {
         selectedWorks: {
             title: 'Selección de trabajos',
             caseStudiesTitle: 'Case Studies',
-            webDesignTitle: 'Diseño web'
+            webDesignTitle: 'Diseño web',
+            comingSoonTitle: 'próximanente'
         },
         about: {
             title: 'about me',

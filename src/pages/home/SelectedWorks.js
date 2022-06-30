@@ -8,6 +8,15 @@ import { Hidden, makeStyles, Typography } from '@material-ui/core';
 import SectionTitle from 'components/common/SectionTitle';
 
 const useStyles = makeStyles((theme) => ({
+    comingSoon: {
+        position: 'absolute',
+        zIndex: 3,
+        bottom: '50%',
+        right: '-10%',
+        transform: 'translateY(50%)',
+        fontSize: '1rem',
+        color: theme.palette.text.primary
+    },
     pageTitle: {
         color: '#ffffff'
     },
@@ -108,15 +117,17 @@ const SelectedWorks = ({ classes, ...props }) => {
                                         </Typography>
                                     </Link>
                                 ) : (
-                                    <Typography
-                                        variant="h3"
-                                        className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
-                                    >
+                                    <Typography variant="h3" className={clsx(internalClasses.projectTitle, 'fw-600')}>
                                         {' '}
                                         <span className={clsx(internalClasses.projectNumber, 'fw-500')}>
                                             0{index + 1}/
                                         </span>{' '}
                                         {project.title}
+                                        <Hidden smUp>
+                                            <span className={internalClasses.comingSoon}>
+                                                {textProvider?.comingSoonTitle}
+                                            </span>
+                                        </Hidden>
                                     </Typography>
                                 )}
                                 <Hidden xsDown>
@@ -144,7 +155,7 @@ const SelectedWorks = ({ classes, ...props }) => {
                                     <a target="_blank" rel="noreferrer" href={project.website}>
                                         <Typography
                                             variant="h3"
-                                            className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
+                                            className={clsx(internalClasses.projectTitle, 'fw-600')}
                                         >
                                             <span className={clsx(internalClasses.projectNumber, 'fw-500')}>
                                                 0{index + 1}/
@@ -153,14 +164,16 @@ const SelectedWorks = ({ classes, ...props }) => {
                                         </Typography>
                                     </a>
                                 ) : (
-                                    <Typography
-                                        variant="h3"
-                                        className={clsx(internalClasses.projectTitle, 'fs-biggest fw-600')}
-                                    >
+                                    <Typography variant="h3" className={clsx(internalClasses.projectTitle, 'fw-600')}>
                                         <span className={clsx(internalClasses.projectNumber, 'fw-500')}>
                                             0{index + 1}/
                                         </span>{' '}
                                         {project.title}
+                                        <Hidden smUp>
+                                            <span className={internalClasses.comingSoon}>
+                                                {textProvider?.comingSoonTitle}
+                                            </span>
+                                        </Hidden>
                                     </Typography>
                                 )}
                                 <Hidden xsDown>
