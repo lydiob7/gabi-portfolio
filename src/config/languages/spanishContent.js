@@ -24,7 +24,7 @@ const spanishContent = {
             subtitle3: 'que quiere ser parte ',
             subtitle4: 'Me mueve el deseo de hacer este mundo uno más accesible, justo y democrático.',
             subtitleBold1: '(muy empática)',
-            subtitleBold2: 'de la revolución digital'
+            subtitleBold2: 'de la revolución digital.'
         },
         selectedWorks: {
             title: 'Selección de trabajos',

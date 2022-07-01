@@ -144,21 +144,21 @@ const daomos = {
                         type: 'paragraph',
                         content: 'For the UI, I decided to create user interfaces that were:',
                         size: '200',
-                        weight: '600',
+                        weight: '500',
                         style: 'normal'
                     },
                     {
                         type: 'paragraph',
                         content: '1-Intuitive so it can be operated even by laypersons or untrained users.',
                         size: '200',
-                        weight: '600',
+                        weight: '500',
                         style: 'normal'
                     },
                     {
                         type: 'paragraph',
                         content: '2-Enjoyable and fun  (because it is always essential!)',
                         size: '200',
-                        weight: '600',
+                        weight: '500',
                         style: 'normal'
                     },
                     {
@@ -166,14 +166,14 @@ const daomos = {
                         content:
                             '3-Efficient and not much different from what users are used to dealing with or interacting with.',
                         size: '200',
-                        weight: '600',
+                        weight: '500',
                         style: 'normal'
                     },
                     {
                         type: 'paragraph',
                         content: 'The result is:',
                         size: '200',
-                        weight: '600',
+                        weight: '500',
                         style: 'normal'
                     },
                     {
@@ -194,7 +194,7 @@ const daomos = {
                         type: 'paragraph',
                         content: 'Take a look at the prototype.',
                         size: '200',
-                        weight: '600',
+                        weight: '500',
                         style: 'normal'
                     },
                     {
@@ -353,21 +353,21 @@ const daomos = {
                         type: 'paragraph',
                         content: 'Para la interfaz de usuario, decidí crear interfaces que fueran:',
                         size: '200',
-                        weight: '600',
+                        weight: '500',
                         style: 'normal'
                     },
                     {
                         type: 'paragraph',
                         content: '1-Intuitivas para que puedan ser manejadas incluso por usuarios no expertas.',
                         size: '200',
-                        weight: '600',
+                        weight: '500',
                         style: 'normal'
                     },
                     {
                         type: 'paragraph',
                         content: '2- Agradables y divertidas (porque siempre es esencial).',
                         size: '200',
-                        weight: '600',
+                        weight: '500',
                         style: 'normal'
                     },
                     {
@@ -375,14 +375,14 @@ const daomos = {
                         content:
                             '3-Eficaces y no muy diferentes de lo que los usuarios están acostumbrados a tratar o interactuar.',
                         size: '200',
-                        weight: '600',
+                        weight: '500',
                         style: 'normal'
                     },
                     {
                         type: 'paragraph',
                         content: 'El resultado es:',
                         size: '200',
-                        weight: '600',
+                        weight: '500',
                         style: 'normal'
                     },
                     {
@@ -403,7 +403,7 @@ const daomos = {
                         type: 'paragraph',
                         content: 'Mira el prototipo final',
                         size: '200',
-                        weight: '600',
+                        weight: '500',
                         style: 'normal'
                     },
                     {

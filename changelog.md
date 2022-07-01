@@ -1,3 +1,11 @@
+### v0.6.0
+
+-   Feature: Add meta tags.
+-   Bugfix: Fix bold paragraphs on daomos.
+-   Bugfix: Fix image on banner.
+-   Update: Add a square image to share.
+-   Bugfix: Move 'coming soon' string below project title on selected works.
+
 ### v0.5.1
 
 -   Update: Fix some responsive errors.

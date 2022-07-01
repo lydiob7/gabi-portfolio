@@ -11,11 +11,12 @@ const useStyles = makeStyles((theme) => ({
     comingSoon: {
         position: 'absolute',
         zIndex: 3,
-        bottom: '50%',
+        bottom: '-30%',
         right: '-10%',
-        transform: 'translateY(50%)',
         fontSize: '1rem',
-        color: theme.palette.text.primary
+        color: theme.palette.type === 'light' ? theme.palette.text.primary : theme.palette.primary.main
+        // textShadow:
+        //     theme.palette.type === 'dark' && '-1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000'
     },
     pageTitle: {
         color: '#ffffff'

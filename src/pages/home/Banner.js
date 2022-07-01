@@ -6,7 +6,11 @@ import { Grid, makeStyles, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     image: {
-        width: '90%'
+        width: '100%',
+        [theme.breakpoints.up('md')]: {
+            width: '90%',
+            marginLeft: '5%'
+        }
     },
     root: {
         position: 'relative',
@@ -58,8 +62,8 @@ const Banner = ({ classes, ...props }) => {
                     {textProvider?.subtitle4}
                 </Typography>
             </div>
-            <Grid item xs={false} sm={3} />
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={2} sm={3} />
+            <Grid item xs={8} sm={6}>
                 <img className={internalClasses.image} src="images/profile-picture.jpg" alt="Gabi Polanco profile" />
             </Grid>
         </Grid>
