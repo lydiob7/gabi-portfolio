@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     paragraph: {
+        fontFamily: "'Barlow', sans-serif",
         marginBottom: '.4rem'
     },
     section: {

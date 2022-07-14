@@ -11,7 +11,7 @@ const daomos = {
     en: {
         subtitle: 'Dapp for DAOs',
         overview: [
-            'For this project, I worked with Jaoa Pereira (Build up Labs) as the stakeholder, and the research for this project was teamwork with Catarina Silva.',
+            'For this project, I worked with Joao Pereira (Build up Labs) as the stakeholder, and the research for this project was teamwork with Catarina Silva.',
             'The challenge was to create a tool to enhance DAOs and keep contributing to the decentralization of the web3 ecosystem.'
         ],
         scope: 'User research, analyzing, user flow, information architecture, wireframing, mock-up, design system, prototyping, and usability testing.',
@@ -212,7 +212,7 @@ const daomos = {
     es: {
         subtitle: 'Una Dapp para DAOs',
         overview: [
-            'Para este proyecto, trabajé con Jaoa Pereira (Build up Labs), como parte interesada. La investigación para este proyecto fue un trabajo en equipo con Catarina Silva.',
+            'Para este proyecto, trabajé con Joao Pereira (Build up Labs), como parte interesada. La investigación para este proyecto fue un trabajo en equipo con Catarina Silva.',
             'El principal desafío fue crear una herramienta para mejorar los DAOs y seguir contribuyendo a la automatización y descentralización del ecosistema web3. '
         ],
         scope: 'Investigación de usuarios, análisis, flujo de usuarios, arquitectura de la información, wireframing, mock-up, sistema de diseño, prototipado y pruebas de usabilidad.',

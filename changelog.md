@@ -1,3 +1,7 @@
+### v0.7.0
+
+-   Update: Change font family of case studies to Barlow.
+
 ### v0.6.0
 
 -   Feature: Add meta tags.

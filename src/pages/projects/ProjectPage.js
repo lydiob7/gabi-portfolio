@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
         top: '5vh'
     },
     checkOutLink: {
+        fontFamily: "'Barlow', sans-serif",
         fontSize: '1.5rem',
         color: theme.palette.primary.main,
         fontWeight: 500,
@@ -61,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: '40vh'
     },
     sectionContent: {
+        fontFamily: "'Barlow', sans-serif",
         fontSize: '1rem',
         [theme.breakpoints.up('sm')]: {
             fontSize: '1.2rem'
@@ -110,14 +112,17 @@ const ProjectPage = ({ classes, ...props }) => {
                                     project[section].map((subsection) => (
                                         <Typography
                                             key={subsection}
-                                            variant="h3"
+                                            variant="body1"
                                             className={clsx(internalClasses.sectionContent, 'fw-400')}
                                         >
                                             {subsection}
                                         </Typography>
                                     ))
                                 ) : (
-                                    <Typography variant="h3" className={clsx(internalClasses.sectionContent, 'fw-400')}>
+                                    <Typography
+                                        variant="body1"
+                                        className={clsx(internalClasses.sectionContent, 'fw-400')}
+                                    >
                                         {project[section]}
                                     </Typography>
                                 )}
