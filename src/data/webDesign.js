@@ -1,13 +1,13 @@
 const array = [
     {
-        id: 'tierra-roja',
-        website: 'https://tierra-roja.herokuapp.com/',
-        title: 'Tierra roja',
+        id: 'tomi-scattini',
+        website: 'https://tomiscattini.com/',
+        title: 'Tomi Scattini',
         en: {
-            subtitle: 'Web app for clay artists in Misiones'
+            subtitle: 'Full stack developer portfolio'
         },
         es: {
-            subtitle: 'Web app para ceramistas en Misiones'
+            subtitle: 'Portfolio de Desarrollador full-stack'
         },
         type: 'web-design',
         status: 'ready'
@@ -25,32 +25,32 @@ const array = [
         type: 'web-design',
         status: 'ready'
     },
-    // {
-    //     id: 'tomi-scattini',
-    //     title: 'Tomi Scattini',
-    //     website: 'https://tomiscattini.com/',
-    //     en: {
-    //         subtitle: 'Full stack developer portfolio'
-    //     },
-    //     es: {
-    //         subtitle: 'Portfolio de Desarrollador full-stack'
-    //     },
-    //     type: 'web-design',
-    //     status: 'ready'
-    // },
     {
-        id: 'vaikuntha',
-        website: 'https://vaikuntha.com.ar/',
-        title: 'Vaikuntha',
+        id: 'tierra-roja',
+        website: 'https://tierra-roja.herokuapp.com/',
+        title: 'Tierra roja',
         en: {
-            subtitle: 'Ceramist portfolio (coming soon)'
+            subtitle: 'Web app for clay artists in Misiones'
         },
         es: {
-            subtitle: 'Portfolio de Ceramista (próximanente)'
+            subtitle: 'Web app para ceramistas en Misiones'
         },
         type: 'web-design',
-        status: 'in-progress'
+        status: 'ready'
     }
+    // {
+    //     id: 'vaikuntha',
+    //     website: 'https://vaikuntha.com.ar/',
+    //     title: 'Vaikuntha',
+    //     en: {
+    //         subtitle: 'Ceramist portfolio (coming soon)'
+    //     },
+    //     es: {
+    //         subtitle: 'Portfolio de Ceramista (próximanente)'
+    //     },
+    //     type: 'web-design',
+    //     status: 'in-progress'
+    // }
 ];
 
 export default array;

@@ -1,3 +1,7 @@
+### v1.0.0
+
+-   Feature: Add Tomi portfolio and remove Vaikuntha.
+
 ### v0.7.0
 
 -   Update: Change font family of case studies to Barlow.
