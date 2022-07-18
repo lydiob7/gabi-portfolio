@@ -1,3 +1,7 @@
+### v1.1.0
+
+-   Update: Update meta tags and share image.
+
 ### v1.0.0
 
 -   Feature: Add Tomi portfolio and remove Vaikuntha.
