@@ -11,6 +11,10 @@
 # production
 /build
 
+# other folders
+
+/ignore_files
+
 # misc
 .DS_Store
 .env

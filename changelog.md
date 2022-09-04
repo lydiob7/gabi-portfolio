@@ -1,3 +1,8 @@
+### v1.2.0
+
+-   Feature: Add social media icons.
+-   Update: Make about section white.
+
 ### v1.1.0
 
 -   Update: Update meta tags and share image.

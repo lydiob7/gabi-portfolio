@@ -4,6 +4,8 @@ import clsx from 'clsx';
 
 import { Grid, makeStyles, Typography } from '@material-ui/core';
 
+import MediaList from 'components/common/MediaList';
+
 const useStyles = makeStyles((theme) => ({
     image: {
         width: '100%',
@@ -11,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
             width: '90%',
             marginLeft: '5%'
         }
+    },
+    mediaLinks: {
+        margin: '2rem auto'
     },
     root: {
         position: 'relative',
@@ -61,6 +66,8 @@ const Banner = ({ classes, ...props }) => {
                 <Typography className={clsx(internalClasses.subtitle, 'fs-200 fw-400')} variant="h1">
                     {textProvider?.subtitle4}
                 </Typography>
+
+                <MediaList classes={{ root: internalClasses.mediaLinks }} />
             </div>
             <Grid item xs={2} sm={3} />
             <Grid item xs={8} sm={6}>

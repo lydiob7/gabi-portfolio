@@ -30,7 +30,7 @@ const HomePage = ({ classes, ...props }) => {
                     <SelectedWorks />
                 </Container>
             </div>
-            <div className={internalClasses.beigeBackground}>
+            <div>
                 <Container maxWidth="md">
                     <About />
                 </Container>

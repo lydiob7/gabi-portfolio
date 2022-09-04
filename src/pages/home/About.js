@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { Grid, Hidden, makeStyles, Typography } from '@material-ui/core';
 
 import SectionTitle from 'components/common/SectionTitle';
+import MediaList from 'components/common/MediaList';
 
 const useStyles = makeStyles((theme) => ({
     availabilityLink: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
     content: {
         fontSize: '1.1rem',
-        fontWeight: '600',
+        fontWeight: '500',
         [theme.breakpoints.up('md')]: {
             fontSize: '1.4rem'
         }
@@ -55,6 +56,9 @@ const useStyles = makeStyles((theme) => ({
             flexDirection: 'row',
             alignItems: 'center'
         }
+    },
+    mediaLinks: {
+        marginBottom: '2rem'
     },
     root: {
         padding: '10vh 0',
@@ -97,23 +101,7 @@ const About = ({ classes, ...props }) => {
                 </Hidden>
 
                 <Grid item xs={6} md={3}>
-                    <ul className={internalClasses.linksWrapper}>
-                        <li className={clsx(internalClasses.link, 'fw-800')}>
-                            <a href={textProvider?.linkedinLink} target="_blank" rel="noreferrer">
-                                {textProvider?.linkedinLinkText}
-                            </a>
-                        </li>
-                        <li className={clsx(internalClasses.link, 'fw-800')}>
-                            <a href={textProvider?.cvLink} download>
-                                {textProvider?.cvLinkText}
-                            </a>
-                        </li>
-                        <li className={clsx(internalClasses.link, 'fw-800')}>
-                            <a href={textProvider?.behanceLink} target="_blank" rel="noreferrer">
-                                {textProvider?.behanceLinkText}
-                            </a>
-                        </li>
-                    </ul>
+                    <MediaList classes={{ root: internalClasses.mediaLinks }} size="small" />
                 </Grid>
             </Grid>
 
