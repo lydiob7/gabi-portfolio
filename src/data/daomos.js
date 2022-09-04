@@ -16,6 +16,10 @@ const daomos = {
         ],
         scope: 'User research, analyzing, user flow, information architecture, wireframing, mock-up, design system, prototyping, and usability testing.',
         categories: 'Mobile',
+        brief: [],
+        research: [],
+        visualConcept: [],
+        prototype: [],
         post: [
             {
                 sectionNumber: '01',
@@ -217,6 +221,10 @@ const daomos = {
         ],
         scope: 'Investigación de usuarios, análisis, flujo de usuarios, arquitectura de la información, wireframing, mock-up, sistema de diseño, prototipado y pruebas de usabilidad.',
         categories: 'Movil',
+        brief: [],
+        research: [],
+        visualConcept: [],
+        prototype: [],
         post: [
             {
                 sectionNumber: '01',

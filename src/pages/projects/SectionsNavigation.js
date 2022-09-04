@@ -1,24 +1,34 @@
-import React from 'react';
-import { HashLink } from 'react-router-hash-link';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 
-import { Grid, makeStyles } from '@material-ui/core';
+import { Accordion, AccordionSummary, AccordionDetails, Grid, makeStyles } from '@material-ui/core';
+
+import ImageModal from '../../components/modals/ImageModal';
+import renderProperElement from './components/renderProperElement';
 
 const useStyles = makeStyles((theme) => ({
-    navLink: {
-        position: 'relative',
-        marginBottom: '1.5rem',
-        width: '100%',
+    accordion: {
+        backgroundColor: 'transparent',
+        boxShadow: 'none',
+        '&:before': {
+            display: 'none'
+        },
         '&::after': {
             content: '""',
             position: 'absolute',
-            width: '80%',
+            width: '100%',
             bottom: '0',
             left: 0,
             borderBottom: `1px solid ${theme.palette.text.primary}`
-        },
-        '& a': {
+        }
+    },
+    accordionDetails: {
+        padding: '2rem'
+    },
+    navLink: {
+        position: 'relative',
+        '& .MuiAccordionSummary-content': {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -26,7 +36,8 @@ const useStyles = makeStyles((theme) => ({
             '& .text': {
                 width: '35%'
             }
-        }
+        },
+        width: '100%'
     },
     root: {}
 }));
@@ -34,22 +45,29 @@ const useStyles = makeStyles((theme) => ({
 const SectionsNavigation = ({ classes, ...props }) => {
     const internalClasses = useStyles();
 
+    const [imageToOpen, setImageToOpen] = useState(null);
+
+    const project = useSelector(({ entities }) => entities.projects.currentProject);
     const textProvider = useSelector(({ ui }) => ui.textContent.projectPage);
 
     return (
         <Grid component="nav" item xs={12} className={clsx(internalClasses.root, classes?.root)} {...props}>
-            <ul>
-                {['brief', 'research', 'visualConcept', 'prototype'].map((navItem, index) => (
-                    <React.Fragment key={navItem}>
-                        <li className={internalClasses.navLink}>
-                            <HashLink to={`#${navItem}`}>
-                                <span className="fs-200">0{index + 1}.</span>{' '}
-                                <span className="text fs-800 fw-800">{textProvider[`${navItem}Label`]}</span>
-                            </HashLink>
-                        </li>
-                    </React.Fragment>
-                ))}
-            </ul>
+            {['brief', 'research', 'visualConcept', 'prototype'].map((navItem, index) => (
+                <Accordion key={navItem} classes={{ root: internalClasses.accordion }}>
+                    <AccordionSummary classes={{ root: internalClasses.navLink }}>
+                        <span className="fs-200">0{index + 1}.</span>{' '}
+                        <span className="text fs-800 fw-800">{textProvider[`${navItem}Label`]}</span>
+                    </AccordionSummary>
+
+                    <AccordionDetails classes={{ root: internalClasses.accordionDetails }}>
+                        <Grid item container xs={12}>
+                            {project?.[navItem]?.map((item) => renderProperElement(item, setImageToOpen))}
+                        </Grid>
+                    </AccordionDetails>
+                </Accordion>
+            ))}
+
+            <ImageModal open={!!imageToOpen} onClose={() => setImageToOpen(null)} imageUrl={imageToOpen} />
         </Grid>
     );
 };

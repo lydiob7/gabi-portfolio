@@ -4,6 +4,10 @@ import navis from 'data/navis';
 import rito from 'data/rito';
 import webDesign from 'data/webDesign';
 
+import daomosImg from 'assets/images/projects/daomos.jpg';
+import navisImg from 'assets/images/projects/navis.jpg';
+import ritoImg from 'assets/images/projects/rito.jpg';
+
 export const setProject = (projectId) => (dispatch, getState) => {
     const currentLanguage = getState()?.ui?.appSettings?.currentLanguage;
     const stateList = getState()?.entities?.projects?.list;
@@ -29,7 +33,8 @@ const slice = createSlice({
                 data: daomos,
                 title: daomos?.title,
                 type: 'case-study',
-                status: 'ready'
+                status: 'ready',
+                img: daomosImg
             },
             {
                 id: rito?.id,
@@ -37,7 +42,8 @@ const slice = createSlice({
                 data: rito,
                 title: rito?.title,
                 type: 'case-study',
-                status: 'ready'
+                status: 'ready',
+                img: ritoImg
             },
             {
                 id: navis?.id,
@@ -45,7 +51,8 @@ const slice = createSlice({
                 data: navis,
                 title: navis?.title,
                 type: 'case-study',
-                status: 'in-progress'
+                status: 'in-progress',
+                img: navisImg
             },
             ...webDesign
         ],

@@ -9,6 +9,7 @@ import { defaultRedirects } from 'config';
 const AppRoute = ({
     component: Component,
     footer,
+    gsap,
     history,
     layout = true,
     noLayoutFooter = false,
@@ -38,11 +39,11 @@ const AppRoute = ({
                 <>
                     {layout ? (
                         <LayoutDefault footer={footer} scrollBtn={scrollBtn}>
-                            <Component {...componentProps} />
+                            <Component gsap={gsap} {...componentProps} />
                         </LayoutDefault>
                     ) : (
                         <NoLayout footer={noLayoutFooter} scrollBtn={noLayoutBtn}>
-                            <Component {...componentProps} />
+                            <Component gsap={gsap} {...componentProps} />
                         </NoLayout>
                     )}
                 </>

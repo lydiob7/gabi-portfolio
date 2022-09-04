@@ -2,6 +2,8 @@
 
 -   Feature: Add social media icons.
 -   Update: Make about section white.
+-   Feature: Add animations on home page.
+-   Feature: Add accordions on sections of project.
 
 ### v1.1.0
 

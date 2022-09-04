@@ -14,25 +14,30 @@ const useStyles = makeStyles((theme) => ({
     purpleBackground: {
         backgroundColor: theme.palette?.type === 'light' ? theme.palette.primary.main : theme.palette.background.default
     },
-    root: {}
+    root: {
+        paddingTop: '130px',
+        [theme.breakpoints.up('sm')]: {
+            paddingTop: '80px'
+        }
+    }
 }));
 
-const HomePage = ({ classes, ...props }) => {
+const HomePage = ({ classes, gsap, ...props }) => {
     const internalClasses = useStyles();
 
     return (
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>
             <Container maxWidth="md">
-                <Banner />
+                <Banner gsap={gsap} />
             </Container>
             <div className={internalClasses.purpleBackground}>
                 <Container maxWidth="md">
-                    <SelectedWorks />
+                    <SelectedWorks gsap={gsap} />
                 </Container>
             </div>
             <div>
                 <Container maxWidth="md">
-                    <About />
+                    <About gsap={gsap} />
                 </Container>
             </div>
         </div>

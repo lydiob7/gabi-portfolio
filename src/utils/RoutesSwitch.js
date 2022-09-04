@@ -8,7 +8,7 @@ import { AppRoute } from 'utils';
 import MantainancePage from 'pages/others/MantainancePage';
 import { routes } from 'config';
 
-const RoutesSwitch = () => {
+const RoutesSwitch = ({ gsap }) => {
     const mantainanceMode = useSelector(({ ui }) => ui.appSettings.mantainanceMode);
 
     return (
@@ -26,7 +26,13 @@ const RoutesSwitch = () => {
 
                     return (
                         <Route exact={exact} path={path} key={path + index}>
-                            <AppRoute component={component} path={path} privateRoute={privateRoute} {...rest} />
+                            <AppRoute
+                                component={component}
+                                gsap={gsap}
+                                path={path}
+                                privateRoute={privateRoute}
+                                {...rest}
+                            />
                         </Route>
                     );
                 })

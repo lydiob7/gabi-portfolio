@@ -19,8 +19,9 @@ const useStyles = makeStyles((theme) => ({
         zIndex: 2
     },
     root: {
-        position: 'relative',
+        position: 'absolute',
         display: 'flex',
+        zIndex: 2,
         alignItems: 'center',
         minHeight: '80px',
         minWidth: '100vw',
