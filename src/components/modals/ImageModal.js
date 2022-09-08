@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         height: '85vh',
         overflowX: 'scroll',
         overflowY: 'scroll',
-        background: '#eeeeee',
+        background: 'transparent',
         '& img': {
             objectFit: 'cover',
             width: '100%',

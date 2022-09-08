@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     root: {},
     paragraph: {
         fontFamily: "'Barlow', sans-serif",
-        marginBottom: '.4rem'
+        marginBottom: '1rem'
     }
 }));
 

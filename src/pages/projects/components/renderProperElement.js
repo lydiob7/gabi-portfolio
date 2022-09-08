@@ -1,14 +1,18 @@
 import Image from './Image';
+import ImagesGrid from './ImagesGrid';
 import ImagesSlide from './ImagesSlide';
+import List from './List';
 import Paragraph from './Paragraph';
 import Video from './Video';
 
 const renderProperElement = ({ type, ...rest }, setImageToOpen) => {
     const itemOptions = {
         image: Image,
-        video: Video,
+        'images-grid': ImagesGrid,
+        'images-slide': ImagesSlide,
+        list: List,
         paragraph: Paragraph,
-        'images-slide': ImagesSlide
+        video: Video
     };
     const Component = itemOptions[type];
 

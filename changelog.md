@@ -4,6 +4,7 @@
 -   Update: Make about section white.
 -   Feature: Add animations on home page.
 -   Feature: Add accordions on sections of project.
+-   Feature: Update projects sections and rito content.
 
 ### v1.1.0
 

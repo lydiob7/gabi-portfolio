@@ -27,9 +27,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     root: {},
-    sectionContent: {
-        margin: '2rem 0'
-    }
+    sectionContent: {}
 }));
 
 const Image = ({ content, setImageToOpen }) => {

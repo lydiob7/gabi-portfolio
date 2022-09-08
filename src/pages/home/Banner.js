@@ -54,10 +54,10 @@ const Banner = ({ classes, gsap, ...props }) => {
     const textProvider = useSelector(({ ui }) => ui.textContent?.homePage?.banner);
 
     useLayoutEffect(() => {
-        gsap.to('.title', { opacity: 1, duration: 1, delay: 0.5 });
-        gsap.to('.p1', { opacity: 1, duration: 1, delay: 0.8 });
-        gsap.to('.links', { opacity: 1, duration: 1, delay: 1.5 });
-        gsap.to('.image', { opacity: 1, duration: 1, delay: 1.2 });
+        gsap.to('.title', { opacity: 1, duration: 0.5, delay: 0.3 });
+        gsap.to('.p1', { opacity: 1, duration: 0.5, delay: 0.6 });
+        gsap.to('.links', { opacity: 1, duration: 0.5, delay: 1 });
+        gsap.to('.image', { opacity: 1, duration: 0.5, delay: 0.8 });
     }, [gsap]);
 
     return (

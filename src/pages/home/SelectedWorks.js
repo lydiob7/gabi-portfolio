@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
                     transform: 'skew(2deg, 3deg) rotateY(-10deg)'
                 },
                 '&.skew-2': {
-                    transform: 'skew(0, 2deg) rotateY(-10deg)'
+                    transform: 'skew(0, -1deg) rotateY(-10deg)'
                 },
                 '&.skew-3': {
                     transform: 'skew(-2deg, -3deg) rotateY(-10deg)'
