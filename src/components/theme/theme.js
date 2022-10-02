@@ -10,15 +10,24 @@ export const theme = (color) =>
             secondary: {
                 main: '#82816D'
             },
-            beige: {
-                main: '#DED7C5'
+            green: {
+                main: '#83C493'
             },
             background: {
                 default: color === 'light' ? '#FFFFFF' : '#0A010B',
                 paper: color === 'light' ? '#FFFFFF' : '#303030'
             },
             text: {
-                primary: color === 'light' ? 'rgba(0, 0, 0, 0.87)' : '#DED7C5'
+                primary: color === 'light' ? 'rgba(0, 0, 0, 0.87)' : '#FFFFFF'
+            }
+        },
+        breakpoints: {
+            values: {
+                xs: 0,
+                sm: 600,
+                md: 768,
+                lg: 1200,
+                xl: 1920
             }
         },
         typography: {

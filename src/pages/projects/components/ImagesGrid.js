@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 import { Grid, makeStyles } from '@material-ui/core';
+import { getRandomId } from 'utils/helpers';
 
 const useStyles = makeStyles((theme) => ({
     image: {
@@ -54,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const ImagesGrid = ({ content, setImageToOpen, size }) => {
+const ImagesGrid = ({ content, setImageToOpen, size, ...rest }) => {
     const internalClasses = useStyles();
 
     const sizeClass = size === 'auto' ? internalClasses.imageSizeAuto : internalClasses.imageSizeNormal;
@@ -64,8 +65,9 @@ const ImagesGrid = ({ content, setImageToOpen, size }) => {
                 {Array.isArray(content) &&
                     content.map((item) => (
                         <div
+                            key={getRandomId()}
                             onClick={() => setImageToOpen(item?.src)}
-                            className={clsx(internalClasses.image, sizeClass)}
+                            className={clsx(internalClasses.image, sizeClass, 'fade-in')}
                         >
                             {item?.src && <img src={item?.src} alt={item?.alt} />}
                         </div>

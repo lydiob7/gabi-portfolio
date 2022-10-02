@@ -99,7 +99,11 @@ const useStyles = makeStyles((theme) => ({
     },
     mainNavigationWrapper: {
         display: 'flex',
-        alignItems: 'center'
+        position: 'relative',
+        alignItems: 'center',
+        [theme.breakpoints.up('md')]: {
+            width: '100%'
+        }
     },
     mainNavigationListItem: {
         '& .MuiButton-textPrimary': {
@@ -124,7 +128,13 @@ const useStyles = makeStyles((theme) => ({
     themeButton: {
         display: 'flex',
         alignItems: 'center',
-        margin: '0 10px'
+        margin: '0 10px',
+        [theme.breakpoints.up('md')]: {
+            position: 'absolute',
+            zIndex: '9999',
+            left: '50%',
+            transform: 'translateX(-50%)'
+        }
     },
     themeIcon: {
         margin: '0 5px',

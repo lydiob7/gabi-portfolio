@@ -17,11 +17,11 @@ const englishContent = {
     },
     homePage: {
         banner: {
-            title: 'Hola world, I am Gabi Polanco-Ferreyra',
+            title: 'Hola world, I am Gabi Polanco Ferreyra',
             subtitle:
-                'My background in law allowed me to develop and exercise my empathic view of the world; my limitless curiosity and desire to create led me to study design in a self-taught and formal way.',
-            subtitle2: 'The result is: Gabi, a new UX/UI',
-            subtitle3: 'designer who wants to be part of the ',
+                'My background in law allowed me to develop my empathic view of the world, and my limitless curiosity led me to study different design programs in a self-taught and formal way.',
+            subtitle2: 'The result: Gabi,',
+            subtitle3: 'new UX/UI designer who wants to be part of the ',
             subtitle4: "I'm driven by the desire to make this world more accessible, fair, and democratic.",
             subtitleBold1: '(very empathic)',
             subtitleBold2: 'digital revolution.'
@@ -33,10 +33,13 @@ const englishContent = {
             comingSoonTitle: 'Coming soon'
         },
         about: {
-            title: 'about me',
-            content:
-                'I am Gabi Polanco-Ferreyra and I come from a colorful background. I graduated from Law School, did a master’s in Mediation and Conflict Resolutions, and worked in government for many years before I dedicated myself to being a full-time traveler around the world for a few months. I tried a lot of other jobs before committing to my creative talents full-time. I love to travel, see the world, camp, hike mountains, and meet people (really). My dream is to sail around the world one day.',
-            contentHighlight: 'I am on my creative-human journey, and ME ENCANTA.',
+            title: 'About me',
+            content: [
+                "I'm from Argentina, and I've been living and traveling to different places for the last few years; I'm currently in NYC. My former profession was as a lawyer in Argentina, but I've been trying to make my way in the tech world for two years now.",
+                'I love traveling, seeing the world, learning about cultures and languages, camping, hiking mountains, and meeting people (really). My dream is to sail around the world one day.'
+            ],
+            content2: 'I am on my creative-human journey, and',
+            contentHighlight: 'me encanta.',
             linkedinLinkText: 'Linkedin',
             linkedinLink: 'https://www.linkedin.com/in/gabriela-polanco-ferreyra-b5b25717a/',
             mediumLinkText: 'Medium',

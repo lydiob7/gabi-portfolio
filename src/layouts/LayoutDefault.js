@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const LayoutDefault = ({ children, footer, scrollBtn }) => {
+const LayoutDefault = ({ children, footer, gsap, scrollBtn }) => {
     const internalClasses = useStyles();
 
     const headerFixed = useSelector(({ ui }) => ui.headerSettings.fixed);
@@ -45,11 +45,11 @@ const LayoutDefault = ({ children, footer, scrollBtn }) => {
             <HashLink className={internalClasses.skipAnchor} to="#main-wrapper">
                 {textProvider?.skipNavigationAnchor}
             </HashLink>
-            <GeneralHeader fixed={headerFixed} />
+            <GeneralHeader fixed={headerFixed} gsap={gsap} />
             <div id="main-wrapper" className={clsx(internalClasses.pageWrapper)}>
                 {children}
             </div>
-            {showBtn && <ScrollTopBtn />}
+            {showBtn && <ScrollTopBtn gsap={gsap} />}
             {showFooter && <Footer />}
             <ToastMessage fixed={headerFixed} />
         </div>

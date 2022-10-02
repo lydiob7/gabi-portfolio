@@ -17,14 +17,14 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const Behance = ({ classes, width = '40', height = '26', size = 'default', ...props }) => {
+const Behance = ({ className, width = '40', height = '26', size = 'default', ...props }) => {
     const internalClasses = useStyles();
 
     return (
         <svg
             className={clsx(
                 internalClasses.root,
-                classes?.root,
+                className,
                 size === 'small' ? internalClasses.small : '',
                 size === 'large' ? internalClasses.large : ''
             )}

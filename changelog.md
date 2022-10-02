@@ -5,6 +5,8 @@
 -   Feature: Add animations on home page.
 -   Feature: Add accordions on sections of project.
 -   Feature: Update projects sections and rito content.
+-   Feature: Update bio and banner images
+-   Feature: Update Rito text and animations.
 
 ### v1.1.0
 

@@ -1,3 +1,5 @@
+const getRandomId = () => Math.random().toString(36).slice(2);
+
 function parsePath(uri = '') {
     return `${process.env.PUBLIC_URL}${uri}`;
 }
@@ -14,4 +16,4 @@ const parseSeconds = (time) => {
 
 const mantainancePath = '/mantainance';
 
-export { mantainancePath, parsePath, parseSeconds };
+export { getRandomId, mantainancePath, parsePath, parseSeconds };

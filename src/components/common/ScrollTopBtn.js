@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
-import { useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 
 import { Hidden, makeStyles } from '@material-ui/core';
@@ -10,8 +8,11 @@ const useStyles = makeStyles((theme) => ({
     root: {
         position: 'fixed',
         right: '8vw',
-        bottom: '5vh',
+        top: '85vh',
         zIndex: 999,
+        [theme.breakpoints.up('sm')]: {
+            top: '80vh'
+        },
         [theme.breakpoints.up('md')]: {
             right: '10vw',
             bottom: '10vh'
@@ -44,9 +45,13 @@ const useStyles = makeStyles((theme) => ({
         cursor: 'pointer',
         transform: 'rotate(180deg)',
         transition: 'transform .4s ease',
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('sm')]: {
             width: '100px',
             height: '100px'
+        },
+        [theme.breakpoints.up('md')]: {
+            width: '122px',
+            height: '122px'
         },
         '& svg': {
             transition: 'transform .4s ease'
@@ -65,16 +70,11 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const rootElement = document.documentElement;
-
-function ScrollTopBtn() {
+function ScrollTopBtn({ gsap }) {
     const internalClasses = useStyles();
-    const location = useLocation();
 
     const [section, setSection] = useState(1);
     const [isArrowWhite, setIsArrowWhite] = useState(false);
-
-    const themeColor = useSelector(({ ui }) => ui.appSettings?.theme);
 
     const hashLinkOptions = {
         1: '#case-studies',
@@ -84,36 +84,68 @@ function ScrollTopBtn() {
     };
 
     useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if (rootElement.scrollTop > 1900) setSection(4);
-            else if (rootElement.scrollTop > 1200) setSection(3);
-            else if (rootElement.scrollTop > 500) setSection(2);
-            else setSection(1);
-            if (themeColor === 'light' && location.pathname === '/home') {
-                if (rootElement.scrollTop > 1660) setIsArrowWhite(false);
-                else if (rootElement.scrollTop > 210) setIsArrowWhite(true);
-                else setIsArrowWhite(false);
-            } else setIsArrowWhite(false);
+        gsap.to('.scroll-top-btn', {
+            scrollTrigger: {
+                trigger: '#banner',
+                start: 'top top+=100',
+                end: 'bottom bottom-=100',
+                onToggle: ({ isActive }) => {
+                    if (isActive) {
+                        setSection(1);
+                    }
+                }
+            }
         });
-
-        return () => window.removeEventListener('scroll', () => {});
-    }, [location.pathname, themeColor]);
-
-    // function scroll() {
-    //     const sectionOptions = {
-    //         1: 791,
-    //         2: 1450,
-    //         3: 2400,
-    //         4: 0
-    //     };
-    //     rootElement.scrollTo({
-    //         top: sectionOptions[section],
-    //         behavior: 'smooth'
-    //     });
-    // }
+        gsap.to('.scroll-top-btn', {
+            scrollTrigger: {
+                trigger: '#selected-works',
+                start: 'top top+=100',
+                end: 'bottom top+=100',
+                onToggle: ({ isActive }) => {
+                    if (isActive) {
+                        setSection(2);
+                    }
+                }
+            }
+        });
+        gsap.to('.scroll-top-btn', {
+            scrollTrigger: {
+                trigger: '#selected-works',
+                start: 'top bottom',
+                end: 'bottom bottom-=100',
+                onToggle: ({ isActive }) => {
+                    if (isActive) {
+                        setIsArrowWhite(true);
+                    } else setIsArrowWhite(false);
+                }
+            }
+        });
+        gsap.to('.scroll-top-btn', {
+            scrollTrigger: {
+                trigger: '#web-design-content',
+                start: 'top-=100 top+=100',
+                onToggle: ({ isActive }) => {
+                    if (isActive) {
+                        setSection(3);
+                    }
+                }
+            }
+        });
+        gsap.to('.scroll-top-btn', {
+            scrollTrigger: {
+                trigger: '#about',
+                start: 'top top+=100',
+                onToggle: ({ isActive }) => {
+                    if (isActive) {
+                        setSection(4);
+                    }
+                }
+            }
+        });
+    }, [gsap]);
 
     return (
-        <div className={internalClasses.root}>
+        <div className={clsx(internalClasses.root, 'scroll-top-btn')}>
             <HashLink
                 to={hashLinkOptions[section]}
                 className={clsx(
@@ -122,7 +154,7 @@ function ScrollTopBtn() {
                     isArrowWhite ? internalClasses.whiteBackground : internalClasses.purpleBackground
                 )}
             >
-                <Hidden smDown>
+                <Hidden xsDown>
                     <svg width="16" height="82" viewBox="0 0 24 92" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M13.0607 0.939339C12.4749 0.353554 11.5251 0.353554 10.9394 0.939339L1.39341 10.4853C0.807624 11.0711 0.807624 12.0208 1.39341 12.6066C1.9792 13.1924 2.92894 13.1924 3.51473 12.6066L12 4.12132L20.4853 12.6066C21.0711 13.1924 22.0208 13.1924 22.6066 12.6066C23.1924 12.0208 23.1924 11.0711 22.6066 10.4853L13.0607 0.939339ZM13.5 92L13.5 2L10.5 2L10.5 92L13.5 92Z"
@@ -130,7 +162,7 @@ function ScrollTopBtn() {
                         />
                     </svg>
                 </Hidden>
-                <Hidden mdUp>
+                <Hidden smUp>
                     <svg width="9" height="50" viewBox="0 0 24 92" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M13.0607 0.939339C12.4749 0.353554 11.5251 0.353554 10.9394 0.939339L1.39341 10.4853C0.807624 11.0711 0.807624 12.0208 1.39341 12.6066C1.9792 13.1924 2.92894 13.1924 3.51473 12.6066L12 4.12132L20.4853 12.6066C21.0711 13.1924 22.0208 13.1924 22.6066 12.6066C23.1924 12.0208 23.1924 11.0711 22.6066 10.4853L13.0607 0.939339ZM13.5 92L13.5 2L10.5 2L10.5 92L13.5 92Z"

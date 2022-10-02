@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
@@ -19,10 +19,11 @@ const useStyles = makeStyles((theme) => ({
         '& .project-image': {
             position: 'absolute',
             overflow: 'hidden',
-            right: '0',
+            right: '10%',
             top: '-50%',
             width: '40%',
             transition: 'all .8s ease',
+            zIndex: 2,
             opacity: '0',
             '&>img': {
                 width: '100%',
@@ -40,7 +41,10 @@ const useStyles = makeStyles((theme) => ({
                 }
             },
             '& .arrow': {
-                transform: 'scale(1)'
+                transform: 'scale(.8)',
+                [theme.breakpoints.up('md')]: {
+                    transform: 'scale(1)'
+                }
             },
             '& .project-image': {
                 opacity: '1',
@@ -63,8 +67,11 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '1rem',
         '& .arrow': {
             transition: 'transform .4s ease',
-            marginLeft: '-15%',
-            transform: 'scale(0)'
+            marginLeft: '-5%',
+            transform: 'scale(0)',
+            [theme.breakpoints.up('md')]: {
+                marginLeft: '-15%'
+            }
         }
     },
     comingSoon: {
@@ -72,16 +79,15 @@ const useStyles = makeStyles((theme) => ({
         zIndex: 3,
         bottom: '-30%',
         right: '-10%',
-        fontSize: '1rem',
+        fontSize: '.8rem',
+        textTransform: 'lowercase',
         color: theme.palette.type === 'light' ? theme.palette.text.primary : theme.palette.primary.main
         // textShadow:
         //     theme.palette.type === 'dark' && '-1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000'
     },
-    pageTitle: {
-        color: '#ffffff'
-    },
+    pageTitle: {},
     pageTitleLine: {
-        backgroundColor: '#ffffff'
+        backgroundColor: theme.palette.text.primary
     },
     projectsContainer: {
         display: 'flex',
@@ -101,7 +107,8 @@ const useStyles = makeStyles((theme) => ({
     },
     projectSubtitle: {
         marginLeft: '70px',
-        transition: 'transform .4s ease-in-out'
+        transition: 'transform .4s ease-in-out',
+        color: theme.palette.type === 'light' ? theme.palette.text.primary : theme.palette.primary.main
     },
     projectTitle: {
         display: 'inline-block',
@@ -136,72 +143,37 @@ const useStyles = makeStyles((theme) => ({
         minHeight: '100vh'
     },
     sectionTitle: {
-        marginTop: '3rem'
+        marginTop: '3rem',
+        fontSize: '1.2rem',
+        [theme.breakpoints.up('sm')]: {
+            fontSize: '1.6rem'
+        }
     },
     titleWrapper: {
-        paddingLeft: '3vw'
+        paddingLeft: '10vw'
     }
 }));
 
-const SelectedWorks = ({ classes, gsap, ...props }) => {
+const SelectedWorks = ({ classes, ...props }) => {
     const internalClasses = useStyles();
 
     const currentLanguage = useSelector(({ ui }) => ui.appSettings?.currentLanguage);
     const projectsList = useSelector(({ entities }) => entities?.projects?.list);
     const textProvider = useSelector(({ ui }) => ui.textContent?.homePage?.selectedWorks);
 
-    useLayoutEffect(() => {
-        const textParagraphs = ['.works-p1', '.works-p2', '.works-p3'];
-        textParagraphs.forEach((cl) => {
-            gsap.fromTo(
-                cl,
-                {
-                    opacity: 0
-                },
-                {
-                    opacity: 1,
-                    duration: 1,
-                    scrollTrigger: {
-                        trigger: cl,
-                        start: 'top center',
-                        toggleActions: 'restart none none reverse'
-                    }
-                }
-            );
-        });
-
-        const caseStudies = ['.works-cs-1', '.works-cs-2', '.works-cs-3', '.works-wd-1', '.works-wd-2', '.works-wd-3'];
-        caseStudies.forEach((cl) => {
-            gsap.fromTo(
-                cl,
-                {
-                    opacity: 0
-                },
-                {
-                    opacity: 1,
-                    duration: 1,
-                    scrollTrigger: {
-                        trigger: cl,
-                        start: 'top bottom-=200',
-                        toggleActions: 'restart none none reverse'
-                    }
-                }
-            );
-        });
-    }, [gsap]);
-
     return (
-        <div className={clsx(internalClasses.root, classes?.root)} {...props}>
+        <div id="selected-works" className={clsx(internalClasses.root, classes?.root)} {...props}>
             <SectionTitle
+                id="case-studies"
                 classes={{
-                    title: clsx(internalClasses.pageTitle, 'works-p1'),
-                    line: clsx(internalClasses.pageTitleLine, 'works-p1')
+                    title: clsx(internalClasses.pageTitle, 'fade-in'),
+                    line: clsx(internalClasses.pageTitleLine, 'fade-in')
                 }}
                 title={textProvider?.title}
             />
 
-            <div id="case-studies" className={internalClasses.projectsContainer}>
-                <Typography variant="h2" className={clsx(internalClasses.sectionTitle, 'works-p2 fs-300 fw-600')}>
+            <div className={internalClasses.projectsContainer}>
+                <Typography variant="h2" className={clsx(internalClasses.sectionTitle, 'fade-in fw-600')}>
                     {textProvider?.caseStudiesTitle}
                 </Typography>
 
@@ -209,10 +181,7 @@ const SelectedWorks = ({ classes, gsap, ...props }) => {
                     {projectsList
                         ?.filter((project) => project?.type === 'case-study')
                         ?.map((project, index) => (
-                            <div
-                                key={project.id}
-                                className={clsx(internalClasses.caseStudyTitle, `works-cs-${index + 1}`)}
-                            >
+                            <div key={project.id} className={clsx(internalClasses.caseStudyTitle, 'fade-in')}>
                                 {project?.status === 'ready' ? (
                                     <Link to={`/project/${project.id}`}>
                                         <div className={internalClasses.caseStudyTitleWrapper}>
@@ -220,9 +189,6 @@ const SelectedWorks = ({ classes, gsap, ...props }) => {
                                                 variant="h3"
                                                 className={clsx(internalClasses.projectTitle, 'fw-600')}
                                             >
-                                                <span className={clsx(internalClasses.projectNumber, 'fw-500')}>
-                                                    0{index + 1}/
-                                                </span>{' '}
                                                 {project.title}
                                             </Typography>
                                             <Hidden xsDown>
@@ -238,10 +204,6 @@ const SelectedWorks = ({ classes, gsap, ...props }) => {
                                             variant="h3"
                                             className={clsx(internalClasses.projectTitle, 'fw-600')}
                                         >
-                                            {' '}
-                                            <span className={clsx(internalClasses.projectNumber, 'fw-500')}>
-                                                0{index + 1}/
-                                            </span>{' '}
                                             {project.title}
                                             <Hidden smUp>
                                                 <span className={internalClasses.comingSoon}>
@@ -279,35 +241,30 @@ const SelectedWorks = ({ classes, gsap, ...props }) => {
                         ))}
                 </div>
 
-                <Typography variant="h2" className={clsx(internalClasses.sectionTitle, 'works-p3 fs-300 fw-600')}>
+                <Typography
+                    id="web-design"
+                    variant="h2"
+                    className={clsx(internalClasses.sectionTitle, 'fade-in fw-600')}
+                >
                     {textProvider?.webDesignTitle}
                 </Typography>
 
-                <div id="web-design" className={internalClasses?.titleWrapper}>
+                <div id="web-design-content" className={internalClasses?.titleWrapper}>
                     {projectsList
                         ?.filter((project) => project?.type === 'web-design')
                         ?.map((project, index) => (
-                            <div
-                                className={clsx(internalClasses.projectTitleWrapper, `works-wd-${index + 1}`)}
-                                key={project.id}
-                            >
+                            <div className={clsx(internalClasses.projectTitleWrapper, 'fade-in')} key={project.id}>
                                 {project?.status === 'ready' ? (
                                     <a target="_blank" rel="noreferrer" href={project.website}>
                                         <Typography
                                             variant="h3"
                                             className={clsx(internalClasses.projectTitle, 'fw-600')}
                                         >
-                                            <span className={clsx(internalClasses.projectNumber, 'fw-500')}>
-                                                0{index + 1}/
-                                            </span>{' '}
                                             {project.title}
                                         </Typography>
                                     </a>
                                 ) : (
                                     <Typography variant="h3" className={clsx(internalClasses.projectTitle, 'fw-600')}>
-                                        <span className={clsx(internalClasses.projectNumber, 'fw-500')}>
-                                            0{index + 1}/
-                                        </span>{' '}
                                         {project.title}
                                         <Hidden smUp>
                                             <span className={internalClasses.comingSoon}>

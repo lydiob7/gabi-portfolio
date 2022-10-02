@@ -4,8 +4,12 @@ import { useSelector } from 'react-redux';
 import { Container, Grid, makeStyles } from '@material-ui/core';
 import ImageModal from '../../components/modals/ImageModal';
 import renderProperElement from './components/renderProperElement';
+import { getRandomId } from 'utils/helpers';
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        padding: '1rem 0'
+    },
     section: {
         padding: '40px 0!important'
     }
@@ -21,7 +25,12 @@ const Sections = ({ classes, ...props }) => {
     return (
         <>
             {project?.map((section) => (
-                <section key={section?.id} id={section?.id} style={{ backgroundColor: section?.backgroundColor }}>
+                <section
+                    className={internalClasses.root}
+                    key={getRandomId()}
+                    id={section?.id}
+                    style={{ backgroundColor: section?.backgroundColor }}
+                >
                     {section?.noContainer ? (
                         <div>{section?.content?.map((item) => renderProperElement(item, setImageToOpen))}</div>
                     ) : (

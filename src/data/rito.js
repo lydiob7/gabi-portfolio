@@ -1,12 +1,14 @@
-import rito1 from 'assets/images/projects/rito/rito1.jpg';
-import rito2 from 'assets/images/projects/rito/rito2.jpg';
-import rito3 from 'assets/images/projects/rito/rito3.jpg';
-import rito4 from 'assets/images/projects/rito/rito4.jpg';
-import rito5 from 'assets/images/projects/rito/rito5.jpg';
-import rito6 from 'assets/images/projects/rito/rito6.jpg';
-import rito7 from 'assets/images/projects/rito/rito7.jpg';
-import rito8 from 'assets/images/projects/rito/rito8.jpg';
-import rito9 from 'assets/images/projects/rito/rito9.jpg';
+import rito1 from 'assets/images/projects/rito/rito1.png';
+import rito2 from 'assets/images/projects/rito/rito2.png';
+import rito3 from 'assets/images/projects/rito/rito3.png';
+import rito4 from 'assets/images/projects/rito/rito4.png';
+import rito5 from 'assets/images/projects/rito/rito5.png';
+import rito6 from 'assets/images/projects/rito/rito6.png';
+import rito7 from 'assets/images/projects/rito/rito7.png';
+import rito8 from 'assets/images/projects/rito/rito8.png';
+import rito9 from 'assets/images/projects/rito/rito9.png';
+import ritoVisualConcept from 'assets/images/projects/rito/rito-visual-concept.png';
+import ritoVisualConcept2 from 'assets/images/projects/rito/rito-visual-concept2.png';
 
 const rito = {
     id: 'rito',
@@ -15,16 +17,16 @@ const rito = {
     en: {
         subtitle: 'Web/app editorial project',
         overview: [
-            'Project created from scratch, in 4 days, in collaboration with Tadeau Carabias.',
-            'The challenge was to create a responsive online platform for a magazine to meet the needs and goals of users. The goal was to deliver a consistent, branded, and engaging experience and our main focus was on UI Design.'
+            'Project created from scratch in 4 days, in collaboration with Tadeau Carabias.',
+            'The challenge was to create a responsive online platform for a magazine to meet the needs and goals of users. The goal was to deliver a consistent, branded, and engaging experience and our main focus were on UI Design.'
         ],
-        scope: 'Desktop research, user flow, information architecture, wireframing, mock-up, design system, prototyping, and usability testing.',
+        scope: 'User Research, analyzing, user flow, information architecture, wireframing, mock-up, design system, prototyping, and usability testing.',
         categories: 'Website/Mobile',
         brief: [
             {
                 type: 'paragraph',
                 content:
-                    'Rito is an emergent art magazine to promote new and upcoming artists and review the work of established ones, with the intent to democratize art and enable easier access for everyone both artist and viewers.',
+                    'Rito is an emergent art magazine that aims to promote new and upcoming artists and review the work of established ones, with the intent to democratize art and enable easier access for everyone, both artist and viewer.',
                 size: '300',
                 weight: '500',
                 style: 'normal'
@@ -34,7 +36,7 @@ const rito = {
             {
                 type: 'paragraph',
                 content:
-                    'At first, we searched the web for different digital and physical magazines to understand how this type of market works and what people want to consume when they read an art magazine.',
+                    'At first, we searched for different digital and physical magazines to understand how this type of market works and what people want to consume when they decide to read an art magazine.',
                 size: '300',
                 weight: '500',
                 style: 'normal'
@@ -42,14 +44,14 @@ const rito = {
             {
                 type: 'paragraph',
                 content:
-                    'After visiting and comparing different sites, the information they offer, how they organize content, their aesthetics, their accessibility, and even the frequency of content, we started thinking of questions for the interviews that would allow us to achieve our goal.',
+                    'After visiting and comparing different sites, the information they offer, how content is organized, their aesthetics, their accessibility, and even the frequency of content, we started thinking of questions for the interviews that would allow us to achieve our goal.',
                 size: '300',
                 weight: '500',
                 style: 'normal'
             },
             {
                 type: 'paragraph',
-                content: 'We interviewed five people and this is what we learned from them.',
+                content: 'We interviewed five people, and this is what we learned from them.',
                 size: '300',
                 weight: '500',
                 style: 'normal'
@@ -73,14 +75,14 @@ const rito = {
                     },
                     {
                         content:
-                            "The existence of subscriptions to access certain content somehow contributes to giving economic value to artists' creations",
+                            "The existence of subscriptions to access certain content contributes economic value to artists' creations.",
                         size: '300',
                         weight: '500',
                         style: 'normal'
                     },
                     {
                         content:
-                            'An interviewee talked about "un cafecito" ( buy me a coffee) in Argentina, a way of donating money symbolically for the artist\'s work. But also mentioned that to democratize art would be to find a space in between, which gives access to art in a free and free way to those who do not have the material means to access it.',
+                            'An interviewee talked about "un cafecito" ( buy me a coffee) in Argentina, a way of donating money symbolically for the artist\'s work. He also mentioned that for him, democratizing art would be to find a space in between, which gives access to art in a free and free way to those who do not have the material means to access it.',
                         size: '300',
                         weight: '500',
                         style: 'normal'
@@ -90,7 +92,7 @@ const rito = {
             {
                 type: 'paragraph',
                 content:
-                    'On the other hand, the surveys allow us to learn that magazines are a product that is not consumed daily but more sporadically during the week. Also, 100% of the time, they are accessed by recommendation on social networks. Finally, people consume them because they look for inspiration and recommendations.',
+                    'On the other hand, the surveys allow us to learn that magazines are a product that is not consumed daily but more sporadically during the week. Also, 100% of the time, they are accessed by recommendations on social networks. Finally, people consume them because they look for inspiration and suggestions.',
                 size: '300',
                 weight: '500',
                 style: 'normal'
@@ -108,10 +110,25 @@ const rito = {
             {
                 type: 'paragraph',
                 content:
-                    'We choose a  colorful palette since colors are representative of Latin America.Our name was born after brainstorming a lot. We thought about our interviews, what we heard about them, and reflected on what we understood about art.',
+                    'We choose a very colorful palette since it is representative of Latin America. We thought about our interviews and what we heard about them and reflected on what we understood about art to pick up the name.',
                 size: '300',
                 weight: '500',
                 style: 'normal'
+            },
+            {
+                type: 'paragraph',
+                content: 'Rito was born from collective discussions.',
+                size: '300',
+                weight: '500',
+                style: 'normal'
+            },
+            {
+                type: 'images-slide',
+                size: 'auto',
+                content: [
+                    { src: ritoVisualConcept2, alt: 'Rito visual concept' },
+                    { src: ritoVisualConcept, alt: 'Rito visual concept 2' }
+                ]
             }
         ],
         prototype: [
@@ -151,30 +168,31 @@ const rito = {
             },
             {
                 noContainer: true,
+                backgroundColor: '#2C6961',
                 id: 'green',
                 content: [
                     {
-                        type: 'image',
-                        content: { src: rito5, alt: 'Rito 4', size: 'auto' }
+                        type: 'images-in-diagonal',
+                        size: 'auto',
+                        content: [
+                            { src: rito5, alt: 'Rito 5' },
+                            { src: rito6, alt: 'Rito 6' }
+                        ]
                     }
                 ]
             },
             {
-                backgroundColor: '#EBEBDF',
+                backgroundColor: '#AA94FB',
                 id: 'other',
                 content: [
                     {
                         type: 'images-grid',
                         size: 'auto',
                         content: [
-                            { src: rito6, alt: 'Rito 6' },
                             { src: rito7, alt: 'Rito 7' },
-                            { src: rito8, alt: 'Rito 8' }
+                            { src: rito8, alt: 'Rito 8' },
+                            { src: rito9, alt: 'Rito 9' }
                         ]
-                    },
-                    {
-                        type: 'image',
-                        content: { src: rito9, alt: 'Rito 9', size: 'auto' }
                     }
                 ]
             }

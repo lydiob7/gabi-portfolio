@@ -4,9 +4,9 @@ import navis from 'data/navis';
 import rito from 'data/rito';
 import webDesign from 'data/webDesign';
 
-import daomosImg from 'assets/images/projects/daomos.jpg';
-import navisImg from 'assets/images/projects/navis.jpg';
-import ritoImg from 'assets/images/projects/rito.jpg';
+import daomosImg from 'assets/images/projects/daomos.png';
+import navisImg from 'assets/images/projects/navis.png';
+import ritoImg from 'assets/images/projects/rito.png';
 
 export const setProject = (projectId) => (dispatch, getState) => {
     const currentLanguage = getState()?.ui?.appSettings?.currentLanguage;

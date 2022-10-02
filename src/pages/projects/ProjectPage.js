@@ -1,14 +1,15 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import clsx from 'clsx';
 import { setProject } from 'store/projectsSlice';
 
-import { Container, Grid, Hidden, makeStyles, Typography } from '@material-ui/core';
+import { Container, Grid, makeStyles, Typography } from '@material-ui/core';
 
 import Sections from './Sections';
 import SectionsNavigation from './SectionsNavigation';
 import GoBackArrow from 'components/common/GoBackArrow';
+import { changeLogoColor } from 'store/uiSlice';
 
 const useStyles = makeStyles((theme) => ({
     arrowBack: {
@@ -26,25 +27,30 @@ const useStyles = makeStyles((theme) => ({
         bottom: '5vh'
     },
     arrowBackTop: {
-        top: '5vh'
+        top: '2vh'
     },
     checkOutLink: {
         fontFamily: "'Barlow', sans-serif",
-        fontSize: '1.8rem',
-        color: '#FFFFFF',
+        fontSize: '1.2rem',
+        color: theme.palette.text.primary,
         fontWeight: 500,
-        padding: '32px 64px',
-        textAlign: 'center',
+        padding: '32px',
+        [theme.breakpoints.up('sm')]: {
+            padding: '32px 64px',
+            fontSize: '1.5rem'
+        },
         [theme.breakpoints.up('md')]: {
-            fontSize: '2.5rem',
-            textAlign: 'left'
+            fontSize: '2.5rem'
         }
     },
     checkOutLinkBottom: {
-        fontSize: '2rem',
-        color: '#ffffff',
+        fontSize: '1rem',
+        color: theme.palette.text.primary,
         fontWeight: 700,
         padding: '32px 64px',
+        [theme.breakpoints.up('sm')]: {
+            fontSize: '1.5rem'
+        },
         [theme.breakpoints.up('md')]: {
             fontSize: '3rem'
         }
@@ -56,31 +62,48 @@ const useStyles = makeStyles((theme) => ({
         height: '50vh'
     },
     purpleBackground: {
-        background: theme.palette.primary.main
+        background: theme.palette.type === 'light' ? theme.palette.primary.main : theme.palette.background.default
     },
     hereLink: {
         textTransform: 'lowercase',
+        color: theme.palette.type === 'light' ? theme.palette.green.main : theme.palette.primary.main,
         fontWeight: 700
     },
     hereLinkBottom: {
-        textDecoration: 'underline!important'
+        textDecoration: 'underline!important',
+        color: theme.palette.green.main
+    },
+    paddingSides: {
+        padding: '0',
+        [theme.breakpoints.up('sm')]: {
+            padding: '0 3rem'
+        }
     },
     paddingTopAndBottom: {
         position: 'relative',
-        padding: '130px 0',
-        [theme.breakpoints.up('sm')]: {
-            padding: '80px 0'
+        paddingTop: '130px',
+        paddingBottom: '130px',
+        [theme.breakpoints.up('md')]: {
+            paddingTop: '150px',
+            paddingBottom: '150px'
         }
     },
     projectSubtitle: {
         fontSize: '1rem',
+        [theme.breakpoints.up('sm')]: {
+            fontSize: '1.2rem'
+        },
         [theme.breakpoints.up('md')]: {
-            fontSize: '1rem'
+            fontSize: '1.5rem'
         }
     },
     projectTitle: {
         textTransform: 'uppercase',
-        fontSize: '2rem',
+        fontSize: '3rem',
+        color: theme.palette.type === 'light' ? theme.palette.text.primary : theme.palette.primary.main,
+        [theme.breakpoints.up('sm')]: {
+            fontSize: '5rem'
+        },
         [theme.breakpoints.up('md')]: {
             fontSize: '5rem'
         }
@@ -103,6 +126,7 @@ const ProjectPage = ({ classes, gsap, ...props }) => {
     const { projectId } = useParams();
     const dispatch = useDispatch();
 
+    const currentTheme = useSelector(({ ui }) => ui.appSettings.theme);
     const textProvider = useSelector(({ ui }) => ui.textContent.projectPage);
     const project = useSelector(({ entities }) => entities.projects.currentProject);
 
@@ -110,18 +134,29 @@ const ProjectPage = ({ classes, gsap, ...props }) => {
         dispatch(setProject(projectId));
     }, [dispatch, projectId]);
 
+    useEffect(() => {
+        if (currentTheme === 'light') dispatch(changeLogoColor('white'));
+        else dispatch(changeLogoColor('default'));
+    }, [currentTheme, dispatch]);
+
     return (
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>
-            <div className={clsx(internalClasses.purpleBackground, internalClasses.paddingTopAndBottom)}>
-                <Container maxWidth="md" style={{ position: 'relative' }}>
+            <div
+                className={clsx(
+                    internalClasses.purpleBackground,
+                    internalClasses.paddingTopAndBottom,
+                    internalClasses.paddingSides
+                )}
+            >
+                <Container maxWidth="lg" style={{ position: 'relative' }}>
                     <GoBackArrow
                         className={clsx(internalClasses.arrowBack, internalClasses.arrowBackTop)}
-                        color="black"
+                        color={currentTheme === 'light' ? 'white' : 'default'}
                     />
 
                     <Grid container spacing={8}>
                         <Grid component="header" item xs={12}>
-                            <Typography variant="h1" className={clsx(internalClasses.projectTitle, 'fw-600')}>
+                            <Typography variant="h1" className={clsx(internalClasses.projectTitle, ' fw-600')}>
                                 {project?.title}
                             </Typography>
                             <Typography variant="h2" className={clsx(internalClasses.projectSubtitle)}>
@@ -132,12 +167,12 @@ const ProjectPage = ({ classes, gsap, ...props }) => {
                         <Grid component="main" container spacing={4} item xs={12}>
                             {['overview', 'scope', 'categories'].map((section) => (
                                 <React.Fragment key={section}>
-                                    <Grid item xs={5} sm={4}>
+                                    <Grid item xs={4} sm={5} md={4}>
                                         <Typography variant="h3" className={clsx('fs-200 fw-700 capitalize')}>
                                             {textProvider[`${section}Label`]}:
                                         </Typography>
                                     </Grid>
-                                    <Grid item xs={7} sm={8}>
+                                    <Grid item xs={8} sm={7} md={6}>
                                         {project && Array.isArray(project[section]) ? (
                                             project[section].map((subsection) => (
                                                 <Typography
@@ -161,11 +196,15 @@ const ProjectPage = ({ classes, gsap, ...props }) => {
                             ))}
                         </Grid>
 
-                        <Hidden smDown>
-                            <SectionsNavigation />
-                        </Hidden>
+                        <Grid container item xs={12}>
+                            <Grid item xs={false} md={2} />
+                            <Grid item xs={12} md={8}>
+                                <SectionsNavigation />
+                            </Grid>
+                            <Grid item xs={false} md={2} />
+                        </Grid>
 
-                        <Typography variant="body1" className={clsx(internalClasses.checkOutLink)}>
+                        <Typography variant="body1" className={clsx(internalClasses.checkOutLink, 'fade-in')}>
                             {textProvider?.recommendation}{' '}
                             <a
                                 rel="noreferrer"
@@ -184,8 +223,8 @@ const ProjectPage = ({ classes, gsap, ...props }) => {
             <Sections />
 
             <div className={internalClasses.purpleBackground}>
-                <Container maxWidth="md" className={internalClasses.footer}>
-                    <Typography variant="body1" className={clsx(internalClasses.checkOutLinkBottom, 'fw-600')}>
+                <Container maxWidth="lg" className={internalClasses.footer}>
+                    <Typography variant="body1" className={clsx(internalClasses.checkOutLinkBottom, 'fw-600 fade-in')}>
                         {textProvider?.checkHereLink}{' '}
                         <a
                             rel="noreferrer"
@@ -197,7 +236,7 @@ const ProjectPage = ({ classes, gsap, ...props }) => {
                         </a>
                     </Typography>
                     <GoBackArrow
-                        className={clsx(internalClasses.arrowBack, internalClasses.arrowBackBottom)}
+                        className={clsx(internalClasses.arrowBack, internalClasses.arrowBackBottom, 'fade-in-bottom')}
                         color="white"
                     />
                 </Container>

@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const NoLayout = ({ children, footer, scrollBtn }) => {
+const NoLayout = ({ children, footer, gsap, scrollBtn }) => {
     const classes = useStyles();
 
     const showBtn = scrollBtn === undefined ? false : scrollBtn;
@@ -21,7 +21,7 @@ const NoLayout = ({ children, footer, scrollBtn }) => {
     return (
         <div className={classes.root}>
             {children}
-            {showBtn && <ScrollTopBtn />}
+            {showBtn && <ScrollTopBtn gsap={gsap} />}
             {showFooter && <Footer />}
             <ToastMessage />
         </div>

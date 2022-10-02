@@ -6,6 +6,7 @@ import { Accordion, AccordionSummary, AccordionDetails, Grid, makeStyles } from 
 
 import ImageModal from '../../components/modals/ImageModal';
 import renderProperElement from './components/renderProperElement';
+import ArrowDown from 'components/common/custom-icons/ArrowDown';
 
 const useStyles = makeStyles((theme) => ({
     accordion: {
@@ -34,12 +35,32 @@ const useStyles = makeStyles((theme) => ({
             alignItems: 'center',
             textTransform: 'uppercase',
             '& .text': {
-                width: '35%'
+                width: '70%'
+            },
+            '& .arrow': {
+                transition: 'transform .3s ease',
+                '& path': {
+                    fill: theme.palette.text.primary
+                }
+            }
+        },
+        '& .Mui-expanded': {
+            '& .arrow': {
+                transform: 'rotate(-90deg)'
             }
         },
         width: '100%'
     },
-    root: {}
+    root: {},
+    title: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        fontSize: '1.2rem',
+        [theme.breakpoints.up('md')]: {
+            fontSize: '2.5rem'
+        }
+    }
 }));
 
 const SectionsNavigation = ({ classes, ...props }) => {
@@ -54,9 +75,12 @@ const SectionsNavigation = ({ classes, ...props }) => {
         <Grid component="nav" item xs={12} className={clsx(internalClasses.root, classes?.root)} {...props}>
             {['brief', 'research', 'visualConcept', 'prototype'].map((navItem, index) => (
                 <Accordion key={navItem} classes={{ root: internalClasses.accordion }}>
-                    <AccordionSummary classes={{ root: internalClasses.navLink }}>
+                    <AccordionSummary classes={{ root: clsx(internalClasses.navLink, 'fade-in') }}>
                         <span className="fs-200">0{index + 1}.</span>{' '}
-                        <span className="text fs-800 fw-800">{textProvider[`${navItem}Label`]}</span>
+                        <span className={clsx(internalClasses.title, 'text fw-800')}>
+                            {textProvider[`${navItem}Label`]}
+                            <ArrowDown className="arrow" />
+                        </span>
                     </AccordionSummary>
 
                     <AccordionDetails classes={{ root: internalClasses.accordionDetails }}>

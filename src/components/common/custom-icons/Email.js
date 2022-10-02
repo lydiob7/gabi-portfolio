@@ -17,14 +17,14 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const Email = ({ classes, width = '37', height = '27', size = 'default', ...props }) => {
+const Email = ({ className, width = '37', height = '27', size = 'default', ...props }) => {
     const internalClasses = useStyles();
 
     return (
         <svg
             className={clsx(
                 internalClasses.root,
-                classes?.root,
+                className,
                 size === 'small' ? internalClasses.small : '',
                 size === 'large' ? internalClasses.large : ''
             )}

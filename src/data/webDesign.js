@@ -26,6 +26,32 @@ const array = [
         status: 'ready'
     },
     {
+        id: 'vaikuntha',
+        website: 'https://vaikuntha.com.ar/',
+        title: 'Vaikuntha',
+        en: {
+            subtitle: 'Ceramist portfolio'
+        },
+        es: {
+            subtitle: 'Portfolio de Ceramista'
+        },
+        type: 'web-design',
+        status: 'ready'
+    },
+    {
+        id: 'miguel-bruno',
+        website: 'https://miguelbruno.es/',
+        title: 'Miguel Bruñó',
+        en: {
+            subtitle: 'Musician portfolio'
+        },
+        es: {
+            subtitle: 'Portfolio de Músico'
+        },
+        type: 'web-design',
+        status: 'ready'
+    },
+    {
         id: 'tierra-roja',
         website: 'https://tierra-roja.herokuapp.com/',
         title: 'Tierra roja',
@@ -38,19 +64,6 @@ const array = [
         type: 'web-design',
         status: 'ready'
     }
-    // {
-    //     id: 'vaikuntha',
-    //     website: 'https://vaikuntha.com.ar/',
-    //     title: 'Vaikuntha',
-    //     en: {
-    //         subtitle: 'Ceramist portfolio (coming soon)'
-    //     },
-    //     es: {
-    //         subtitle: 'Portfolio de Ceramista (próximanente)'
-    //     },
-    //     type: 'web-design',
-    //     status: 'in-progress'
-    // }
 ];
 
 export default array;

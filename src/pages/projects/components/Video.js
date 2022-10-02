@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 const containerWidth = Math.floor(window.innerWidth * 0.571);
 const iframeHeight = Math.floor(containerWidth * 0.6);
 
-const Video = ({ classes, content, ...props }) => {
+const Video = ({ classes, content, ...rest }) => {
     const internalClasses = useStyles();
     return (
         <Grid item xs={12} className={internalClasses.sectionContent}>
@@ -28,9 +28,9 @@ const Video = ({ classes, content, ...props }) => {
                         height={iframeHeight}
                         src={content.src}
                         title={content.alt}
-                        frameborder="0"
+                        frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
+                        allowFullScreen
                     ></iframe>
                 )}
             </div>

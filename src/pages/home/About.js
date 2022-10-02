@@ -1,156 +1,120 @@
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 
-import { Grid, Hidden, makeStyles, Typography } from '@material-ui/core';
+import { makeStyles, Typography } from '@material-ui/core';
 
 import SectionTitle from 'components/common/SectionTitle';
-// import MediaList from 'components/common/MediaList';
+import MediaList from 'components/common/MediaList';
+import aboutImg from 'assets/images/about.png';
+import resume from 'assets/resume.pdf';
 
 const useStyles = makeStyles((theme) => ({
-    availabilityLink: {
-        fontSize: '2rem',
-        color: theme.palette.primary.main,
-        [theme.breakpoints.up('md')]: {
-            position: 'absolute',
-            bottom: '-30px',
-            width: '100vw',
-            color: theme.palette.type === 'light' ? theme.palette.text.primary : theme.palette.primary.main,
-            fontSize: '5rem'
-        }
-    },
     content: {
         fontSize: '1.1rem',
-        fontWeight: '500',
-        [theme.breakpoints.up('md')]: {
-            fontSize: '1.4rem'
-        }
-    },
-    contentHighlight: {
-        color: theme.palette.primary.main,
-        marginTop: '1rem',
-        fontSize: '1.3rem',
         [theme.breakpoints.up('md')]: {
             fontSize: '1.5rem'
         }
     },
-    contentWrapper: {
-        alignItems: 'flex-end',
-        padding: '15vh 0'
-    },
-    link: {
-        fontSize: '1.2rem',
+    footer: {
+        color: theme.palette.type === 'light' ? theme.palette.green.main : theme.palette.text.primary,
+        marginTop: '1rem',
+        fontSize: '.8rem',
+        fontWeight: '500',
+        textAlign: 'center',
+        paddingTop: '.5rem',
+        paddingBottom: '.5rem',
+        marginBottom: '.5rem',
+        borderTop:
+            theme.palette.type === 'light'
+                ? `2px solid ${theme.palette.primary.main}`
+                : `2px solid ${theme.palette.text.primary}`,
+        borderBottom:
+            theme.palette.type === 'light'
+                ? `2px solid ${theme.palette.primary.main}`
+                : `2px solid ${theme.palette.text.primary}`,
+        '&>span': {
+            fontWeight: '600'
+        },
+        [theme.breakpoints.up('sm')]: {
+            paddingTop: '1rem',
+            fontSize: '1.2rem'
+        },
         [theme.breakpoints.up('md')]: {
-            fontSize: '1rem'
+            fontSize: '1.5rem'
         }
     },
-    linksWrapper: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-end',
-        justifyContent: 'space-between',
-        gap: '1rem',
-        width: '100%',
-        marginBottom: '5vh',
-        [theme.breakpoints.up('md')]: {
-            flexDirection: 'row',
-            alignItems: 'center'
-        }
+    pageTitle: {
+        color: theme.palette.primary.main
     },
-    mediaLinks: {
-        marginBottom: '2rem'
+    pageTitleLine: {
+        backgroundColor: `${theme.palette.primary.main}!important`
     },
     root: {
-        padding: '10vh 0',
-        minHeight: '100vh'
+        padding: '10vh 0 0 0',
+        [theme.breakpoints.up('md')]: {
+            minHeight: '100vh'
+        }
+    },
+    wrapper: {
+        display: 'flex',
+        flexDirection: 'column-reverse',
+        justifyContent: 'center',
+        gap: '4rem',
+        marginTop: '5rem',
+        paddingBottom: '4rem',
+        [theme.breakpoints.up('sm')]: {
+            flexDirection: 'row',
+            padding: '0 2rem 10rem 2rem'
+        },
+        [theme.breakpoints.up('md')]: {
+            alignItems: 'center'
+        },
+        '&>.image-wrapper': {
+            flex: '1 0 100%',
+            '&>img': {
+                width: '100%'
+            },
+            [theme.breakpoints.up('sm')]: {
+                flex: '1 0 40%'
+            }
+        },
+        '&>.content-wrapper': {
+            '&>.links-wrapper': {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginTop: '1rem',
+                '& .resume': {
+                    color: theme.palette.primary.main,
+                    textDecoration: 'underline',
+                    fontWeight: '600',
+                    fontSize: '1rem',
+                    [theme.breakpoints.up('md')]: {
+                        fontSize: '1.7rem',
+                        margin: '2rem 0'
+                    }
+                },
+                '& > .media-links': {
+                    transform: 'scale(0.7)',
+                    [theme.breakpoints.up('md')]: {
+                        transform: 'scale(1)',
+                        marginBottom: '2rem'
+                    }
+                },
+                [theme.breakpoints.up('md')]: {
+                    display: 'block'
+                }
+            }
+        }
     }
 }));
 
-const About = ({ classes, gsap, ...props }) => {
+const About = ({ classes, ...props }) => {
     const internalClasses = useStyles();
 
-    useLayoutEffect(() => {
-        gsap.fromTo(
-            '.about-title',
-            {
-                opacity: 0
-            },
-            {
-                opacity: 1,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: '.about-title',
-                    start: 'top center',
-                    toggleActions: 'restart none none reverse'
-                }
-            }
-        );
-        gsap.fromTo(
-            '.about-par1',
-            {
-                opacity: 0
-            },
-            {
-                opacity: 1,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: '.about-par1',
-                    start: 'top center',
-                    toggleActions: 'restart none none reverse'
-                }
-            }
-        );
-        gsap.fromTo(
-            '.about-par2',
-            {
-                opacity: 0
-            },
-            {
-                opacity: 1,
-                duration: 1,
-                delay: 0.3,
-                scrollTrigger: {
-                    trigger: '.about-par2',
-                    start: 'top bottom-=70',
-                    toggleActions: 'restart none none reverse'
-                }
-            }
-        );
-        gsap.fromTo(
-            '.about-par3',
-            {
-                opacity: 0
-            },
-            {
-                opacity: 1,
-                duration: 1,
-                delay: 0.3,
-                scrollTrigger: {
-                    trigger: '.about-par3',
-                    start: 'top bottom-=40',
-                    toggleActions: 'restart none none reverse'
-                }
-            }
-        );
-        gsap.fromTo(
-            '.about-links',
-            {
-                opacity: 0
-            },
-            {
-                opacity: 1,
-                duration: 1,
-                delay: 0.3,
-                scrollTrigger: {
-                    trigger: '.about-links',
-                    start: 'top bottom-=70',
-                    toggleActions: 'restart none none reverse'
-                }
-            }
-        );
-    }, [gsap]);
-
     const textProvider = useSelector(({ ui }) => ui.textContent?.homePage?.about);
+    const currentTheme = useSelector(({ ui }) => ui.appSettings.theme);
 
     return (
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>
@@ -158,72 +122,47 @@ const About = ({ classes, gsap, ...props }) => {
                 id="about"
                 title={textProvider?.title}
                 classes={{
-                    title: 'about-title',
-                    line: 'about-title'
+                    title: clsx(internalClasses.pageTitle, 'fade-in'),
+                    line: clsx(internalClasses.pageTitleLine, 'fade-in')
                 }}
             />
 
-            <Grid spacing={8} container className={clsx(internalClasses.contentWrapper)}>
-                <Grid item xs={12} md={9}>
-                    <Typography variant="body1" className={clsx(internalClasses.content, 'about-par1')}>
-                        {textProvider?.content}
-                    </Typography>
-                    <Typography variant="body1" className={clsx(internalClasses.contentHighlight, 'about-par2 fw-600')}>
-                        {textProvider?.contentHighlight}
-                    </Typography>
-                </Grid>
-
-                <Hidden mdUp>
-                    <Grid item xs={6}>
-                        <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href="mailto:gabrielapolancoferreyra@gmail.com"
-                            style={{ position: 'relative' }}
-                            className="about-par3"
-                        >
-                            <Typography variant="body1" className={clsx(internalClasses.availabilityLink, 'fw-800')}>
-                                {textProvider?.askForAvailability}
+            <div className={clsx(internalClasses.wrapper)}>
+                <div className="fade-in image-wrapper">
+                    <img src={aboutImg} alt="Gabriela Polanco on a sailboat" />
+                </div>
+                <div className="content-wrapper">
+                    {Array.isArray(textProvider?.content) ? (
+                        textProvider.content.map((paragraph) => (
+                            <Typography
+                                key={paragraph}
+                                variant="body1"
+                                className={clsx(internalClasses.content, 'fade-in')}
+                            >
+                                {paragraph}
                             </Typography>
+                        ))
+                    ) : (
+                        <Typography variant="body1" className={clsx(internalClasses.content, 'fade-in')}>
+                            {textProvider?.content}
+                        </Typography>
+                    )}
+                    <div className="links-wrapper">
+                        <a className="fade-in" href={resume} download="Gabriela Polanco-Ferreyra Resume">
+                            <Typography className="resume">Resume</Typography>
                         </a>
-                    </Grid>
-                </Hidden>
+                        <MediaList
+                            classes={{ root: clsx('media-links', 'fade-in') }}
+                            color={currentTheme === 'light' ? 'green' : ''}
+                            size="small"
+                        />
+                    </div>
+                </div>
+            </div>
 
-                <Grid item xs={6} md={3}>
-                    {/* <MediaList classes={{ root: internalClasses.mediaLinks }} size="small" /> */}
-                    <ul className={clsx(internalClasses.linksWrapper, 'about-links')}>
-                        <li className={clsx(internalClasses.link, 'fw-800')}>
-                            <a href={textProvider?.linkedinLink} target="_blank" rel="noreferrer">
-                                {textProvider?.linkedinLinkText}
-                            </a>
-                        </li>
-                        <li className={clsx(internalClasses.link, 'fw-800')}>
-                            <a href={textProvider?.cvLink} download>
-                                {textProvider?.cvLinkText}
-                            </a>
-                        </li>
-                        <li className={clsx(internalClasses.link, 'fw-800')}>
-                            <a href={textProvider?.behanceLink} target="_blank" rel="noreferrer">
-                                {textProvider?.behanceLinkText}
-                            </a>
-                        </li>
-                    </ul>
-                </Grid>
-            </Grid>
-
-            <Hidden smDown>
-                <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="mailto:gabrielapolancoferreyra@gmail.com"
-                    style={{ position: 'relative' }}
-                    className="about-par3"
-                >
-                    <Typography variant="body1" className={clsx(internalClasses.availabilityLink, 'fw-800')}>
-                        {textProvider?.askForAvailability}
-                    </Typography>
-                </a>
-            </Hidden>
+            <Typography variant="body1" className={clsx(internalClasses.footer, 'fade-in-bottom')}>
+                {textProvider?.content2} <span>{textProvider?.contentHighlight}</span>
+            </Typography>
         </div>
     );
 };

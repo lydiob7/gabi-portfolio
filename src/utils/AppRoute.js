@@ -38,11 +38,11 @@ const AppRoute = ({
             ) : (
                 <>
                     {layout ? (
-                        <LayoutDefault footer={footer} scrollBtn={scrollBtn}>
+                        <LayoutDefault footer={footer} gsap={gsap} scrollBtn={scrollBtn}>
                             <Component gsap={gsap} {...componentProps} />
                         </LayoutDefault>
                     ) : (
-                        <NoLayout footer={noLayoutFooter} scrollBtn={noLayoutBtn}>
+                        <NoLayout footer={noLayoutFooter} gsap={gsap} scrollBtn={noLayoutBtn}>
                             <Component gsap={gsap} {...componentProps} />
                         </NoLayout>
                     )}

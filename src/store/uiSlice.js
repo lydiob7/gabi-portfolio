@@ -18,7 +18,7 @@ const slice = createSlice({
             currentLanguage: 'en',
             isLanguageCheckTriggered: false,
             isPreferredThemeCheckTriggered: false,
-            isLanguageToggable: true,
+            isLanguageToggable: false,
             isThemeToggable: true,
             mantainanceMode: false,
             supportedLanguages: Object.keys(supportedLanguages).slice(0, -1),
@@ -32,7 +32,8 @@ const slice = createSlice({
             socialLinks
         },
         headerSettings: {
-            fixed: false
+            fixed: false,
+            logoColor: 'default'
         },
         sidebar: {
             menuItems: navigationConfig(supportedLanguages['default']).headermenu
@@ -40,6 +41,10 @@ const slice = createSlice({
         textContent: supportedLanguages['default']
     },
     reducers: {
+        changeLogoColor: (state, action) => {
+            state.headerSettings.logoColor = action.payload;
+        },
+
         themeDark: (state, action) => {
             state.appSettings.theme = 'dark';
         },
@@ -86,6 +91,7 @@ const slice = createSlice({
 });
 
 export const {
+    changeLogoColor,
     themeDark,
     themeLight,
     setThemePreferredCheckOn,

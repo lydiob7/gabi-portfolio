@@ -10,6 +10,18 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         width: '100%',
         cursor: 'pointer',
+        '&:nth-child(1)': {
+            [theme.breakpoints.up('md')]: {
+                gridColumn: '1/3',
+                gridRow: '1/3'
+            }
+        },
+        '&:nth-child(2)': {
+            [theme.breakpoints.up('md')]: {
+                gridColumn: '2/4',
+                gridRow: '2/4'
+            }
+        },
         '& img': {
             height: '100%'
         }
@@ -33,7 +45,9 @@ const useStyles = makeStyles((theme) => ({
         flexWrap: 'wrap',
         overflow: 'hidden',
         [theme.breakpoints.up('md')]: {
-            flexWrap: 'nowrap',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateRows: 'repeat(3, 1fr)',
             overflow: 'visible'
         }
     },
@@ -43,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const ImagesSlide = ({ content, setImageToOpen, size, ...rest }) => {
+const ImagesInDiagonal = ({ content, setImageToOpen, size, ...rest }) => {
     const internalClasses = useStyles();
 
     const sizeClass = size === 'auto' ? internalClasses.imageSizeAuto : internalClasses.imageSizeNormal;
@@ -65,4 +79,4 @@ const ImagesSlide = ({ content, setImageToOpen, size, ...rest }) => {
     );
 };
 
-export default ImagesSlide;
+export default ImagesInDiagonal;

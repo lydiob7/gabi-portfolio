@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
         '& svg': {
             transition: 'transform .4s ease',
             '& .path': {
-                fill: '#DED7C5'
+                fill: '#FFFFFF'
             }
         },
         '&:hover svg': {
