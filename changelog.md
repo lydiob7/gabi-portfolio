@@ -8,6 +8,7 @@
 -   Feature: Update bio and banner images
 -   Feature: Update Rito text and animations.
 -   FeatureÑ Update Daomos.
+-   Update: Move banner text up.
 
 ### v1.1.0
 

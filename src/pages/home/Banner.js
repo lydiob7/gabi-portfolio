@@ -59,10 +59,10 @@ const useStyles = makeStyles((theme) => ({
     textWrapper: {
         padding: '5vw',
         [theme.breakpoints.up('md')]: {
-            padding: '0 5vw',
+            padding: '0 2vw',
             position: 'absolute',
             left: 0,
-            top: '20vh',
+            top: '10vh',
             width: '60%'
         }
     },
