@@ -28,7 +28,7 @@ const rito = {
                 content:
                     'Rito is an emergent art magazine that aims to promote new and upcoming artists and review the work of established ones, with the intent to democratize art and enable easier access for everyone, both artist and viewer.',
                 size: '300',
-                weight: '500',
+                weight: '400',
                 style: 'normal'
             }
         ],
@@ -38,7 +38,7 @@ const rito = {
                 content:
                     'At first, we searched for different digital and physical magazines to understand how this type of market works and what people want to consume when they decide to read an art magazine.',
                 size: '300',
-                weight: '500',
+                weight: '400',
                 style: 'normal'
             },
             {
@@ -46,14 +46,14 @@ const rito = {
                 content:
                     'After visiting and comparing different sites, the information they offer, how content is organized, their aesthetics, their accessibility, and even the frequency of content, we started thinking of questions for the interviews that would allow us to achieve our goal.',
                 size: '300',
-                weight: '500',
+                weight: '400',
                 style: 'normal'
             },
             {
                 type: 'paragraph',
                 content: 'We interviewed five people, and this is what we learned from them.',
                 size: '300',
-                weight: '500',
+                weight: '400',
                 style: 'normal'
             },
             {
@@ -63,28 +63,28 @@ const rito = {
                         content:
                             'Art in Latin American contexts is generally understood more as a hobby or an elitist practice but very rarely taken as the result of a creative process that requires a work commitment, which is usually not recognized or compensated economically.',
                         size: '300',
-                        weight: '500',
+                        weight: '400',
                         style: 'normal'
                     },
                     {
                         content:
                             'WORK FOR THE LOVE OF ART: An excuse for not offering the necessary working conditions and retribution to artists who, by making art, make culture invaluable wealth of any society.',
                         size: '300',
-                        weight: '500',
+                        weight: '400',
                         style: 'normal'
                     },
                     {
                         content:
                             "The existence of subscriptions to access certain content contributes economic value to artists' creations.",
                         size: '300',
-                        weight: '500',
+                        weight: '400',
                         style: 'normal'
                     },
                     {
                         content:
                             'An interviewee talked about "un cafecito" ( buy me a coffee) in Argentina, a way of donating money symbolically for the artist\'s work. He also mentioned that for him, democratizing art would be to find a space in between, which gives access to art in a free and free way to those who do not have the material means to access it.',
                         size: '300',
-                        weight: '500',
+                        weight: '400',
                         style: 'normal'
                     }
                 ]
@@ -94,7 +94,7 @@ const rito = {
                 content:
                     'On the other hand, the surveys allow us to learn that magazines are a product that is not consumed daily but more sporadically during the week. Also, 100% of the time, they are accessed by recommendations on social networks. Finally, people consume them because they look for inspiration and suggestions.',
                 size: '300',
-                weight: '500',
+                weight: '400',
                 style: 'normal'
             },
             {
@@ -102,7 +102,7 @@ const rito = {
                 content:
                     'In this stage of seeking to empathize with our users, we opened the door to Latin American art. We decided to create RITO to contribute to the visibility and democratization of emerging artists from Argentina and Brazil, countries that share territorial borders, proximity, and a long history of cooperation despite not sharing the same language.',
                 size: '400',
-                weight: '700',
+                weight: '600',
                 style: 'normal'
             }
         ],
@@ -112,14 +112,14 @@ const rito = {
                 content:
                     'We choose a very colorful palette since it is representative of Latin America. We thought about our interviews and what we heard about them and reflected on what we understood about art to pick up the name.',
                 size: '300',
-                weight: '500',
+                weight: '400',
                 style: 'normal'
             },
             {
                 type: 'paragraph',
                 content: 'Rito was born from collective discussions.',
                 size: '300',
-                weight: '500',
+                weight: '400',
                 style: 'normal'
             },
             {

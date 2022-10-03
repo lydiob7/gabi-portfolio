@@ -35,6 +35,7 @@ const slice = createSlice({
             fixed: false,
             logoColor: 'default'
         },
+        imageToOpen: null,
         sidebar: {
             menuItems: navigationConfig(supportedLanguages['default']).headermenu
         },
@@ -51,6 +52,10 @@ const slice = createSlice({
 
         themeLight: (state, action) => {
             state.appSettings.theme = 'light';
+        },
+
+        setImageToOpen: (state, action) => {
+            state.imageToOpen = action.payload;
         },
 
         setThemePreferredCheckOn: (state, action) => {
@@ -94,6 +99,7 @@ export const {
     changeLogoColor,
     themeDark,
     themeLight,
+    setImageToOpen,
     setThemePreferredCheckOn,
     setThemePreferredCheckOff,
     setThemeToggableOn,

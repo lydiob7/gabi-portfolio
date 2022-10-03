@@ -7,6 +7,7 @@
 -   Feature: Update projects sections and rito content.
 -   Feature: Update bio and banner images
 -   Feature: Update Rito text and animations.
+-   FeatureÑ Update Daomos.
 
 ### v1.1.0
 

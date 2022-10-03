@@ -27,7 +27,9 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     root: {},
-    sectionContent: {}
+    sectionContent: {
+        padding: '0'
+    }
 }));
 
 const Image = ({ content, setImageToOpen, ...rest }) => {

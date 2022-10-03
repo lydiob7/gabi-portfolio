@@ -23,6 +23,7 @@ const RoutesSwitch = ({ gsap }) => {
     return (
         <div
             className={`${transitionStage}`}
+            style={{ position: 'relative' }}
             onAnimationEnd={() => {
                 if (transitionStage === 'fadeOut') {
                     setTransistionStage('fadeIn');

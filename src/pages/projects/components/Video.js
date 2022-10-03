@@ -6,16 +6,26 @@ import { Grid, makeStyles } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {},
     sectionContent: {
-        margin: '2rem 0'
+        margin: '2rem 0',
+        width: '100%',
+        '& iframe': {
+            width: '350px',
+            height: '200px',
+            [theme.breakpoints.up('sm')]: {
+                width: '80vw',
+                height: '60vw'
+            },
+            [theme.breakpoints.up('md')]: {
+                width: '700px',
+                height: '500px'
+            }
+        }
     },
     video: {
         display: 'grid',
         placeContent: 'center'
     }
 }));
-
-const containerWidth = Math.floor(window.innerWidth * 0.571);
-const iframeHeight = Math.floor(containerWidth * 0.6);
 
 const Video = ({ classes, content, ...rest }) => {
     const internalClasses = useStyles();
@@ -24,8 +34,6 @@ const Video = ({ classes, content, ...rest }) => {
             <div className={clsx(internalClasses.video)}>
                 {content?.src && (
                     <iframe
-                        width={containerWidth}
-                        height={iframeHeight}
                         src={content.src}
                         title={content.alt}
                         frameBorder="0"

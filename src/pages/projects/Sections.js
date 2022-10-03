@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setImageToOpen } from 'store/uiSlice';
 
 import { Container, Grid, makeStyles } from '@material-ui/core';
-import ImageModal from '../../components/modals/ImageModal';
 import renderProperElement from './components/renderProperElement';
 import { getRandomId } from 'utils/helpers';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        padding: '1rem 0'
+        padding: '0'
     },
     section: {
         padding: '40px 0!important'
@@ -17,8 +17,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Sections = ({ classes, ...props }) => {
     const internalClasses = useStyles();
+    const dispatch = useDispatch();
 
-    const [imageToOpen, setImageToOpen] = useState(null);
+    const handleOpenImage = (image) => dispatch(setImageToOpen(image));
 
     const project = useSelector(({ entities }) => entities.projects.currentProject?.post);
 
@@ -32,20 +33,18 @@ const Sections = ({ classes, ...props }) => {
                     style={{ backgroundColor: section?.backgroundColor }}
                 >
                     {section?.noContainer ? (
-                        <div>{section?.content?.map((item) => renderProperElement(item, setImageToOpen))}</div>
+                        <div>{section?.content?.map((item) => renderProperElement(item, handleOpenImage))}</div>
                     ) : (
                         <Container maxWidth="lg">
                             <Grid spacing={4} container className={internalClasses.section} item xs={12}>
                                 <Grid item container xs={12}>
-                                    {section?.content?.map((item) => renderProperElement(item, setImageToOpen))}
+                                    {section?.content?.map((item) => renderProperElement(item, handleOpenImage))}
                                 </Grid>
                             </Grid>
                         </Container>
                     )}
                 </section>
-            ))}
-
-            <ImageModal open={!!imageToOpen} onClose={() => setImageToOpen(null)} imageUrl={imageToOpen} />
+            ))}{' '}
         </>
     );
 };
