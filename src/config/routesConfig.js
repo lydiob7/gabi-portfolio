@@ -37,7 +37,7 @@ export const routes = [
     {
         component: ErrorPage,
         layout: false,
-        noLayoutFooter: true,
+        noLayoutFooter: false,
         noLayoutBtn: true
     }
 ];

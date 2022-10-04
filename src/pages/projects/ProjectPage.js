@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     },
     hereLinkBottom: {
         textDecoration: 'underline!important',
-        color: theme.palette.green.main
+        color: theme.palette.type === 'light' ? theme.palette.green.main : theme.palette.primary.main
     },
     paddingSides: {
         padding: '0',
@@ -237,7 +237,7 @@ const ProjectPage = ({ classes, gsap, ...props }) => {
                     </Typography>
                     <GoBackArrow
                         className={clsx(internalClasses.arrowBack, internalClasses.arrowBackBottom, 'fade-in-bottom')}
-                        color="white"
+                        color={currentTheme === 'light' ? 'white' : 'default'}
                     />
                 </Container>
             </div>

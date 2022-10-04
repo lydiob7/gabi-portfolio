@@ -108,7 +108,11 @@ const useStyles = makeStyles((theme) => ({
     projectSubtitle: {
         marginLeft: '70px',
         transition: 'transform .4s ease-in-out',
-        color: theme.palette.type === 'light' ? theme.palette.text.primary : theme.palette.primary.main
+        color: theme.palette.type === 'light' ? theme.palette.text.primary : theme.palette.primary.main,
+        fontSize: '1rem',
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1.3rem'
+        }
     },
     projectTitle: {
         display: 'inline-block',
@@ -222,7 +226,7 @@ const SelectedWorks = ({ classes, ...props }) => {
                                 <Hidden xsDown>
                                     <Typography
                                         variant="body1"
-                                        className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}
+                                        className={clsx(internalClasses.projectSubtitle, 'fw-600')}
                                     >
                                         {project.data?.[currentLanguage]?.subtitle}
                                     </Typography>
@@ -276,7 +280,7 @@ const SelectedWorks = ({ classes, ...props }) => {
                                 <Hidden xsDown>
                                     <Typography
                                         variant="body1"
-                                        className={clsx(internalClasses.projectSubtitle, 'fs-300 fw-600')}
+                                        className={clsx(internalClasses.projectSubtitle, 'fw-600')}
                                     >
                                         {project[currentLanguage]?.subtitle}
                                     </Typography>

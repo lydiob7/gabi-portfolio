@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
     photoCredits: {
         textAlign: 'center',
+        fontSize: '.75rem',
         [theme.breakpoints.up('md')]: {
             transform: 'translateX(-100%)'
         }

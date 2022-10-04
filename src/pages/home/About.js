@@ -16,6 +16,14 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '1.5rem'
         }
     },
+    credits: {
+        fontSize: '.9rem',
+        position: 'absolute',
+        bottom: '.3rem',
+        left: '0',
+        width: '100%',
+        textAlign: 'center'
+    },
     footer: {
         color: theme.palette.type === 'light' ? theme.palette.green.main : theme.palette.text.primary,
         marginTop: '1rem',
@@ -24,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         paddingTop: '.5rem',
         paddingBottom: '.5rem',
-        marginBottom: '.5rem',
+        marginBottom: '1.8rem',
         borderTop:
             theme.palette.type === 'light'
                 ? `2px solid ${theme.palette.primary.main}`
@@ -51,7 +59,8 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: `${theme.palette.primary.main}!important`
     },
     root: {
-        padding: '10vh 0 0 0',
+        position: 'relative',
+        padding: '10vh 0 1px 0',
         [theme.breakpoints.up('md')]: {
             minHeight: '100vh'
         }
@@ -162,6 +171,13 @@ const About = ({ classes, ...props }) => {
 
             <Typography variant="body1" className={clsx(internalClasses.footer, 'fade-in-bottom')}>
                 {textProvider?.content2} <span>{textProvider?.contentHighlight}</span>
+            </Typography>
+            <Typography variant="body1" className={internalClasses.credits}>
+                Designed by Gabi Polanco and developed by{' '}
+                <a href="https://tomiscattini.com" target="_blank" rel="noreferrer">
+                    Tomi Scattini
+                </a>{' '}
+                (Itakhi) {new Date().getFullYear()}
             </Typography>
         </div>
     );

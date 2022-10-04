@@ -19,7 +19,10 @@ const Paragraph = (params) => {
 
     return (
         <Grid item xs={12}>
-            <Typography variant="body1" className={clsx(sizeClass, weightClass, internalClasses.paragraph)}>
+            <Typography
+                variant="body1"
+                className={clsx(sizeClass, weightClass, internalClasses.paragraph, params.className)}
+            >
                 {params?.content}
             </Typography>
         </Grid>

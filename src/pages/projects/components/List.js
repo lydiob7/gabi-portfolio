@@ -23,10 +23,10 @@ const ListItem = (params) => {
     return <li className={clsx(sizeClass, weightClass, params.internalClasses.listItem)}>{params?.content}</li>;
 };
 
-const List = ({ listItems, ...rest }) => {
+const List = ({ className, listItems, ...rest }) => {
     const internalClasses = useStyles();
     return (
-        <ul className={internalClasses?.list}>
+        <ul className={clsx(internalClasses?.list, className)}>
             {Array.isArray(listItems) &&
                 listItems?.map((item) => <ListItem key={getRandomId()} internalClasses={internalClasses} {...item} />)}
         </ul>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 
@@ -40,15 +41,18 @@ const useStyles = makeStyles((theme) => ({
 
 export default function GeneralHeader({ fixed }) {
     const classes = useStyles();
+    const location = useLocation();
 
     const menuItems = useSelector(({ ui }) => ui.sidebar.menuItems);
     const appInformation = useSelector(({ ui }) => ui.appInformation);
 
     return (
         <Grid component="header" container className={clsx(classes.root, fixed && classes.fixed)}>
-            <Grid container className={classes.logoWrapper} item xs={12}>
-                <Logo className={classes.logo} size="small" title={appInformation?.appTitle} />
-            </Grid>
+            {(location?.pathname === '/' || location?.pathname === '/home') && (
+                <Grid container className={classes.logoWrapper} item xs={12}>
+                    <Logo className={classes.logo} size="small" title={appInformation?.appTitle} />
+                </Grid>
+            )}
             <Grid className={classes.navbar} item container xs={12} alignItems="center">
                 <Navbar appTitle={appInformation?.appTitle} menuItems={menuItems} />
             </Grid>

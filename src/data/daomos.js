@@ -95,6 +95,7 @@ const daomos = {
             },
             {
                 type: 'paragraph',
+                className: 'mt-16',
                 content:
                     'We concluded that in new and revolutionary products such as those that live on the blockchain, it is crucial to make a great effort to develop a friendly and guided user experience. In this way, we could invite a more significant number of people to join something still unknown and often overwhelming like web 3 and, thus, avoid a complexity that excludes those non-expert users.',
                 size: '300',

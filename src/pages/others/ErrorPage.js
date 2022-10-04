@@ -20,6 +20,14 @@ const useStyles = makeStyles((theme) => ({
             width: '100%'
         }
     },
+    statusCode: {
+        fontSize: '8rem',
+        fontWeight: '500',
+        color: theme.palette.primary.main,
+        [theme.breakpoints.up('md')]: {
+            fontSize: '9rem'
+        }
+    },
     title: {
         fontSize: '1.5rem',
         [theme.breakpoints.up('sm')]: {
@@ -44,7 +52,7 @@ function ErrorPage({ errorimg = '/images/404.svg' }) {
             <Grid container justifyContent="center">
                 <Grid container spacing={4} justifyContent="center" item xs={12} sm={6}>
                     <Grid item xs={12}>
-                        <img src={parsePath(errorimg)} alt="error" />
+                        <Typography className={internalClasses.statusCode}>404</Typography>
                     </Grid>
                     <Grid item xs={12}>
                         <Typography className={clsx(internalClasses.title, 'fs-800')} variant="h2" color="textPrimary">

@@ -57,12 +57,12 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const ImagesInDiagonal = ({ content, setImageToOpen, size, ...rest }) => {
+const ImagesInDiagonal = ({ className, content, setImageToOpen, size, ...rest }) => {
     const internalClasses = useStyles();
 
     const sizeClass = size === 'auto' ? internalClasses.imageSizeAuto : internalClasses.imageSizeNormal;
     return (
-        <Grid item xs={12} className={internalClasses.sectionContent}>
+        <Grid item xs={12} className={clsx(internalClasses.sectionContent, className)}>
             <div className={internalClasses.imagesSlideWrapper}>
                 {Array.isArray(content) &&
                     content.map((item) => (

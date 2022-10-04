@@ -71,6 +71,12 @@ export const theme = (color) =>
                             color: '#AA94FB'
                         }
                     },
+                    '.mt-8': {
+                        marginTop: '.8rem'
+                    },
+                    '.mt-16': {
+                        marginTop: '1.6rem'
+                    },
                     '.fs-biggest': {
                         fontSize: '5rem'
                     },

@@ -27,10 +27,10 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const Video = ({ classes, content, ...rest }) => {
+const Video = ({ className, content, ...rest }) => {
     const internalClasses = useStyles();
     return (
-        <Grid item xs={12} className={internalClasses.sectionContent}>
+        <Grid item xs={12} className={clsx(internalClasses.sectionContent, className)}>
             <div className={clsx(internalClasses.video)}>
                 {content?.src && (
                     <iframe

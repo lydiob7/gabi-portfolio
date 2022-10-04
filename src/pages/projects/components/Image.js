@@ -32,16 +32,16 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const Image = ({ content, setImageToOpen, ...rest }) => {
+const Image = ({ className, content, setImageToOpen, ...rest }) => {
     const internalClasses = useStyles();
 
     const sizeClass = content?.size === 'auto' ? internalClasses.imageSizeAuto : internalClasses.imageSizeNormal;
 
     return (
-        <Grid item xs={12} className={clsx(internalClasses.sectionContent)}>
+        <Grid item xs={12} className={clsx(internalClasses.sectionContent, className)}>
             <div
                 onClick={() => setImageToOpen(content?.src)}
-                className={clsx(internalClasses.image, sizeClass, 'fade-in')}
+                className={clsx(internalClasses.image, sizeClass, 'fade-in-center')}
             >
                 {content?.src && <img src={content.src} alt={content?.alt} />}
             </div>

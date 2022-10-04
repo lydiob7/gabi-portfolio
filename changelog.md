@@ -1,3 +1,7 @@
+### v1.3.0
+
+-   Update: Change code according to feedback.
+
 ### v1.2.0
 
 -   Feature: Add social media icons.

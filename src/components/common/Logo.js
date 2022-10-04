@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: '350px',
         position: 'relative',
         zIndex: '1199',
+        transform: 'scale(.8)',
         '& a': {
             display: 'flex',
             alignItems: 'center',
@@ -30,7 +31,9 @@ const useStyles = makeStyles((theme) => ({
                 }
             }
         },
-        [theme.breakpoints.up('md')]: {}
+        [theme.breakpoints.up('md')]: {
+            transform: 'scale(1)'
+        }
     })
 }));
 
