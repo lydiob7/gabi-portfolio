@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     credits: {
         fontSize: '.9rem',
         position: 'absolute',
-        bottom: '.3rem',
+        bottom: '1rem',
         left: '0',
         width: '100%',
         textAlign: 'center'
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         paddingTop: '.5rem',
         paddingBottom: '.5rem',
-        marginBottom: '1.8rem',
+        marginBottom: '4rem',
         borderTop:
             theme.palette.type === 'light'
                 ? `2px solid ${theme.palette.primary.main}`
@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '1.2rem'
         },
         [theme.breakpoints.up('md')]: {
+            marginBottom: '2.8rem',
             fontSize: '1.5rem'
         }
     },

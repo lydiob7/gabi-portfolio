@@ -1,3 +1,7 @@
+### v1.4.0
+
+-   Update: update daomos information.
+
 ### v1.3.0
 
 -   Update: Change code according to feedback.

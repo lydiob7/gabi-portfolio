@@ -151,10 +151,14 @@ const daomos = {
             }
         ],
         prototype: [
-            // {
-            //     type: 'video',
-            //     content: { src: 'https://www.youtube.com/embed/nvhYqMqH-bQ', alt: 'Daomos prototype' }
-            // }
+            {
+                type: 'video',
+                content: { src: 'https://www.youtube.com/embed/OVyqltEkUVk', alt: 'Daomos prototype' }
+            },
+            {
+                type: 'video',
+                content: { src: 'https://www.youtube.com/embed/eiDzDG_jGxs', alt: 'Daomos prototype 2' }
+            }
         ],
         post: [
             {
