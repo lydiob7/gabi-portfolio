@@ -13,13 +13,13 @@ const useStyles = makeStyles((theme) => ({
         '&:nth-child(1)': {
             [theme.breakpoints.up('md')]: {
                 gridColumn: '1/3',
-                gridRow: '1/3'
+                gridRow: '1/5'
             }
         },
         '&:nth-child(2)': {
             [theme.breakpoints.up('md')]: {
                 gridColumn: '2/4',
-                gridRow: '2/4'
+                gridRow: '4/8'
             }
         },
         '& img': {
@@ -47,9 +47,10 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('md')]: {
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
-            gridTemplateRows: 'repeat(3, 1fr)',
-            overflow: 'visible'
-        }
+            gridTemplateRows: 'repeat(7, 1fr)',
+            overflow: 'visible',
+            paddingBottom: '2rem'
+        },
     },
     root: {},
     sectionContent: {
