@@ -1,68 +1,55 @@
 const array = [
     {
-        id: 'tomi-scattini',
-        website: 'https://tomiscattini.com/',
-        title: 'Tomi Scattini',
+        id: "creativa",
+        website: "https://creativadesign.co",
+        title: "Creativa",
         en: {
-            subtitle: 'Full stack developer portfolio'
+            subtitle: "Design Agency Website"
         },
         es: {
-            subtitle: 'Portfolio de Desarrollador full-stack'
+            subtitle: "Agencia Digital de Diseño"
         },
-        type: 'web-design',
-        status: 'ready'
+        type: "web-design",
+        status: "ready"
     },
     {
-        id: 'chapati',
-        website: 'https://www.chapati-delta.com.ar/',
-        title: 'Chapati',
+        id: "vaikuntha",
+        website: "https://vaikuntha.com.ar/",
+        title: "Vaikuntha",
         en: {
-            subtitle: "Conscious website promoting the Chapati's project"
+            subtitle: "Ceramist portfolio"
         },
         es: {
-            subtitle: 'Página web consciente que promueve el proyecto "Chapati"'
+            subtitle: "Portfolio de Ceramista"
         },
-        type: 'web-design',
-        status: 'ready'
+        type: "web-design",
+        status: "ready"
     },
     {
-        id: 'vaikuntha',
-        website: 'https://vaikuntha.com.ar/',
-        title: 'Vaikuntha',
+        id: "miguel-bruno",
+        website: "https://miguelbruno.es/",
+        title: "Miguel Bruñó",
         en: {
-            subtitle: 'Ceramist portfolio'
+            subtitle: "Musician portfolio"
         },
         es: {
-            subtitle: 'Portfolio de Ceramista'
+            subtitle: "Portfolio de Músico"
         },
-        type: 'web-design',
-        status: 'ready'
+        type: "web-design",
+        status: "ready"
     },
     {
-        id: 'miguel-bruno',
-        website: 'https://miguelbruno.es/',
-        title: 'Miguel Bruñó',
+        id: "tomi-scattini",
+        website: "https://tomiscattini.com/",
+        title: "Tomi Scattini",
         en: {
-            subtitle: 'Musician portfolio'
+            subtitle: "Full stack developer portfolio"
         },
         es: {
-            subtitle: 'Portfolio de Músico'
+            subtitle: "Portfolio de Desarrollador full-stack"
         },
-        type: 'web-design',
-        status: 'ready'
-    },
-    {
-        id: 'tierra-roja',
-        website: 'https://tierra-roja.herokuapp.com/',
-        title: 'Tierra roja',
-        en: {
-            subtitle: 'Web app for clay artists in Misiones'
-        },
-        es: {
-            subtitle: 'Web app para ceramistas en Misiones'
-        },
-        type: 'web-design',
-        status: 'ready'
+        type: "web-design",
+        status: "ready"
     }
 ];
 
