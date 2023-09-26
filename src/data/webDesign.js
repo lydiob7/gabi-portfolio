@@ -17,10 +17,10 @@ const array = [
         website: "https://chameleonic.io",
         title: "Chameleonic",
         en: {
-            subtitle: "Consultancy agency"
+            subtitle: "Consultancy Agency Website"
         },
         es: {
-            subtitle: "Agencia de consultorías"
+            subtitle: "Agencia de Consultorías"
         },
         type: "web-design",
         status: "ready"
