@@ -7,11 +7,12 @@ import { makeStyles, Typography } from '@material-ui/core';
 import SectionTitle from 'components/common/SectionTitle';
 import MediaList from 'components/common/MediaList';
 import aboutImg from 'assets/images/about.png';
-import resume from 'assets/resume.pdf';
+// import resume from 'assets/resume.pdf';
 
 const useStyles = makeStyles((theme) => ({
     content: {
         fontSize: '1.1rem',
+        marginBottom: '1rem',
         [theme.breakpoints.up('md')]: {
             fontSize: '1.5rem'
         }
@@ -158,9 +159,9 @@ const About = ({ classes, ...props }) => {
                         </Typography>
                     )}
                     <div className="links-wrapper">
-                        <a className="fade-in" href={resume} download="Gabriela Polanco-Ferreyra Resume">
+                        {/* <a className="fade-in" href={resume} download="Gabriela Polanco-Ferreyra Resume">
                             <Typography className="resume">Resume</Typography>
-                        </a>
+                        </a> */}
                         <MediaList
                             classes={{ root: clsx('media-links', 'fade-in') }}
                             color={currentTheme === 'light' ? 'green' : ''}
@@ -178,7 +179,11 @@ const About = ({ classes, ...props }) => {
                 <a href="https://tomiscattini.com" target="_blank" rel="noreferrer">
                     Tomi Scattini
                 </a>{' '}
-                (Itakhi) {new Date().getFullYear()}
+                (
+                <a href="https://itakhidigital.com" target="_blank" rel="noreferrer">
+                    Itakhi
+                </a>
+                ) {new Date().getFullYear()}
             </Typography>
         </div>
     );

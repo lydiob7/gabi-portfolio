@@ -16,9 +16,9 @@ const slice = createSlice({
         appInformation,
         appSettings: {
             currentLanguage: 'en',
-            isLanguageCheckTriggered: false,
-            isPreferredThemeCheckTriggered: false,
-            isLanguageToggable: false,
+            isLanguageCheckTriggered: true,
+            isPreferredThemeCheckTriggered: true,
+            isLanguageToggable: true,
             isThemeToggable: true,
             mantainanceMode: false,
             supportedLanguages: Object.keys(supportedLanguages).slice(0, -1),

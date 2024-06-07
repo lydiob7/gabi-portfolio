@@ -186,7 +186,23 @@ const SelectedWorks = ({ classes, ...props }) => {
                         ?.filter((project) => project?.type === 'case-study')
                         ?.map((project, index) => (
                             <div key={project.id} className={clsx(internalClasses.caseStudyTitle, 'fade-in')}>
-                                {project?.status === 'ready' ? (
+                                {project?.status === 'only-behance' ? (
+                                    <a href={project.behanceLink} target="_blank" rel="noreferrer">
+                                        <div className={internalClasses.caseStudyTitleWrapper}>
+                                            <Typography
+                                                variant="h3"
+                                                className={clsx(internalClasses.projectTitle, 'fw-600')}
+                                            >
+                                                {project.title}
+                                            </Typography>
+                                            <Hidden xsDown>
+                                                <span className="arrow">
+                                                    <SmallArrow />
+                                                </span>
+                                            </Hidden>
+                                        </div>
+                                    </a>
+                                ) : project?.status === 'ready' ? (
                                     <Link to={`/project/${project.id}`}>
                                         <div className={internalClasses.caseStudyTitleWrapper}>
                                             <Typography

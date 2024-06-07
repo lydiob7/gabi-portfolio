@@ -1,12 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
-import daomos from "data/daomos";
-import aukai from "data/aukai";
-import rito from "data/rito";
-import webDesign from "data/webDesign";
+import { createSlice } from '@reduxjs/toolkit';
+import daomos from 'data/daomos';
+import aukai from 'data/aukai';
+import rito from 'data/rito';
+import webDesign from 'data/webDesign';
 
-import daomosImg from "assets/images/projects/daomos.png";
-import aukaiImg from "assets/images/projects/aukai.jpg";
-import ritoImg from "assets/images/projects/rito.png";
+import daomosImg from 'assets/images/projects/daomos.png';
+import aukaiImg from 'assets/images/projects/aukai.jpg';
+import ritoImg from 'assets/images/projects/rito.png';
 
 export const setProject = (projectId) => (dispatch, getState) => {
     const currentLanguage = getState()?.ui?.appSettings?.currentLanguage;
@@ -24,16 +24,25 @@ export const setProject = (projectId) => (dispatch, getState) => {
 };
 
 const slice = createSlice({
-    name: "projects",
+    name: 'projects',
     initialState: {
         list: [
+            {
+                id: aukai?.id,
+                behanceLink: aukai?.behanceLink,
+                data: aukai,
+                title: aukai?.title,
+                type: 'case-study',
+                status: 'only-behance',
+                img: aukaiImg
+            },
             {
                 id: daomos?.id,
                 behanceLink: daomos?.behanceLink,
                 data: daomos,
                 title: daomos?.title,
-                type: "case-study",
-                status: "ready",
+                type: 'case-study',
+                status: 'ready',
                 img: daomosImg
             },
             {
@@ -41,18 +50,9 @@ const slice = createSlice({
                 behanceLink: rito?.behanceLink,
                 data: rito,
                 title: rito?.title,
-                type: "case-study",
-                status: "ready",
+                type: 'case-study',
+                status: 'ready',
                 img: ritoImg
-            },
-            {
-                id: aukai?.id,
-                behanceLink: aukai?.behanceLink,
-                data: aukai,
-                title: aukai?.title,
-                type: "case-study",
-                status: "in-progress",
-                img: aukaiImg
             },
             ...webDesign
         ],

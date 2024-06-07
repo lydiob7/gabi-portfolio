@@ -9,7 +9,8 @@ const LanguageCheck = ({ children }) => {
 
     useLayoutEffect(() => {
         if (appSettings?.isLanguageCheckTriggered) {
-            const lang = navigator?.language?.split('-')[0];
+            const lang =
+                navigator?.language?.indexOf('-') !== -1 ? navigator.language.split('-')[0] : navigator?.language;
             if (appSettings?.supportedLanguages.includes(lang)) dispatch(languageChanged(lang));
             else dispatch(languageChanged('default'));
         }

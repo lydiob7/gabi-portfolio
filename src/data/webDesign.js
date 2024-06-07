@@ -1,29 +1,42 @@
 const array = [
     {
-        id: "creativa",
-        website: "https://creativadesign.co",
-        title: "Creativa",
+        id: 'chameleonic',
+        website: 'https://chameleonic.io',
+        title: 'Chameleonic',
         en: {
-            subtitle: "Design Agency Website"
+            subtitle: 'Consultancy Agency Website'
         },
         es: {
-            subtitle: "Agencia Digital de Diseño"
+            subtitle: 'Agencia de Consultorías'
         },
-        type: "web-design",
-        status: "ready"
+        type: 'web-design',
+        status: 'ready'
     },
     {
-        id: "chameleonic",
-        website: "https://chameleonic.io",
-        title: "Chameleonic",
+        id: 'beatsur',
+        website: 'https://beatsurbooks.com',
+        title: 'BeatSur',
         en: {
-            subtitle: "Consultancy Agency Website"
+            subtitle: 'Self-help books ecommerce'
         },
         es: {
-            subtitle: "Agencia de Consultorías"
+            subtitle: 'Tienda virtual de libros de autoayuda'
         },
-        type: "web-design",
-        status: "ready"
+        type: 'web-design',
+        status: 'ready'
+    },
+    {
+        id: 'tuarreglocoral',
+        website: 'https://tuarreglocoral.es',
+        title: 'Tu Arreglo Coral',
+        en: {
+            subtitle: 'Custom coral arrangements website'
+        },
+        es: {
+            subtitle: 'Sitio web de arreglos corales personalizados'
+        },
+        type: 'web-design',
+        status: 'ready'
     }
     // {
     //     id: "vaikuntha",

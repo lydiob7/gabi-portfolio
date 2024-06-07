@@ -98,7 +98,7 @@ const Banner = ({ classes, gsap, ...props }) => {
             <Grid item xs={false} sm={3} />
             <div className={internalClasses.textWrapper}>
                 <Typography className={clsx(internalClasses.title, 'title fw-900')} variant="h1">
-                    {textProvider?.title?.split(',')?.[0]},
+                    {textProvider?.title?.split(',')?.[0]}
                     <br />
                     {textProvider?.title?.split(',')?.[1]}
                 </Typography>

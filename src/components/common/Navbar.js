@@ -99,9 +99,12 @@ const useStyles = makeStyles((theme) => ({
     },
     mainNavigationWrapper: {
         display: 'flex',
-        position: 'relative',
-        alignItems: 'center',
-        [theme.breakpoints.up('md')]: {
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+        [theme.breakpoints.up('sm')]: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
             width: '100%'
         }
     },

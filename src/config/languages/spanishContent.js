@@ -17,14 +17,14 @@ const spanishContent = {
     },
     homePage: {
         banner: {
-            title: 'Hola mundo, Soy Gabi Polanco-Ferreyra',
+            title: 'Creativa freelancer, Curiosa del mundo y habilidades múltiples',
             subtitle:
-                'Mi background profesional en Derecho me permitió desarrollar y ejercitar visión empática del mundo,mi curiosidad sin límites y mis ganas de crear, me llevó a estudiar diseño de forma autodidacta y formalmente.',
-            subtitle2: 'El resultado es: Gabi, una nueva diseñadora UX/UI ',
-            subtitle3: 'que quiere ser parte ',
-            subtitle4: 'Me mueve el deseo de hacer este mundo uno más accesible, justo y democrático.',
-            subtitleBold1: '(muy empática)',
-            subtitleBold2: 'de la revolución digital.'
+                'Soy Gabi: un poco abogada, un poco diseñadora, un poco trotamundos. En el fondo, mi objetivo es ver el mundo desde una perspectiva enriquecida por la humanidad y la empatía. En un mundo que a menudo enfatiza la especialización, yo me esfuerzo por mantenerme curiosa y con la mente abierta. Quiero tener un impacto en el mundo, por eso diseño.',
+            subtitle2: '',
+            subtitle3: '',
+            subtitle4: '',
+            subtitleBold1: '',
+            subtitleBold2: ''
         },
         selectedWorks: {
             title: 'Selección de trabajos',
@@ -35,8 +35,8 @@ const spanishContent = {
         about: {
             title: 'about me',
             content:
-                'Soy Gabi Polanco-Ferreyra y vengo de un pasado profesional variado, soy abogada e hice un máster en Mediación y Resolución de Conflictos, trabajé en el Poder Judicial Federal durante muchos años antes de dedicarme a ser una viajera a tiempo completo alrededor del mundo. Tuve muchos otros trabajos antes de decidir dedicarme a mis talentos creativos como profesión. Me encanta viajar, ver el mundo, acampar, escalar montañas y conocer gente (de verdad). Mi sueño es dar la vuelta, en velero, al mundo algún día.',
-            contentHighlight: 'Estoy transitando mi viaje creativo and ME ENCANTA.',
+                'Soy de Argentina y actualmente resido en Nueva York. Durante los últimos años, he viajado y me he sumergido en diversas culturas e idiomas. Soy abogada y hace cuatro años hice la transición al mundo de la tecnología, impulsada por el deseo de explorar mi creatividad, la tecnología y ayudar a las personas. Viajar nutre mi creatividad, mientras alimento mi sueño de navegar por todo el mundo.',
+            contentHighlight: '',
             linkedinLinkText: 'Linkedin',
             linkedinLink: 'https://www.linkedin.com/in/gabriela-polanco-ferreyra-b5b25717a/',
             mediumLinkText: 'Medium',

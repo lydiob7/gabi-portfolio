@@ -17,14 +17,14 @@ const englishContent = {
     },
     homePage: {
         banner: {
-            title: 'Hola world, I am Gabi Polanco Ferreyra',
+            title: 'Experienced everywhere-based freelance creative, Curious about the world',
             subtitle:
-                'My background in law allowed me to develop my empathic view of the world, and my limitless curiosity led me to study different design programs in a self-taught and formal way.',
-            subtitle2: 'The result: Gabi,',
-            subtitle3: 'new UX/UI designer who wants to be part of the ',
-            subtitle4: "I'm driven by the desire to make this world more accessible, fair, and democratic.",
-            subtitleBold1: '(very empathic)',
-            subtitleBold2: 'digital revolution.'
+                'I am Gabi—a bit lawyer, a bit designer, a bit globetrotter. At the core, I aim to see the world from a perspective enriched by humanity and empathy. In a world that often emphasizes specialization, I strive to remain curious and open-minded. I want to make an impact on the world, which is why I design.',
+            subtitle2: '',
+            subtitle3: '',
+            subtitle4: '',
+            subtitleBold1: '',
+            subtitleBold2: ''
         },
         selectedWorks: {
             title: 'Selected works',
@@ -35,8 +35,8 @@ const englishContent = {
         about: {
             title: 'About me',
             content: [
-                "I'm from Argentina, and I've been living and traveling to different places for the last few years; I'm currently in NYC. My former profession was as a lawyer in Argentina, but I've been trying to make my way in the tech world for two years now.",
-                'I love traveling, seeing the world, learning about cultures and languages, camping, hiking mountains, and meeting people (really). My dream is to sail around the world one day.'
+                ' Originally from Argentina and now based in NYC, I’ve spent the last few years traveling and immersing myself in diverse cultures and languages.',
+                'With a background in law, I’ve transitioned into the tech world over the past four years, driven by a passion for creativity, technology, and helping people. Traveling fuels my creativity, and my ultimate dream is to sail around the world, embracing all the adventures it has to offer.'
             ],
             content2: 'I am on my creative-human journey, and',
             contentHighlight: 'me encanta.',
