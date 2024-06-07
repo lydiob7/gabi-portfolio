@@ -17,10 +17,10 @@ const array = [
         website: 'https://beatsurbooks.com',
         title: 'BeatSur',
         en: {
-            subtitle: 'Self-help books ecommerce'
+            subtitle: 'Online bookstore'
         },
         es: {
-            subtitle: 'Tienda virtual de libros de autoayuda'
+            subtitle: 'Tienda online de libros'
         },
         type: 'web-design',
         status: 'ready'
@@ -30,10 +30,10 @@ const array = [
         website: 'https://tuarreglocoral.es',
         title: 'Tu Arreglo Coral',
         en: {
-            subtitle: 'Custom coral arrangements website'
+            subtitle: 'Customized coral arrangements'
         },
         es: {
-            subtitle: 'Sitio web de arreglos corales personalizados'
+            subtitle: 'Arreglos corales personalizados'
         },
         type: 'web-design',
         status: 'ready'
