@@ -26,6 +26,19 @@ const array = [
         status: 'ready'
     },
     {
+        id: 'itakhi',
+        website: 'https://itakhidigital.com',
+        title: 'Itakhi',
+        en: {
+            subtitle: 'Impactful Digital Agency'
+        },
+        es: {
+            subtitle: 'Agencia Digital con Impacto'
+        },
+        type: 'web-design',
+        status: 'ready'
+    },
+    {
         id: 'tuarreglocoral',
         website: 'https://tuarreglocoral.es',
         title: 'Tu Arreglo Coral',

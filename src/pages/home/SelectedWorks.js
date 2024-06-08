@@ -183,7 +183,7 @@ const SelectedWorks = ({ classes, ...props }) => {
 
                 <div className={internalClasses?.titleWrapper}>
                     {projectsList
-                        ?.filter((project) => project?.type === 'case-study')
+                        ?.filter((project) => project?.status !== 'not-ready' && project?.type === 'case-study')
                         ?.map((project, index) => (
                             <div key={project.id} className={clsx(internalClasses.caseStudyTitle, 'fade-in')}>
                                 {project?.status === 'only-behance' ? (
@@ -271,7 +271,7 @@ const SelectedWorks = ({ classes, ...props }) => {
 
                 <div id="web-design-content" className={internalClasses?.titleWrapper}>
                     {projectsList
-                        ?.filter((project) => project?.type === 'web-design')
+                        ?.filter((project) => project?.status !== 'not-ready' && project?.type === 'web-design')
                         ?.map((project, index) => (
                             <div className={clsx(internalClasses.projectTitleWrapper, 'fade-in')} key={project.id}>
                                 {project?.status === 'ready' ? (

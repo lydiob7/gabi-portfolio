@@ -5,8 +5,10 @@ import rito from 'data/rito';
 import webDesign from 'data/webDesign';
 
 import daomosImg from 'assets/images/projects/daomos.png';
+import diodeImg from 'assets/images/projects/diode.jpg';
 import aukaiImg from 'assets/images/projects/aukai.jpg';
 import ritoImg from 'assets/images/projects/rito.png';
+import diode from 'data/diode';
 
 export const setProject = (projectId) => (dispatch, getState) => {
     const currentLanguage = getState()?.ui?.appSettings?.currentLanguage;
@@ -27,6 +29,15 @@ const slice = createSlice({
     name: 'projects',
     initialState: {
         list: [
+            {
+                id: diode?.id,
+                behanceLink: diode?.behanceLink,
+                data: diode,
+                title: diode?.title,
+                type: 'case-study',
+                status: 'only-behance',
+                img: diodeImg
+            },
             {
                 id: aukai?.id,
                 behanceLink: aukai?.behanceLink,
@@ -51,7 +62,7 @@ const slice = createSlice({
                 data: rito,
                 title: rito?.title,
                 type: 'case-study',
-                status: 'ready',
+                status: 'not-ready',
                 img: ritoImg
             },
             ...webDesign
